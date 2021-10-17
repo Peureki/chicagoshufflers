@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+html,body
+{
+    width: 100%;
+   	height: 100vh;
+   	height: calc(var(--vh, 1vh) * 100);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    overflow: hidden; 
+}
+body {
+    line-height:1;
+    font-family: 'Rubik', sans-serif;
+	background: var(--clr-bkg);
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    color: var(--clr-link);
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+}
+a:hover{
+	color: var(--clr-red);
+}
+details summary{
+	cursor: pointer;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+b{
+	color: var(--clr-bold);
+}
+
+:root{
+    --clr-bkg-main: #202930;
+    --clr-bkg-line: white;
+}
+
+/* 
+    ====================================================
+    ================== MAIN BOX ========================
+    ====================================================
+*/
+.main-box{
+    position: relative;
+    height: 100vh;
+    background-color: var(--clr-bkg-main);
+}
+/* 
+    ====================================================
+    ================== MAIN BOX ========================
+    ====================================================
+    Straight line from top [direction] to bottom [direction]
+*/
+.line-right-to-left{
+    width: 10px;
+    height: 100vh;
+    background-color: var(--clr-bkg-line);
+    position: absolute;
+    transform: rotate(45deg);
+    top: 0%;
+    right: 0%;
+
+}
