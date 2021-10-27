@@ -122,7 +122,7 @@ b{
 
 :root{
     --clr-bkg-main: #202930;
-    --clr-bkg-line: white;
+    --clr-bkg-line: #FE0202;
 }
 
 /* 
@@ -136,18 +136,42 @@ b{
     background-color: var(--clr-bkg-main);
 }
 /* 
-    ====================================================
-    ================== MAIN BOX ========================
-    ====================================================
+    =================================================
+    ================== LINES ========================
+    =================================================
     Straight line from top [direction] to bottom [direction]
 */
-.line-right-to-left{
+.line-left-to-right{
     width: 10px;
-    height: 100vh;
     background-color: var(--clr-bkg-line);
     position: absolute;
-    transform: rotate(45deg);
-    top: 0%;
-    right: 0%;
-
+    top: 50%;
+    left: 50%;
 }
+.circle{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+/* 
+    =================================================
+    ================== LOGOs ========================
+    =================================================
+*/
+/* Center of a box */
+.center-img{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    
+}
+.center-img img{
+    width: 100%;
+}
+

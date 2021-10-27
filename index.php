@@ -6,16 +6,21 @@
 	<title> Chicago Shufflers </title>
 </head>
 <body>
-	<div class = "main-box">
-		<div class = "line-right-to-left">
+	<div id = "merp" class = "main-box" style = "z-index: 100;">
+		
+		<div class = "center-img">
+			<img src = "./images/logos/test.PNG">
+		</div>
+
+		<div class = "line-left-to-right">
 
 		</div>
 	</div>
 
-	<div class = "main-box">
-
+	<div id = "merp2" class = "main-box">
 	</div>
 
 
 </body>
+<script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
 </html>
