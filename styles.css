@@ -35,7 +35,6 @@ body {
     line-height:1;
     font-family: 'Teko', sans-serif;
 	background: var(--clr-bkg);
-	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -132,6 +131,16 @@ b{
     ================== MAIN BOX ========================
     ====================================================
 */
+.main-container{
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+/* Snap to the start of the child divs (sections) */
+.main-container > div{
+    scroll-snap-align: start;
+}
 .main-box{
     position: relative;
     height: 100vh;
@@ -145,6 +154,9 @@ b{
 .nav-bar{
     width: 100%;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
     background-color: var(--clr-bkg-accent);
 }
 .nav-bar ul{
@@ -177,7 +189,22 @@ b{
     margin-right: auto;
     vertical-align: middle;
 }
-
+/* 
+    ================================================================
+    ================== LEFT AND RIGHT BOXES ========================
+    ================================================================
+*/
+/* Container to put both left and right boxes so they get flexxed */
+.left-right-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-box,
+.right-box{
+    width: 50%;
+}
 
 /* 
     =================================================
@@ -206,16 +233,72 @@ b{
 .main-video-block{
     width: 100%;
     height: 80%;
-    background-color: lightblue;
     position: absolute;
     margin: 0;
 }
 .main-video-block video{
     object-fit: cover;
+    background-color: var(--clr-bkg-main);
     width: 100%;
     height: 100%;
 }
 
+/* 
+    =================================================
+    ================== TITLE ========================
+    =================================================
+*/
+.title,
+.title-abs,
+.title-bottom{
+    font-size: 200px;
+    color: var(--clr-bkg-secondary);
+    z-index: 100;
+}
+.title-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.title-abs{
+    position: absolute;
+}
+/* WHO | WE | ARE */
+#about-1{
+    top: 0%;
+    left: 5%;
+}
+#about-2{
+    top: 30%;
+    left: 15%;
+}
+#about-3{
+    top: 60%;
+    left: 25%;
+}
+/* 
+    ======================================================
+    ================== ABOUT PICS ========================
+    ======================================================
+*/
+.about-pic{
+    z-index: 1;
+}
+.about-pic img{
+    width: 65%;
+}
+/* 
+    ==============================================================
+    ================== SMALL DESCRIPTIONS ========================
+    ==============================================================
+*/
+.small-description p1{
+    font-size: 30px;
+    color: var(--clr-bkg-accent);
+}
+#about-desc-1{
+    margin-top: 20px;
+}
 
 
 
