@@ -1,4 +1,4 @@
-function do_diagonal_left_line(box, line){
+/*function do_diagonal_left_line(box, line){
 	let topLeft = box.offsetLeft,
 		top = box.offsetTop,
 		width = box.offsetWidth,
@@ -21,4 +21,19 @@ do_diagonal_left_line(mainBox[0], line[0]);
 
 window.addEventListener('resize', () => {
 	do_diagonal_left_line(mainBox[0], line[0]);
-})
+});  */
+
+let section1 = document.getElementById('section-1'),
+	section2 = document.getElementById('section-2');
+
+console.log(section1, section2);
+
+let lastScroll = 0;
+let body = document.body; 
+
+body.addEventListener('scroll', function(){
+   	let st = window.scrollY,
+   		section1Header = section1.getBoundingClientRect(); 
+   	console.log(section1Header);
+});
+

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500&display=swap');
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -33,7 +33,7 @@ html,body
 }
 body {
     line-height:1;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Teko', sans-serif;
 	background: var(--clr-bkg);
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
@@ -121,7 +121,9 @@ b{
 }
 
 :root{
-    --clr-bkg-main: #202930;
+    --clr-bkg-main: #121212;
+    --clr-bkg-secondary: #fe0100;
+    --clr-bkg-accent: #ffffff;
     --clr-bkg-line: #FE0202;
 }
 
@@ -135,26 +137,47 @@ b{
     height: 100vh;
     background-color: var(--clr-bkg-main);
 }
-/* 
-    =================================================
-    ================== LINES ========================
-    =================================================
-    Straight line from top [direction] to bottom [direction]
+/*
+    ==========================
+    ===== NAVIGATION BAR =====
+    ==========================
 */
-.line-left-to-right{
-    width: 10px;
-    background-color: var(--clr-bkg-line);
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.nav-bar{
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-bkg-accent);
 }
-.circle{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background-color: blue;
-    border-radius: 50%;
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
 }
+/* Individual links */
+.nav-bar li{
+    font-size: 30px;
+    padding: 15px;
+    max-width: 250px;
+    vertical-align: middle;
+}
+.nav-bar li a{
+    padding: 15px;
+}
+.nav-bar li a:hover{
+    background-color: var(--clr-bkg-secondary);
+}
+.nav-bar li:nth-child(3),
+.nav-bar li:nth-child(3) a{
+    padding: 0px;
+}
+.nav-bar img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
 
 /* 
     =================================================
@@ -175,3 +198,105 @@ b{
     width: 100%;
 }
 
+/* 
+    ======================================================
+    ================== MAIN VIDEO ========================
+    ======================================================
+*/
+.main-video-block{
+    width: 100%;
+    height: 80%;
+    background-color: lightblue;
+    position: absolute;
+    margin: 0;
+}
+.main-video-block video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+    =======================================================
+    ================== SEARS TOWER ========================
+    =======================================================
+*/
+.sears-tower-antenna-left,
+.sears-tower-antenna-right{
+    position: absolute;
+    bottom: 50%;
+    transform: translate(-50%);
+    width: 1vw;
+    height: 30vh;
+    background-color: white;
+    z-index: 1000;
+}
+.sears-tower-antenna-left{
+    left: 45%;
+}
+.sears-tower-antenna-right{
+    left: 55%;
+}
+
+.sears-tower-bottom{
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%);
+    width: 60vw;
+    height: 30vh;
+    background-color: blue;
+    z-index: 1000;
+}
+.sears-tower-top{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%);
+    width: 20vw;
+    height: 50vh;
+    background-color: red;
+    z-index: 1000;
+}
+
+/* 
+    =================================================
+    ================== LINES ========================
+    =================================================
+    Straight line from top [direction] to bottom [direction]
+*/
+.line-left-to-right{
+    width: 10px;
+    background-color: var(--clr-bkg-line);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.circle{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    border-radius: 50%;
+}

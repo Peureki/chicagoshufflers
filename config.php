@@ -16,7 +16,4 @@
 
 <!-- Shortcut Icon + Scalable view -->
 <!--<link rel = "shortcut icon" href = "./images/logos/CS_Logo_02.jpg">-->
-<meta name="viewport" content="height=device-height, 
-    					width=device-width, initial-scale=1.0, 
-                      	minimum-scale=1.0, maximum-scale=1.0, 
-                      	user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">

@@ -6,18 +6,44 @@
 	<title> Chicago Shufflers </title>
 </head>
 <body>
-	<div id = "merp" class = "main-box" style = "z-index: 100;">
-		
-		<div class = "center-img">
-			<img src = "./images/logos/test.PNG">
+
+	<!-- 
+		============================================================
+		====================== NAVIGATION BAR ======================
+		============================================================
+	-->
+	<?php include('nav.php'); ?>
+	<!-- 
+		===========================================================
+		====================== MAIN BOXES =========================
+		===========================================================
+	-->
+
+	<div id = "section-1" class = "main-box" style = "z-index: 100;">
+
+		<div class = "main-video-block">
+			<video controls autoplay muted>
+				<source src = "./videos/grant-park-recap.mp4" type = "video/mp4">
+			</video>
+		</div>
+	<!--
+		<div class = "sears-tower-antenna-left">
+
 		</div>
 
-		<div class = "line-left-to-right">
+		<div class = "sears-tower-antenna-right">
+		</div>
+
+		<div class = "sears-tower-top">
 
 		</div>
+	-->
+
+
 	</div>
 
-	<div id = "merp2" class = "main-box">
+	<div id = "section-2" class = "main-box">
+		This is the next section
 	</div>
 
 
