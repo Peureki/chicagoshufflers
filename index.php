@@ -18,7 +18,7 @@
 		====================== MAIN BOXES =========================
 		===========================================================
 	-->
-	<div class = "main-container">
+	<div id = "main-container" class = "main-container">
 
 		<div id = "section-1" class = "main-box" style = "z-index: 100;">
 

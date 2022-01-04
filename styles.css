@@ -262,6 +262,7 @@ b{
 }
 .title-abs{
     position: absolute;
+    opacity: 0;
 }
 /* WHO | WE | ARE */
 #about-1{
