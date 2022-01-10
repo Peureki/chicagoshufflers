@@ -29,12 +29,12 @@ html,body
     padding: 0;
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
-    overflow: hidden; 
+    overflow: hidden;
 }
 body {
     line-height:1;
     font-family: 'Teko', sans-serif;
-	background: var(--clr-bkg);
+	background: var(--clr-bkg-main);
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -134,13 +134,17 @@ b{
 .main-container{
     width: 100%;
     height: 100%;
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    */
 }
-/* Snap to the start of the child divs (sections) */
+/*
+ Snap to the start of the child divs (sections) 
 .main-container > div{
+    scroll-margin-bottom: 92.6px;
     scroll-snap-align: start;
 }
+*/
 .main-box{
     position: relative;
     height: 100vh;
@@ -197,6 +201,7 @@ b{
 /* Container to put both left and right boxes so they get flexxed */
 .left-right-container{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,6 +209,79 @@ b{
 .left-box,
 .right-box{
     width: 50%;
+    height: 100%;
+    position: relative;
+}
+/* 
+    ==================================================================
+    ================== WHOLE / PIC CONTAINERS ========================
+    ==================================================================
+*/
+.whole-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.whole-container img{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+    filter: brightness(30%);
+    z-index: 1;
+}
+.half-container{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 700px;
+    height: 100%;
+    z-index: 100;
+}
+.pic-container,
+.pic-container img{
+    position: absolute;
+    width: 60%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.pic-container img{
+    cursor: pointer;
+    filter: brightness(1);
+}
+
+/* 
+    ===================================================
+    ================== FADERS =========================
+    ===================================================
+*/
+.about-fader-top,
+.about-fader-mid,
+.about-fader-bot{
+    width: 100%;
+    height: 33.33%;
+    position: absolute;
+    z-index: 1000;
+    background-color: var(--clr-bkg-main);
+}
+.about-fader-mid{
+    top: 33.33%;
+}
+.about-fader-bot{
+    top: 66.66%;
+}
+
+.whole-fader{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    z-index: 1000;
+    background-color: var(--clr-bkg-main);
 }
 
 /* 
@@ -266,28 +344,63 @@ b{
 }
 /* WHO | WE | ARE */
 #about-1{
-    top: 0%;
-    left: 5%;
+    top: 8%;
+    left: 0%;
 }
 #about-2{
-    top: 30%;
-    left: 15%;
+    top: 39%;
+    color: var(--clr-bkg-accent);
+    left: 0%;
 }
 #about-3{
-    top: 60%;
-    left: 25%;
+    top: 69%;
+    left: 0%;
+}
+
+.title-events{
+    text-align: center;
+}
+.title-events h1{
+    padding-top: 50px;
+    white-space: nowrap;
+    font-size: 100px;
+    color: var(--clr-bkg-secondary);
+}
+.title-events p1{
+    font-size: 30px;
+    color: var(--clr-bkg-accent);
 }
 /* 
-    ======================================================
-    ================== ABOUT PICS ========================
-    ======================================================
+    =====================================================
+    ================== HALF PICS ========================
+    =====================================================
 */
-.about-pic{
+.half-pic{
     z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-.about-pic img{
-    width: 65%;
+.half-pic img{
+    width: 100%;
 }
+.quarter-pic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quarter-pic img{
+    max-height: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
 /* 
     ==============================================================
     ================== SMALL DESCRIPTIONS ========================
@@ -301,6 +414,30 @@ b{
     margin-top: 20px;
 }
 
+/* 
+    ===================================================
+    ================== MID BOX ========================
+    ===================================================
+*/
+.mid-box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border: 1px white solid;
+    display: block;
+    margin: auto;
+}
+.mid-box img{
+    position: absolute;
+    width: 60%;
+    max-width: 400px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
 
 
 
