@@ -420,17 +420,29 @@ b{
     ===================================================
 */
 .mid-box{
-    position: relative;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 50%;
     height: 100%;
     border: 1px white solid;
     display: block;
     margin: auto;
 }
+.mid-box h1{
+    text-align: center;
+    padding-top: 50px;
+    white-space: nowrap;
+    font-size: 100px;
+    color: var(--clr-bkg-secondary);
+}
 .mid-box img{
     position: absolute;
     width: 60%;
-    max-width: 400px;
+    max-width: 300px;
     margin: auto;
     top: 0;
     bottom: 0;

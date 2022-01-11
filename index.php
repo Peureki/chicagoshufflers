@@ -23,6 +23,17 @@
 			<div class = "mid-box">
 				<img onclick = "rotate_star(this)" src = "<?php echo $base;?>/images/assets/star.svg">
 			</div>
+
+			<div class = "left-right-container">
+				<div class = "left-box">
+					<!-- Headers --> 
+					<div class = "header-abs"> CHICAGO </div>
+				</div>
+
+				<div class = "right-box">
+					<div class = "header-abs"> SHUFFLERS </div>
+				</div>
+			</div>
 		</div>
 	</div> <!-- End of main container -->
 
