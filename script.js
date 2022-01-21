@@ -301,6 +301,16 @@ let eventName = document.getElementById('event-name'),
 
 let wholeFader = document.getElementById('whole-fader');
 
+let progressSlides = document.getElementById('fill-slides'),
+	progressRotate = document.getElementById('fill-rotate');
+
+let starImg = document.getElementById('star-img');
+
+let homepageSlides = document.getElementsByClassName('homepage-slide');
+for (i = 1; i < homepageSlides.length; i++){
+	homepageSlides[i].style.opacity = 0;
+};
+
 // Rotate the star in the homepage to showcase the top 6 events
 function rotate_star(img){
 	star = img; 
@@ -321,72 +331,39 @@ function rotate_star(img){
 			duration: 1000,
 			easing: "ease",
 			fill: "forwards"
-		});
-	/*
-	star.style.transform = "rotate(60deg)";
+	});
 
-	switch (starNum){
-		case 0: 
-			eventName.innerHTML = "GRANT PARK MEETUP";
-			eventDate.innerHTML = "5/2/21";
-			setTimeout(() => {eventImg.src = "./images/group/pic-4.jpg"}, 500);
-			break;
-		case 1: eventName.innerHTML = "SHUFFLEPALOOZA"; 
-				eventDate.innerHTML = "7/24/21 - 7/25/21";
-				setTimeout(() => {eventImg.src = "./images/group/shufflepalooza-1.jpg"}, 500);
-			break; 
-		case 2: eventName.innerHTML = "MYHOUSE MUSIC FESTIVAL"; 
-				eventDate.innerHTML = "8/28/21 - 8/29/21";
-				setTimeout(() => {eventImg.src = "./images/group/myhouse-1.jpg"}, 500);
-			break;
-		case 3: eventName.innerHTML = "LE NOCTURNE";
-				eventDate.innerHTML = "3/5/21"; 
-				setTimeout(() => {eventImg.src = "./images/group/le-nocturne-1.jpg"}, 500);
-			break; 
-		case 4: eventName.innerHTML = "LIVE STREAM PERFORMANCE"; 
-				eventDate.innerHTML = "2/20/21 - 2/21/21";
-				setTimeout(() => {eventImg.src = "./images/group/pic-5.jpg"}, 500);
-			break;
-		case 5: eventName.innerHTML = "MUSIC VIDEO COLLAB";
-				eventDate.innerHTML = "5/10/21"; 
-				setTimeout(() => {eventImg.src = "./images/group/pic-6.jpg"}, 500);
-			break;
+	for (i = 0; i < homepageSlides.length; i++){
+		if (starNum == i){
+			homepageSlides[i].style.opacity = 1; 
+		} else {
+			homepageSlides[i].style.opacity = 0;
+		}
 	}
+	progressSlides.style.width = ((starNum+1)/6) * 100 + "%"; 
+}
 
-	wholeFader.animate([
+function auto_fill_rotate(){
+	progressRotate.animate([
 		{
 			width: "0%",
-			left: "0%",
 		},
 		{
 			width: "100%",
-			right: "0%",
-		},
-		{
-			width: "100%",
-			right: "0%",
-		},
-		{
-			width: "0%",
-			right: "0%",
 		}],
 		{
-			duration: 1000,
+			duration: 10000,
 			easing: "linear",
 			fill: "forwards"
 	});
-	/*
-	setTimeout(() => {
-		eventImg.src = eventImg;
-		if (starNum == 0){
-			innerHalfPics[5].style.display = "none";
-		} else {
-			innerHalfPics[starNum - 1].style.display = "none";
-		}
-		innerHalfPics[starNum].style.display = "block";
-	}, 500); 
-	*/
 }
+
+auto_fill_rotate();
+
+let auto_rotate_star = setInterval(() => {
+	auto_fill_rotate();
+	rotate_star(starImg);
+}, 10000)
 
 
 
