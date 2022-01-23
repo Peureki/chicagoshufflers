@@ -23,13 +23,12 @@ time, mark, audio, video {
 html,body
 {
     width: 100%;
-   	height: 100vh;
-   	height: calc(var(--vh, 1vh) * 100);
+   	height: 100%;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 body {
     line-height:1;
@@ -206,19 +205,15 @@ b{
 */
 /* Container to put both left and right boxes so they get flexxed */
 .left-right-container{
-    width: 100%;
-    height: 100%;
+    position: relative;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* Seperate main page and about page because the way the text and images are lined up differently
-    but the main aspects of the left-box, right-box still remain as half and half screen
-*/
+
 .left-box,
-.right-box,
-.about-left-box,
-.about-right-box{
+.right-box{
     width: 50%;
     height: 100%;
     position: relative;
@@ -243,6 +238,40 @@ b{
     flex-shrink: 0;
     object-fit: cover;
 } 
+/* 
+    ==========================================================
+    ================== ABOUT US BOXES ========================
+    ==========================================================
+*/
+/* Short description in the about page where the statement stays stagnet on the left side */
+.about-desc-abs{
+    position: sticky;
+    top: 20%;
+    left: 10%;
+    font-size: 70px;
+    color: var(--clr-bkg-accent);
+    transition: all ease 0.5s;
+}
+.about-desc-abs span{
+    color: var(--clr-bkg-secondary);
+}
+.about-left-box,
+.about-right-box{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-left-box p1{
+    font-size: 30px;
+    color: var(--clr-bkg-accent);
+    width: 80%;
+}
+.about-left-box img,
+.about-right-box img{
+    width: 100%;
+}
 
 .bottom-half{
     width: 100%;

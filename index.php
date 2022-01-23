@@ -5,7 +5,7 @@
 	<?php include('config.php'); ?>
 	<title> Chicago Shufflers </title>
 </head>
-<body>
+<body style = "overflow-y: hidden;">
 
 	<!-- 
 		============================================================
