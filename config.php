@@ -9,7 +9,7 @@
 	$date = date("D M d, Y G:i"); // For versioning
 ?>
 <!-- Tab icon -->
-<link rel = "icon" href = "<?php echo $base;?>/images/logos/CS_Logo_02.jpg">
+<link rel = "icon" href = "<?php echo $base;?>/images/logos/CS_Logo-01.jpg">
 
 <!-- Main files -->
 <link type = "text/css" rel = "stylesheet" href = "<?php echo $base;?>/styles.css?v=<?php echo $date;?>">

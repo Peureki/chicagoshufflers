@@ -385,8 +385,6 @@ function auto_fill_rotate(){
 	});
 }
 
-auto_fill_rotate();
-
 /*
 let auto_rotate_star = setInterval(() => {
 	auto_fill_rotate();

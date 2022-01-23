@@ -163,4 +163,5 @@
 
 </body>
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
+<script> auto_fill_rotate(); </script>
 </html>
