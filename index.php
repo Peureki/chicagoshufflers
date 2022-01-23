@@ -56,6 +56,11 @@
 				</div>
 			</div>
 
+			<!-- 
+				==============================================
+				=============== SHUFFLING ====================
+				==============================================
+			-->
 			<div class = "homepage-slide">
 				<div class = "left-right-container">
 					<div class = "left-box">
@@ -67,7 +72,18 @@
 					</div>
 
 					<div class = "right-box">
-						<p1> Shuffling is the flow and the movement with one's footwork and the motion of their body. </p1>
+						<!-- Description -->
+						<p1> The complete embodiment of what it means to express all emotions through footwork and flow. </p1>
+
+						<!-- Sears Tower Outline -->
+						<div class = "building-container">
+							<div class = "container-fader" id = "sears-tower-fader"></div>
+							<div class = "sears-tower-attena-left"></div>
+							<div class = "sears-tower-attena-right"></div>
+							<div class = "sears-tower-top"></div>
+							<div class = "sears-tower-bottom"></div>
+						</div>
+
 						<div class = "header-abs" id = "main-right-header"> SHUFFLING </div>
 					</div>
 				</div>
@@ -76,6 +92,16 @@
 			<div class = "homepage-slide">
 				<div class = "left-right-container">
 					<div class = "left-box">
+						<!-- Aon Center Outline -->
+						<div class = "building-container">
+							<div class = "container-fader" id = "aon-center-fader"></div>
+							<div class = "aon-center-outer"></div>
+							<div class = "aon-center-line-1"></div>
+							<div class = "aon-center-line-2"></div>
+							<div class = "aon-center-line-3"></div>
+							<div class = "aon-center-line-4"></div>
+							<div class = "aon-center-line-5"></div>
+						</div>
 						<!-- Headers --> 
 						<div class = "header-abs" id = "main-left-header"> ABOUT US </div>
 					</div>

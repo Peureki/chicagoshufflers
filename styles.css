@@ -240,9 +240,9 @@ b{
 }
 .bottom-half{
     width: 100%;
-    height: 50%;
+    height: 60%;
     position: absolute;
-    bottom: 50%;
+    bottom: 40%;
 }
 .bottom-half img{
     position: absolute;
@@ -261,6 +261,35 @@ b{
     flex-shrink: 0;
     object-fit: cover;
 }
+/* 
+    ======================================================
+    ================== MERCH BOXES =======================
+    ======================================================
+*/
+.merch-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.merch-left,
+.merch-mid,
+.merch-right{
+    border: 1px solid white;
+    width: 30%;
+    height: 100%;
+}
+.merch-left img,
+.merch-mid img,
+.merch-right img{
+    border: 1px solid white;
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+}
+
+
 /* 
     ==================================================================
     ================== WHOLE / PIC CONTAINERS ========================
@@ -557,49 +586,114 @@ b{
 
 
 
+
+.building-container{
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container-fader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-bkg-main);
+    border: 1px solid var(--clr-bkg-main);
+    z-index: 100;
+}
 /* 
     =======================================================
     ================== SEARS TOWER ========================
     =======================================================
 */
-.sears-tower-antenna-left,
-.sears-tower-antenna-right{
-    position: absolute;
-    bottom: 50%;
-    transform: translate(-50%);
-    width: 1vw;
-    height: 30vh;
-    background-color: white;
-    z-index: 1000;
-}
-.sears-tower-antenna-left{
-    left: 45%;
-}
-.sears-tower-antenna-right{
-    left: 55%;
-}
-
+.sears-tower-attena-left,
+.sears-tower-attena-right,
+.sears-tower-top,
 .sears-tower-bottom{
     position: absolute;
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%);
-    width: 60vw;
-    height: 30vh;
-    background-color: blue;
-    z-index: 1000;
+    border-top: 1px solid var(--clr-bkg-accent);
+    border-left: 1px solid var(--clr-bkg-accent);
+    border-right: 1px solid var(--clr-bkg-accent);
+    z-index: 99;
+}
+.sears-tower-attena-left{
+    width: 4%;
+    height: 30%;
+    left: 40%;
+    transform: translateX(-40%);
+}
+.sears-tower-attena-right{
+    width: 4%;
+    height: 30%;
+    left: 60%;
+    transform: translateX(-60%);
 }
 .sears-tower-top{
-    position: absolute;
+    width: 40%;
+    height: 50%;
     left: 50%;
-    bottom: 0%;
-    transform: translate(-50%);
-    width: 20vw;
-    height: 50vh;
-    background-color: red;
-    z-index: 1000;
+    bottom: 20%;
+    transform: translateX(-50%);
 }
-
+.sears-tower-bottom{
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+}
+/* 
+    ======================================================
+    ================== AON CENTER ========================
+    ======================================================
+*/
+.aon-center-outer,
+.aon-center-line-1,
+.aon-center-line-2,
+.aon-center-line-3,
+.aon-center-line-4,
+.aon-center-line-5{
+    position: absolute;
+}
+.aon-center-outer{
+    width: 50%;
+    height: 99%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--clr-bkg-accent);
+}
+.aon-center-line-1,
+.aon-center-line-2,
+.aon-center-line-3,
+.aon-center-line-4,
+.aon-center-line-5{
+    width: 3%;
+    height: 99%;
+    bottom: 0;
+    border-left: 1px solid var(--clr-bkg-accent);
+    border-right: 1px solid var(--clr-bkg-accent);
+}
+.aon-center-line-1{
+    left: 30%;
+    transform: translateX(-30%);
+}
+.aon-center-line-2{
+    left: 40%;
+    transform: translateX(-40%);
+}
+.aon-center-line-3{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.aon-center-line-4{
+    left: 60%;
+    transform: translateX(-60%);
+}
+.aon-center-line-5{
+    left: 70%;
+    transform: translateX(-70%);
+}
 /* 
     =================================================
     ================== LINES ========================

@@ -299,7 +299,9 @@ let eventName = document.getElementById('event-name'),
 	star, 
 	starNum = 0;
 
-let wholeFader = document.getElementById('whole-fader');
+let wholeFader = document.getElementById('whole-fader'),
+	searsTowerFader = document.getElementById('sears-tower-fader'),
+	aonCenterFader = document.getElementById('aon-center-fader');
 
 let progressSlides = document.getElementById('fill-slides'),
 	progressRotate = document.getElementById('fill-rotate');
@@ -340,6 +342,31 @@ function rotate_star(img){
 			homepageSlides[i].style.opacity = 0;
 		}
 	}
+
+	// Individual cases for when a particular slide is up
+	switch (starNum){
+		case 0: break;
+		case 1: building_faders(searsTowerFader); break;
+		case 2: building_faders(aonCenterFader); break;
+	}
+	// Animate the buildlings loading in to each slide when they load
+	function building_faders(building){
+		building.animate([
+			{
+				height: "100%",
+				top: 0,
+			},
+			{
+				height: "0%",
+				top: 0,
+			}],
+			{
+				duration: 3000,
+				easing: "ease",
+				fill: "forwards"
+		});
+	}
+
 	progressSlides.style.width = ((starNum+1)/6) * 100 + "%"; 
 }
 
@@ -360,10 +387,11 @@ function auto_fill_rotate(){
 
 auto_fill_rotate();
 
+/*
 let auto_rotate_star = setInterval(() => {
 	auto_fill_rotate();
 	rotate_star(starImg);
 }, 10000)
-
+*/
 
 
