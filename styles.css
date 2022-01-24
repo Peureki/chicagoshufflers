@@ -199,6 +199,27 @@ b{
     vertical-align: middle;
 }
 /* 
+    =================================================
+    ================== FOOTER =======================
+    =================================================
+*/
+.footer-outline{
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+}
+/* 
+    =========================================================
+    ================== SECTION STUFF ========================
+    =========================================================
+*/
+.section-title h1{
+    color: var(--clr-bkg-secondary);
+    font-size: 100px;
+    text-align: center;
+}
+
+/* 
     ================================================================
     ================== LEFT AND RIGHT BOXES ========================
     ================================================================
@@ -238,6 +259,17 @@ b{
     flex-shrink: 0;
     object-fit: cover;
 } 
+#shuffling-desc,
+#about-desc{
+    padding: 10px;
+    font-size: 50px;
+    max-width: 50%;
+    z-index: 1000;
+}
+#about-desc{
+    margin-left: auto;
+    margin-right: 0;
+}
 /* 
     ==========================================================
     ================== ABOUT US BOXES ========================
@@ -249,6 +281,7 @@ b{
     top: 20%;
     left: 10%;
     font-size: 70px;
+    z-index: 1000;
     color: var(--clr-bkg-accent);
     transition: all ease 0.5s;
 }
@@ -275,9 +308,9 @@ b{
 
 .bottom-half{
     width: 100%;
-    height: 60%;
+    height: 100%;
     position: absolute;
-    bottom: 40%;
+    bottom: 0%;
 }
 .bottom-half img{
     position: absolute;
@@ -301,7 +334,8 @@ b{
     ================== MERCH BOXES =======================
     ======================================================
 */
-.merch-box{
+.merch-box,
+.flex-box{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -363,6 +397,42 @@ b{
         height: 30%;
     }
 
+}
+
+/* 
+    ===========================================================
+    ================== SHUFFLE SHOWCASE =======================
+    ===========================================================
+*/
+.shuffler-showcase{
+    position: relative;
+    width: 30%;
+    height: 60%;
+    cursor: pointer;
+}
+.shuffler-showcase img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.shuffler-showcase img:hover{
+    opacity: 0.5;
+    transition: all ease 0.5s;
+}
+/* Name of the shuffler */
+.shuffler-showcase h1{
+    color: var(--clr-bkg-accent);
+    font-size: 50px;
+}
+/* Red (youtube-like) play symbol */
+.shuffler-showcase span{
+    position: absolute;
+    color: var(--clr-bkg-secondary);
+    font-size: 50px;
+    margin: 20px;
+    top: 10%;
 }
 
 .clear{
@@ -667,20 +737,27 @@ b{
 
 
 
-.building-container{
+.building-container-left,
+.building-container-right{
     position: absolute;
     width: 70%;
     height: 80%;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+}
+.building-container-left{
+    left: 5%;
+    transform: translateX(-5%);
+}
+.building-container-right{
+    right: 5%;
+    transform: translateX(5%);
 }
 .container-fader{
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: var(--clr-bkg-main);
-    border: 1px solid var(--clr-bkg-main);
+    /*border: 1px solid var(--clr-bkg-main);*/
     z-index: 100;
 }
 /* 

@@ -393,14 +393,17 @@ let auto_rotate_star = setInterval(() => {
 */
 
 
-let leftRightContainer = document.getElementsByClassName('left-right-container'),
+let leftRightContainer = document.getElementsByClassName('main-container'),
 	aboutKeyword = document.getElementById('about-keyword');
 console.log(leftRightContainer);
 
 body.addEventListener('scroll', function(){
 	// Get the x, y positions of the first header
-	let lrContainer0 = leftRightContainer[0].getBoundingClientRect();
-		lrContainer1 = leftRightContainer[1].getBoundingClientRect();
+	let lrContainer0 = leftRightContainer[0].getBoundingClientRect(),
+		lrContainer1 = leftRightContainer[1].getBoundingClientRect(),
+		lrContainer2 = leftRightContainer[2].getBoundingClientRect();
+
+		console.log(lrContainer1.y);
 
 	console.log(lrContainer0);
 	if (lrContainer0.y >= 0 && lrContainer0.y <= 170){
@@ -408,6 +411,9 @@ body.addEventListener('scroll', function(){
 	}
 	if (lrContainer1.y <= 200){
 		aboutKeyword.innerHTML = "diverse"; 
+	}
+	if (lrContainer2.y <= 200){
+		aboutKeyword.innerHTML = "unique";
 	}
 });
 

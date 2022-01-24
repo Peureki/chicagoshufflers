@@ -29,7 +29,7 @@
 				<img src = "<?php echo $base;?>/images/group/img-4.jpg">
 			</div>
 		</div>
-	</div>
+	</div> <!-- End of main container -->
 
 	<div class = "main-container">
 		<div class = "left-right-container">
@@ -39,6 +39,32 @@
 
 			<div class = "about-right-box">
 				<img src = "<?php echo $base;?>/images/group/img-5.jpg">
+			</div>
+		</div>
+	</div> <!-- End of main container -->
+
+	<div class = "main-container">
+		<div class = "section-title">
+			<h1> Get to Know Us</h1>
+		</div>
+
+		<div class = "flex-box">
+			<div onclick =  "window.open('https://www.youtube.com/watch?v=bgkEk5PhQcQ', '_blank');" class = "shuffler-showcase">
+				<h1> Bebo </h1>
+				<img src = "<?php echo $base;?>/images/individuals/bebo.jpg">
+				<span> &#9654; </span>
+			</div>
+
+			<div onclick =  "window.open('https://www.youtube.com/watch?v=jQM_7BG772A', '_blank');" class = "shuffler-showcase">
+				<h1> Snow </h1>
+				<img src = "<?php echo $base;?>/images/individuals/snow.jpg">
+				<span> &#9654; </span>
+			</div>
+
+			<div onclick =  "window.open('https://www.youtube.com/watch?v=z2mYa11hHi8', '_blank');" class = "shuffler-showcase">
+				<h1> D.J. </h1>
+				<img src = "<?php echo $base;?>/images/individuals/dj.jpg">
+				<span> &#9654; </span>
 			</div>
 		</div>
 	</div> <!-- End of main container -->

@@ -54,6 +54,12 @@
 						<source src = "<?php echo $base;?>/videos/grant-park-recap_trim.mp4">
 					</video>
 				</div>
+				<!--
+				<div class = "footer-outline">
+					<img src = "<?php echo $base;?>/images/logos/chicago-outline-white.png">
+				</div>
+			-->
+				
 			</div>
 
 			<!-- 
@@ -73,10 +79,10 @@
 
 					<div class = "right-box">
 						<!-- Description -->
-						<p1> The complete embodiment of what it means to express all emotions through footwork and flow. </p1>
+						<div id = "shuffling-desc"><p1>The complete embodiment of what it means to express all emotions through footwork and flow. </p1></div>
 
 						<!-- Sears Tower Outline -->
-						<div class = "building-container">
+						<div class = "building-container-right">
 							<div class = "container-fader" id = "sears-tower-fader"></div>
 							<div class = "sears-tower-attena-left"></div>
 							<div class = "sears-tower-attena-right"></div>
@@ -92,8 +98,11 @@
 			<div class = "homepage-slide">
 				<div class = "left-right-container">
 					<div class = "left-box">
+						<!-- Description -->
+						<div id = "about-desc"><p1>Get to know us! We're open to all levels, all ages, and all forms of dance.</p1></div>
+
 						<!-- Aon Center Outline -->
-						<div class = "building-container">
+						<div class = "building-container-left">
 							<div class = "container-fader" id = "aon-center-fader"></div>
 							<div class = "aon-center-outer"></div>
 							<div class = "aon-center-line-1"></div>
@@ -153,7 +162,7 @@
 					</div>
 
 					<div class = "right-box">
-						<div class = "header-abs" id = "main-right-header"> SOCIAL </div>
+						<div class = "header-abs" id = "main-right-header"> MEDIA </div>
 					</div>
 				</div>
 			</div>
