@@ -99,7 +99,7 @@
 				<div class = "left-right-container">
 					<div class = "left-box">
 						<!-- Description -->
-						<div id = "about-desc"><p1>Get to know us! We're open to all levels, all ages, and all forms of dance.</p1></div>
+						<div id = "about-desc"><p1><a href = "<?php echo $base;?>/about-us.php">Get to know us!</a> We're open to all levels, all ages, and all forms of dance.</p1></div>
 
 						<!-- Aon Center Outline -->
 						<div class = "building-container-left">

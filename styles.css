@@ -117,6 +117,10 @@ input, select {
 b{
 	color: var(--clr-bold);
 }
+a{
+    color: var(--clr-bkg-secondary);
+    text-decoration: underline;
+}
 
 :root{
     --clr-bkg-main: #121212;
@@ -183,6 +187,8 @@ b{
 }
 .nav-bar li a{
     padding: 15px;
+    color: var(--clr-bkg-main);
+    text-decoration: none;
 }
 .nav-bar li a:hover{
     background-color: var(--clr-bkg-secondary);
@@ -279,7 +285,7 @@ b{
 .about-desc-abs{
     position: sticky;
     top: 20%;
-    left: 10%;
+    transform: translateX(3%);
     font-size: 70px;
     z-index: 1000;
     color: var(--clr-bkg-accent);

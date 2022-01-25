@@ -313,21 +313,26 @@ for (i = 1; i < homepageSlides.length; i++){
 	homepageSlides[i].style.opacity = 0;
 };
 
+// Main headers on the front page
+// ie: "CHICAGO SHUFFLERS" "ABOUT US"
+let mainHeaders = document.getElementsByClassName('header-abs');
+
 // Rotate the star in the homepage to showcase the top 6 events
-function rotate_star(img){
-	star = img; 
+function rotate_star(){
+	star = starImg; 
 	starNum += 1;
 	if (starNum == 6){
 		starNum = 0;
 	}
 	console.log(starNum);
 
+	// Rotate the star every time this function gets called
 	star.animate([
 		{
-			transform: "rotate(0deg)",
+			transform: "rotate("+ (starNum * 60) +"deg)",
 		},
 		{
-			transform: "rotate(60deg)",
+			transform: "rotate("+ ((starNum * 60) + 60) +"deg)",
 		}],
 		{
 			duration: 1000,
