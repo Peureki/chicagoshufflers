@@ -308,71 +308,30 @@ let progressSlides = document.getElementById('fill-slides'),
 
 let starImg = document.getElementById('star-img');
 
+// All slides in the homepage
 let homepageSlides = document.getElementsByClassName('homepage-slide');
-for (i = 1; i < homepageSlides.length; i++){
-	homepageSlides[i].style.opacity = 0;
-};
 
 // Main headers on the front page
 // ie: "CHICAGO SHUFFLERS" "ABOUT US"
-let mainHeaders = document.getElementsByClassName('header-abs');
+let mainHeaders = document.getElementsByClassName('header-abs'),
+	slideMessages = document.getElementsByClassName('slide-message');
 
-// Rotate the star in the homepage to showcase the top 6 events
-function rotate_star(){
-	star = starImg; 
-	starNum += 1;
-	if (starNum == 6){
-		starNum = 0;
-	}
-	console.log(starNum);
 
-	// Rotate the star every time this function gets called
-	star.animate([
+
+function fade_out_slide_message(message){
+	message.animate([
 		{
-			transform: "rotate("+ (starNum * 60) +"deg)",
+			opacity: 1,
 		},
 		{
-			transform: "rotate("+ ((starNum * 60) + 60) +"deg)",
+			opacity: 0,
 		}],
 		{
 			duration: 1000,
+			delay: 3000,
 			easing: "ease",
-			fill: "forwards"
+			fill: "forwards",
 	});
-
-	for (i = 0; i < homepageSlides.length; i++){
-		if (starNum == i){
-			homepageSlides[i].style.opacity = 1; 
-		} else {
-			homepageSlides[i].style.opacity = 0;
-		}
-	}
-
-	// Individual cases for when a particular slide is up
-	switch (starNum){
-		case 0: break;
-		case 1: building_faders(searsTowerFader); break;
-		case 2: building_faders(aonCenterFader); break;
-	}
-	// Animate the buildlings loading in to each slide when they load
-	function building_faders(building){
-		building.animate([
-			{
-				height: "100%",
-				top: 0,
-			},
-			{
-				height: "0%",
-				top: 0,
-			}],
-			{
-				duration: 3000,
-				easing: "ease",
-				fill: "forwards"
-		});
-	}
-
-	progressSlides.style.width = ((starNum+1)/6) * 100 + "%"; 
 }
 
 function auto_fill_rotate(){
@@ -397,28 +356,38 @@ let auto_rotate_star = setInterval(() => {
 }, 10000)
 */
 
-
-let leftRightContainer = document.getElementsByClassName('main-container'),
-	aboutKeyword = document.getElementById('about-keyword');
-console.log(leftRightContainer);
-
-body.addEventListener('scroll', function(){
-	// Get the x, y positions of the first header
-	let lrContainer0 = leftRightContainer[0].getBoundingClientRect(),
-		lrContainer1 = leftRightContainer[1].getBoundingClientRect(),
-		lrContainer2 = leftRightContainer[2].getBoundingClientRect();
-
-		console.log(lrContainer1.y);
-
-	console.log(lrContainer0);
-	if (lrContainer0.y >= 0 && lrContainer0.y <= 170){
-		aboutKeyword.innerHTML = "a community";
+// Transition is either "in" or "out"
+function fade_words(header, transition){
+	// Transition placeholders
+	// Bottom position placeholders
+	let t1, t2, bottom1, bottom2;
+	if (transition == "in"){
+		t1 = 0; 
+		t2 = 1; 
+		bottom1 = "22%";
+		bottom2 = "18%";
 	}
-	if (lrContainer1.y <= 200){
-		aboutKeyword.innerHTML = "diverse"; 
+	if (transition == "out"){
+		t1 = 1; 
+		t2 = 0;
+		bottom1 = "18%";
+		bottom2 = "14%";
 	}
-	if (lrContainer2.y <= 200){
-		aboutKeyword.innerHTML = "unique";
-	}
-});
+	header.animate([
+		{
+			opacity: t1,
+			bottom: bottom1,
+		},
+		{
+			opacity: t2,
+			bottom: bottom2,
+		}],
+		{
+			duration: 1000,
+			easing: "ease",
+			fill: "forwards"
+	});
+}
+console.log(mainHeaders);
+
 

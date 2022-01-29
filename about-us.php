@@ -72,4 +72,5 @@
 
 </body>
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
+<script type = "text/javascript" src = "<?php echo $base;?>/about.js?v=<?php echo $date;?>"></script>
 </html>
