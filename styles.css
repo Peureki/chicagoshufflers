@@ -429,6 +429,57 @@ a{
     object-fit: cover;
 }
 /* 
+    ====================================================
+    ================== TIMELINE ========================
+    ====================================================
+*/
+.timeline{
+    position: absolute;
+    width: 6px;
+    background-color: var(--clr-bkg-accent);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+}
+.timeline-left-container,
+.timeline-right-container{
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    right: -14px;
+    border: 5px solid var(--clr-bkg-accent);
+    background-color: var(--clr-bkg-secondary);
+    top: 124px;
+}
+.timeline-left-content{
+    left: -600px;
+}
+.timeline-left-content::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+.timeline-left-content{
+    padding: 20px 30px;
+    background-color: var(--clr-bkg-accent);
+    position: relative;
+    border-radius: 6px;
+    font-size: 30px;
+    width: 500px;
+}
+.timeline-left-content h1{
+    color: var(--clr-bkg-secondary);
+    font-size: 50px;
+}
+/* 
     ======================================================
     ================== MERCH BOXES =======================
     ======================================================
