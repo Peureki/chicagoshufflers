@@ -1,393 +1,435 @@
-/*function do_diagonal_left_line(box, line){
-	let topLeft = box.offsetLeft,
-		top = box.offsetTop,
-		width = box.offsetWidth,
-		height =  box.offsetHeight;
+/* 
+==============================================
+============= GLOBAL VARIABLES ===============
+==============================================
+*/
+let body = document.body
+	windowWidth = window.innerWidth;
 
-	console.log("height: ", height);
-	// Get the degrees of the line so it can hit corner to corner
-	// tan-1(w/h) * (convert to degrees)
-	let deg = Math.atan(width/height) * (180/Math.PI);
+// Get current page
+let sPath = window.location.pathname; 
+let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 
-	line.style.height = Math.sqrt((Math.pow(width, 2) + Math.pow(height, 2))) + "px"; 
-	line.style.transform = "translate(-50%, -50%) rotate(-" + deg + "deg)";
+console.log(sPage); 
+
+/* 
+==============================================
+============= GLOBAL FUNCTIONS ===============
+==============================================
+*/
+// Aniamte any headers with their individual letters
+// From left to right, fade and move the words upward
+// Vise versa for fading out
+// Trigger when the sticky word gets to it's sticky spot (somewhere near the top)
+function animate_letters(posY, words, counter){
+	// Check if first letter of word is visibile or not
+	// If not => show letters
+	// If yes => hide letters
+	if (words[0].innerHTML == "W"){
+		console.log(posY);
+	}
+	if (words[0].style.opacity == 0){
+		// Check position of the y element of the sticky header
+		if (posY < 200 && posY >= 0){
+			// Make counter outside the show/hide letter function so it stays constant within this {}
+			let counter = 0;
+			show_letters(words, counter);
+		} 
+	} else {
+		if (posY > 10 || posY < 0){
+			let counter = words.length - 1; 
+			hide_letters(words, counter);
+			console.log('this triggers')
+		}
+	}
+
+	function show_letters(words, counter){
+		setTimeout(() => {
+			words[counter].style.opacity = 1;
+			words[counter].style.paddingTop = 0;
+			counter++; 
+			if (counter < words.length){
+				show_letters(words, counter);
+			}
+		}, 20);
+	}
+	function hide_letters(words, counter){
+		setTimeout(() => {
+			words[counter].style.opacity = 0;
+			words[counter].style.paddingTop = "100px";
+			counter--; 
+			if (counter > -1){
+				hide_letters(words, counter);
+			}
+		}, 20);
+	}
+}
+function animate_on_load(words){
+	let counter = 0;
+	function show_letters(words){
+		setTimeout(() => {
+			words[counter].style.opacity = 1;
+			words[counter].style.paddingTop = 0;
+			counter++; 
+			if (counter < words.length){
+				show_letters(words, counter);
+			}
+		}, 50);
+	}
+	show_letters(words); 
+}
+// Remove any faders that are on top of an img
+function animate_remove_fader(fader){
+	fader.animate([
+		{
+			height: "100%",
+			bottom: 0,
+		},
+		{
+			height: 0,
+			bottom: 0,
+		}],
+		{
+			duration: 2000,
+			easing: "ease",
+			fill: "forwards"
+	});
+ 
 }
 
-let mainBox = document.getElementsByClassName('main-box');
-let circle = document.getElementsByClassName('circle');
-let line = document.getElementsByClassName('line-left-to-right');
 
-do_diagonal_left_line(mainBox[0], line[0]);
-
-window.addEventListener('resize', () => {
-	do_diagonal_left_line(mainBox[0], line[0]);
-});  */
-
-let section1 = document.getElementById('section-1'),
-	section2 = document.getElementById('section-2');
-
-let lastScroll = 0;
-let body = document.body; 
-
-/*
-body.addEventListener('scroll', function(){
-   	let st = window.scrollY,
-   		section1Header = section1.getBoundingClientRect(); 
-   	console.log(section1Header);
-});
+/* 
+========================================
+============= NAVIGATION ===============
+========================================
 */
-let mainContainer = document.getElementById('main-container');
+function on_window_resize(){
+	let width = document.body.clientWidth;
 
-let about1 = document.getElementById('about-1'),
-	about2 = document.getElementById('about-2'),
-	about3 = document.getElementById('about-3');
+	if (width < 768){
+		let hamburger = document.getElementById('mobile-nav-hamburger'),
+			logo = document.getElementById('mobile-nav-logo'),
+			navContainer = document.getElementById('mobile-nav-container'),
+			navStar = document.getElementById('mobile-nav-star'),
+			pageList = document.getElementById('page-list'),
+			hamburgerToggle = 0;
+		// Click on logo to go to homepage
+		logo.addEventListener("click", () => window.location = "./");
 
-let aboutPic = document.getElementById('half-pic'); 
+		// When the user clicks on the star (hamburger) icon on the top right, pull up the nav
+		hamburger.addEventListener("click", () =>{
+			// Toggle = status of the nav bar
+			// 0 => not showing
+			// 1 => showing
+			/*
+			if (hamburgerToggle == 0){
+				hamburgerToggle = 1;
+				navContainer.style.zIndex = 2001;
+				navStar.style.opacity = 1;
+				// Drop the nav bar from the top to the bottom 
+				navContainer.animate([
+					{
+						height: 0,
+					},
+					{
+						height: "100%",
+					}],
+					{
+						duration: 1000,
+						easing: "ease",
+						fill: "forwards"
+				});
+				// Spin the star while the nav bar drops down
+				navStar.animate([
+					{
+						transform: "rotate(0deg)",
+					},
+					{
+						transform: "rotate(180deg)",
+					}],
+					{
+						duration: 1000,
+						easing: "ease",
+						fill: "forwards"
+				});
+				navStar.animate([
+					{
+						opacity: 0,
+					},
+					{
+						opacity: 1,
+					}],
+					{
+						delay: 1000,
+						easing: "ease",
+						fill: "forwards"
+				});
+				// After the animation from above, show the page list
+				setTimeout(() => {
+					pageList.style.opacity = 1;
+				}, 1000);
+				
+			} else {
+				hamburgerToggle = 0;
+				navStar.style.opacity = 0;
+				pageList.style.opacity = 0;
 
-let faderTop = document.getElementById('about-fader-top'),
-	faderMid = document.getElementById('about-fader-mid'),
-	faderBot = document.getElementById('about-fader-bot');
+				navContainer.animate([
+					{
+						height: "100%",
+					},
+					{
+						height: 0,
+					}],
+					{
+						duration: 1000,
+						easing: "ease",
+						fill: "forwards"
+				});
 
-// Set the animate check to 0 = hasn't happened yet
-let animateCheck = 0;
+				navStar.animate([
+					{
+						transform: "rotate(0deg)",
+					},
+					{
+						transform: "rotate(-180deg)",
+					}],
+					{
+						duration: 1000,
+						easing: "ease",
+						fill: "forwards"
+				});
 
-mainContainer.addEventListener('scroll', function(){
-	// Get the x, y positions of the first header
-	let about1Position = about1.getBoundingClientRect();
-	// When the position of the first header hits around 90, trigger animation
-	if (about1Position.y <= 170 && about1Position.y >= 160 && animateCheck == 0){
-		// Mark that it has happened
-		animateCheck = 1;
-		animate_about_headers();
-		animate_about_faders();
+				setTimeout(() => {
+					navContainer.style.zIndex = -1000;
+				}, 1000);
+				
+			}	*/
+			if (hamburgerToggle == 0){
+				navContainer.style.zIndex = 2001; 
+				navStar.style.opacity = 1;
+				navStar.style.transform = "rotate(360deg)";
+				pageList.style.opacity = 1;
+				hamburgerToggle = 1;
+			} else {
+				hamburgerToggle = 0;
+				navContainer.style.zIndex = -2001; 
+				navStar.style.opacity = 0;
+				pageList.style.opacity = 0;
+			}
+			
+		});
+	}
+	
+}
+window.addEventListener("resize", on_window_resize);
+if (windowWidth <= 768){
+	on_window_resize();
+}
+
+// Format the time to display in days, hours, minutes, and seconds
+// Parameters: time, HTML IDs of days, hours, mins, seconds
+function format_time(result, days, hours, minutes, seconds){
+	/*
+    let s = Math.floor(result_time);
+    let m = Math.floor(s / 60);
+    let h = Math.floor(m / 60);
+    let d = Math.floor(h / 24);
+
+    if (isNaN(s) == true){
+        s = 0;
+        m = 0;
+        h = 0;
+        d = 0;
+    }
+
+    d %= 24;
+    h %= 24;
+    m %= 60; 
+    s %= 60;
+
+	d = (d < 10) ? "0" + d : d;
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s; 
+
+    days.innerHTML = d + "d";
+    hours.innerHTML = h + "h";
+    minutes.innerHTML = m + "m";
+    seconds.innerHTML = s + "s";
+    */
+    let d = Math.floor(result / (1000 * 60 * 60 * 24));
+	let h = Math.floor((result % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	let m = Math.floor((result % (1000 * 60 * 60)) / (1000 * 60));
+	let s = Math.floor((result % (1000 * 60)) / 1000);
+
+	days.innerHTML = d + "d";
+    hours.innerHTML = h + "h";
+    minutes.innerHTML = m + "m";
+    seconds.innerHTML = s + "s";
+}
+
+function display_time(targetDate, dateHTML, timeHTML){
+	let mon = targetDate.getMonth(),
+		d = targetDate.getDate(),
+		h = targetDate.getHours(),
+		min = targetDate.getMinutes(); 
+
+	let monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+	let displayHour = 0; 
+
+	if (h > 12){
+		displayHour = h - 12; 
+	}
+
+	let displayMonth = monthsList[mon]; 
+
+	//html.innerHTML = displayMonth + " " + d + " " + displayHour + " " + min;
+
+	dateHTML.innerHTML = targetDate.toLocaleDateString(); 
+	timeHTML.innerHTML = targetDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+	console.log(mon, d, h, min);
+}
+
+// Animate any collages of videos or pictures
+// Display the collage from bottom to top in an endless loop
+function animate_collage(obj, restart, end){
+	let position = 0,
+		setMotion = 0;
+	obj.style.transform = "translateY(" + position + "%)";
+
+
+	console.log("what page is this: ", sPage);
+	if (sPage == "about.php"){
+		setMotion = 0.02;
+	} else {
+		setMotion = 0.05;
+	}
+
+	setInterval(() => {
+		position -= setMotion; 
+		obj.style.transform = "translateY(" + position + "%)";
+
+		if (position <= end){
+			position = restart;
+		}
+	}, 20);
+}
+
+// Set the nav logo to always direct users to the homepage
+let navLogo = document.getElementById('nav-logo'); 
+navLogo.addEventListener('click', () => {
+	location.href = "./";
+}, false);
+
+function animate_every_letter(div, word){
+	let wordArray = word.split("");
+	console.log("letters: ", wordArray);
+	let newWord = "";
+
+	for (let i = 0; i < wordArray.length; i++){
+		if (wordArray[i] == " "){
+			newWord += "<span class = 'letter-space'>" + " " + "</span>"; 
+		} else {
+			newWord += "<span>" + wordArray[i] + "</span>" + " ";
+		}
+		div.innerHTML = newWord;  
+	}
+
+	console.log("new word: ", newWord);
+
+	let span = div.querySelectorAll("span"),
+		index = 0; 
+
+	let span_function = setInterval(fade, 25);
+
+	function fade(){
+		span[index].style.opacity = 1; 
+		span[index].style.transform = "translateY(0%)";
+		index++;
+		// Stop when interval reaches the end of the array
+		if (index == span.length){
+			clearInterval(span_function);
+		}
+	}
+}
+
+// Animate every word in a given paragraph to fade in one by one
+function animate_every_word(div, word){
+	// Check if the string has a span tag. If yes, remove it
+	word = word.replace(/<\/?span[^>]*>/g,"");
+	// Seperate every word into an array index
+	wordArray = word.split(" ");
+	// This is where the new word is gonna be
+	let newWord = "";
+
+	// Iterate through the entire paragraph array
+	for (let i = 0; i < wordArray.length; i++){
+		// Check certain words at certain indexes if they're special red-texted words that need to have an additional effect (hover to display a video)
+		// If yes, add a unique span class for that hover effect
+		// Otherwise, give every word a span class
+		// 
+		// Having words be in a <span> class allows more special effects to happen individually
+		switch (sPage){
+			case "":
+				if (wordArray[i] == "classes."){
+					newWord += "<span class = 'red-text'><a href = './classes.php'>" + wordArray[i] + "</a></span></p1>";
+					break;
+				}
+				if (wordArray[i] == "Shuffling"){
+					newWord += "<span class = 'red-text'><a href = './shuffling.php'>" + wordArray[i] + "</a></span>" + " ";
+					break;
+				}
+			case "shuffling.php": 
+				if (wordArray[i] == "T-Step"){
+					newWord += "<span class = 'red-text' id = 'shuffle-t-step-word'>" + wordArray[i] + "</span>" + "  ";
+				} else if (wordArray[i] == "Running" && wordArray[i+1] == "Man"){
+					newWord += "<span class = 'red-text' id = 'shuffle-running-man-word'>" + wordArray[i] + " " + wordArray[i+1] + "</span>" + " ";
+				} else if (wordArray[i] == "umbrella" && wordArray[i+1] == "term"){
+					newWord += "<span class = 'red-text' id = 'umbrella-hover'>" + wordArray[i] + " " + wordArray[i+1] + "</span>" + " ";
+				} else {
+					newWord += "<span>" +  wordArray[i] + "</span>" + " ";
+				}
+				break; 
+			default: 
+				newWord += "<span>" + wordArray[i] + "</span>" + " ";
+				break;
+		}
 		
+		// Display the word
+		div.innerHTML = newWord;
 	}
-});
+	// Get an array of all the span classes for each word
+	let span = div.querySelectorAll("span"),
+		spanIndex = 0;
+	// For every 1/10 second, animate each word
+	let span_function = setInterval(fade, 10);
 
-// Animate the faders on the right side of the About section of the homepage
-function animate_about_faders(){
-
-	// Fade out the faders to show the pictures 
-	// Match the timeout delay with the animation of the headers 
-	fade_out_faders(faderTop, faderMid, faderBot);
-	setTimeout(() => {fade_in_faders(faderTop, faderMid, faderBot)}, 3000);
-
-	setTimeout(() => {aboutPic.src = "./images/group/pic-2.jpg"}, 5000);
-	setTimeout(() => {fade_out_faders(faderTop, faderMid, faderBot)}, 5000);
-	setTimeout(() => {fade_in_faders(faderTop, faderMid, faderBot)}, 8000);
-
-	setTimeout(() => {aboutPic.src = "./images/group/pic-4.jpg"}, 10000);
-	setTimeout(() => {fade_out_faders(faderTop, faderMid, faderBot)}, 10000);
-	//setTimeout(() => {fade_out_faders(faderMid)}, 500);
-	//setTimeout(() => {fade_out_faders(faderBot)}, 1000);
-
-	function fade_out_faders(fade1, fade2, fade3){
-		let top = fade1,
-			mid = fade2, 
-			bot = fade3;
-		top.animate([
-			{
-				width: "100%",
-				right: "0%",
-			},
-			{
-				width: "0%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-		mid.animate([
-			{
-				width: "100%",
-				right: "0%",
-			},
-			{
-				width: "0%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				delay: 500,
-				easing: "ease",
-				fill: "forwards"
-		});
-		bot.animate([
-			{
-				width: "100%",
-				right: "0%",
-			},
-			{
-				width: "0%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				delay: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-	}
-
-	function fade_in_faders(fade1, fade2, fade3){
-		let top = fade1,
-			mid = fade2, 
-			bot = fade3;
-		top.animate([
-			{
-				width: "%",
-				right: "0%",
-			},
-			{
-				width: "100%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-		mid.animate([
-			{
-				width: "0%",
-				right: "0%",
-			},
-			{
-				width: "100%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				delay: 500,
-				easing: "ease",
-				fill: "forwards"
-		});
-		bot.animate([
-			{
-				width: "0%",
-				right: "0%",
-			},
-			{
-				width: "100%",
-				right: "0%",
-			}],
-			{
-				duration: 1000,
-				delay: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
+	function fade(){
+		span[spanIndex].style.opacity = 1; 
+		span[spanIndex].style.transform = "translateY(0%)";
+		spanIndex++;
+		// Stop when interval reaches the end of the array
+		if (spanIndex == span.length){
+			clearInterval(span_function);
+		}
 	}
 }
 
-// Animate the faders in the About section of the homepage
-function animate_about_headers(){
-	// Each fade-ins are a total of 1000 milsecs
-	// Each fade-outs are a total of 1000 milsecs
-	setTimeout(() => {fade_in_headers("DIVERSE", "INCLUSIVE", "ECLECTIC")}, 0);
-	setTimeout(() => {fade_out_headers()}, 3000);
-	setTimeout(() => {fade_in_headers("FAMILY", "COMMUNITY", "SUPPROTIVE")}, 5000);
-	setTimeout(() => {fade_out_headers()}, 8000);
-	setTimeout(() => {fade_in_headers("WE ARE", "CHICAGO", "SHUFFLERS")}, 10000);
-
-	// Set animations for fading in the words
-	// Set what the 3 words will be
-	// Timeout = amount of time before it pops up
-	function fade_in_headers(word1, word2, word3){
-		about1.innerHTML = word1; 
-		about2.innerHTML = word2;
-		about3.innerHTML = word3;
-
-		about1.animate([
-			{
-				left: "0%",
-				opacity: 0,
-			},
-			{
-				left: "5%",
-				opacity: 1,
-			}],
-			{
-				duration: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-
-		about2.animate([
-			{
-				left: "0%",
-				opacity: 0,
-			},
-			{
-				left: "5%",
-				opacity: 1,
-			}],
-			{
-				duration: 1000,
-				delay: 500,
-				easing: "ease",
-				fill: "forwards"
-		});
-
-		about3.animate([
-			{
-				left: "0%",
-				opacity: 0,
-			},
-			{
-				left: "5%",
-				opacity: 1,
-			}],
-			{
-				duration: 1000,
-				delay: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-	}
-	// Set animations to fade out 
-	// Timeout = delay to happen
-	function fade_out_headers(){
-		about1.animate([
-			{
-				opacity: 1,
-			},
-			{
-				opacity: 0,
-			}],
-			{
-				duration: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
-
-		about2.animate([
-			{
-				opacity: 1,
-			},
-			{
-				opacity: 0,
-			}],
-			{
-				duration: 1000,
-				delay: 500,
-				easing: "ease",
-				fill: "forwards"
-		});
-
-		about3.animate([
-			{
-				opacity: 1,
-			},
-			{
-				opacity: 0,
-			}],
-			{
-				duration: 1000,
-				delay: 1000,
-				easing: "ease",
-				fill: "forwards"
-		});
+// For every header, put it in an empty array then call them during the scroll event
+// Replace all HTML with a blank until scroll event happens
+function remove_desc_from_HTML_for_scroll(desc, array){
+	for (let i = 0; i < desc.length; i++){
+		array[i] = desc[i].children[0].innerHTML;
+		desc[i].children[0].innerHTML = "&nbsp;";
 	}
 }
 
-let eventName = document.getElementById('event-name'),
-	eventDate = document.getElementById('event-date'),
-	eventImg = document.getElementById('event-img'),
-	star, 
-	starNum = 0;
-
-let wholeFader = document.getElementById('whole-fader'),
-	searsTowerFader = document.getElementById('sears-tower-fader'),
-	aonCenterFader = document.getElementById('aon-center-fader');
-
-let progressSlides = document.getElementById('fill-slides'),
-	progressRotate = document.getElementById('fill-rotate');
-
-let starImg = document.getElementById('star-img');
-
-// All slides in the homepage
-let homepageSlides = document.getElementsByClassName('homepage-slide');
-
-// Main headers on the front page
-// ie: "CHICAGO SHUFFLERS" "ABOUT US"
-let mainHeaders = document.getElementsByClassName('header-abs'),
-	slideMessages = document.getElementsByClassName('slide-message');
-
-
-
-function fade_out_slide_message(message){
-	message.animate([
-		{
-			opacity: 1,
-		},
-		{
-			opacity: 0,
-		}],
-		{
-			duration: 1000,
-			delay: 3000,
-			easing: "ease",
-			fill: "forwards",
-	});
+// Fade in any elements
+// Change transition within CSS of this element
+function fade_in_element(ele){
+	ele.style.opacity = 1;
 }
-
-function auto_fill_rotate(){
-	progressRotate.animate([
-		{
-			width: "0%",
-		},
-		{
-			width: "100%",
-		}],
-		{
-			duration: 10000,
-			easing: "linear",
-			fill: "forwards"
-	});
-}
-
-/*
-let auto_rotate_star = setInterval(() => {
-	auto_fill_rotate();
-	rotate_star(starImg);
-}, 10000)
-*/
-
-// Transition is either "in" or "out"
-function fade_words(header, transition){
-	// Transition placeholders
-	// Bottom position placeholders
-	let t1, t2, bottom1, bottom2;
-	if (transition == "in"){
-		t1 = 0; 
-		t2 = 1; 
-		bottom1 = "22%";
-		bottom2 = "18%";
-	}
-	if (transition == "out"){
-		t1 = 1; 
-		t2 = 0;
-		bottom1 = "18%";
-		bottom2 = "14%";
-	}
-	header.animate([
-		{
-			opacity: t1,
-			bottom: bottom1,
-		},
-		{
-			opacity: t2,
-			bottom: bottom2,
-		}],
-		{
-			duration: 1000,
-			easing: "ease",
-			fill: "forwards"
-	});
-}
-console.log(mainHeaders);
 
 
