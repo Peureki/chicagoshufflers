@@ -71,7 +71,7 @@
 
 				<div class = "roster-img" id = "roster-4">
 					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/individuals/amrita.jpg">
+					<img src = "<?php echo $base;?>/images/individuals/Amrita.jpg">
 					<h1> Amrita, Administrator </h1>
 				</div>
 
@@ -121,7 +121,7 @@
 
 				<div class = "roster-img" id = "roster-4">
 					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/individuals/amrita.jpg">
+					<img src = "<?php echo $base;?>/images/individuals/Amrita.jpg">
 					<h1> Amrita, Administrator </h1>
 				</div>
 
@@ -154,7 +154,7 @@
 
 
 	<div class = "main-container">
-		
+
 	</div>
 	
 

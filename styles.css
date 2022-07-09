@@ -1318,7 +1318,7 @@ table.crossword #secondary-word{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-35%, -50%);
 }
 
 #img-slider-up-arrow{
@@ -2433,6 +2433,7 @@ table.crossword #secondary-word{
     ========================================================
 */
 #main-roster-container{
+    min-height: 3200px;
     height: 400vh;
     background-color: transparent;
 }
