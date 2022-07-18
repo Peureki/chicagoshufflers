@@ -1,7 +1,7 @@
 <div class = "homepage-nav-bar" id = "homepage-nav-bar">
 	<div class = "homepage-nav-list">
 		<div class = "homepage-nav-logo" id = "nav-logo">
-			<img src = "<?php echo $base;?>/images/logos/banner-logo.PNG" id = "nav-logo-img">
+			<img src = "<?php echo $base;?>/images/logos/Logo_White.png" id = "nav-logo-img">
 		</div>
 
 		<div class = "homepage-list-container" id = "homepage-list-container">

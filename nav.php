@@ -1,7 +1,7 @@
 
 <div class = "mobile-nav-bar">
 	<div class = "mobile-nav-logo" id = "mobile-nav-logo" href = "<?php echo $base;?>/">
-		<img src = "<?php echo $base;?>/images/logos/banner-logo.PNG">
+		<img src = "<?php echo $base;?>/images/logos/Logo_White.png">
 	</div>
 
 	<div id = "mobile-nav-hamburger" class = "mobile-nav-hamburger">
@@ -29,7 +29,7 @@
 <div class = "nav-bar" id = "nav-bar">
 	<div class = "nav-list">
 		<div class = "nav-logo" id = "nav-logo">
-			<img src = "<?php echo $base;?>/images/logos/banner-logo.PNG" id = "nav-logo-img">
+			<img src = "<?php echo $base;?>/images/logos/Logo_White.png" id = "nav-logo-img">
 		</div>
 
 		<div class = "list-container" id = "list-container">
