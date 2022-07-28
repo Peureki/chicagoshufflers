@@ -3,11 +3,6 @@ let navBar = document.getElementById('nav-bar'),
 	homepageNavBar = document.getElementById('homepage-nav-bar'),
 	homepageListContainer = document.getElementById('homepage-list-container');
 
-if (windowWidth > 500){
-	navBar.style.display = "none";
-}
-
-
 let aboutBKG = document.getElementById('home-about-bkg'),
 	aboutMarquee = document.getElementById('home-about-marquee');
 
@@ -82,7 +77,18 @@ let headerAbs = document.getElementsByClassName('main-header'),
 	headerAbsArray = [], headerBlocksArray = [], generalDescArray = [],
 	absCount = 0, blockCount = 0, generalDescCount = 0;
 
-console.log(generalDescArray);
+// Get timeline events
+let timelineMiddleLine = document.getElementsByClassName('timeline-middle-line'),
+	timelineEventSection = document.getElementsByClassName('timeline-event-section');
+	timelineMiddleLineArray = [], 
+	timelineEventSectionArray = [],
+	timelineMiddleLineCount = 0; 
+
+get_HTML_into_array(timelineMiddleLine, timelineMiddleLineArray, "h1");
+get_HTML_into_array(timelineEventSection, timelineEventSectionArray, "p2");
+
+console.log(timelineEventSectionArray);
+
 
 remove_desc_from_HTML_for_scroll(headerAbs, headerAbsArray);
 remove_desc_from_HTML_for_scroll(headerBlocks, headerBlocksArray);
@@ -108,7 +114,7 @@ body.addEventListener('scroll', function(){
 		absCount = 1;
 	}
 	// SHUFFLING
-	if (headerAbs[1].getBoundingClientRect().y < 500 && absCount == 1){
+	if (headerAbs[1].getBoundingClientRect().y < 800 && absCount == 1){
 		animate_every_letter(headerAbs[1].children[0], headerAbsArray[1]);
 		absCount = 2;
 	}
@@ -132,6 +138,26 @@ body.addEventListener('scroll', function(){
 		animate_every_letter(headerAbs[2].children[0], headerAbsArray[2]);
 		absCount = 3;
 	}
+
+	// TIMELINE EVENTS
+	// 01
+	/*
+	if (timelineMiddleLine[0].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 0){
+		animate_every_word(timelineEventSection[0].getElementsByTagName('p2')[0], timelineEventDesc[0]); 
+		timelineMiddleLine[0].style.height = "100%"; 
+		timelineMiddleLineCount++;
+	}
+	//02
+	if (timelineMiddleLine[1].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 1){
+		timelineMiddleLine[1].style.height = "100%"; 
+		timelineMiddleLineCount++;
+	}
+	//03
+	if (timelineMiddleLine[2].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 2){
+		timelineMiddleLine[2].style.height = "100%"; 
+		timelineMiddleLineCount++;
+	}
+	*/
 
 	// COLLABORATORS
 	if (generalDesc[0].getBoundingClientRect().y < 500 && generalDescCount == 0){
@@ -456,7 +482,7 @@ body.addEventListener('scroll', () => {
 	========================== TIMELINE =================================
 	=====================================================================
 */
-
+/*
 let timelineSections = document.getElementsByClassName('timeline-section'),
 	timelineEvents = document.getElementsByClassName('timeline-event-section');
 
@@ -505,7 +531,7 @@ timelineSections[0].children[0].style.color = "var(--clr-bkg-accent)";
 timelineSections[0].children[1].style.color = "var(--clr-bkg-accent)";
 timelineSections[0].children[2].style.width = "100%";
 
-
+*/
 
 
 

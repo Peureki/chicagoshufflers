@@ -10,7 +10,6 @@ let body = document.body
 let sPath = window.location.pathname; 
 let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 
-console.log(sPage); 
 
 /* 
 ==============================================
@@ -26,7 +25,7 @@ function animate_letters(posY, words, counter){
 	// If not => show letters
 	// If yes => hide letters
 	if (words[0].innerHTML == "W"){
-		console.log(posY);
+
 	}
 	if (words[0].style.opacity == 0){
 		// Check position of the y element of the sticky header
@@ -39,7 +38,6 @@ function animate_letters(posY, words, counter){
 		if (posY > 10 || posY < 0){
 			let counter = words.length - 1; 
 			hide_letters(words, counter);
-			console.log('this triggers')
 		}
 	}
 
@@ -289,7 +287,6 @@ function display_time(targetDate, dateHTML, timeHTML){
 
 	dateHTML.innerHTML = targetDate.toLocaleDateString(); 
 	timeHTML.innerHTML = targetDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
-	console.log(mon, d, h, min);
 }
 
 // Animate any collages of videos or pictures
@@ -300,7 +297,6 @@ function animate_collage(obj, restart, end){
 	obj.style.transform = "translateY(" + position + "%)";
 
 
-	console.log("what page is this: ", sPage);
 	if (sPage == "about.php"){
 		setMotion = 0.02;
 	} else {
@@ -325,7 +321,6 @@ navLogo.addEventListener('click', () => {
 
 function animate_every_letter(div, word){
 	let wordArray = word.split("");
-	console.log("letters: ", wordArray);
 	let newWord = "";
 
 	for (let i = 0; i < wordArray.length; i++){
@@ -336,8 +331,6 @@ function animate_every_letter(div, word){
 		}
 		div.innerHTML = newWord;  
 	}
-
-	console.log("new word: ", newWord);
 
 	let span = div.querySelectorAll("span"),
 		index = 0; 
@@ -424,6 +417,28 @@ function remove_desc_from_HTML_for_scroll(desc, array){
 		array[i] = desc[i].children[0].innerHTML;
 		desc[i].children[0].innerHTML = "&nbsp;";
 	}
+}
+
+// Get the <h> or <p> tags from the HTML and put them into an array
+// This array will be used to form an animation on scroll when the user gets to it's section. The function animate_every_letter() and animate_every_word() takes in parameters: the div where it's animating, array with content
+function get_HTML_into_array(desc, array, tags){
+	for (let i = 0; i < desc.length; i++){		
+		// TRY: Check if the desc has the valid tags. If not, CATCH the error and continue the loop
+		// 		Also check to see if the previous slots in the array are empty. This shouldn't be the case except for cases such as class = "timeline-event-section" where there are imgs instead of any <h1> or <p> tags.
+		try{
+			if (array[i-2] == null && (i-2) > 0){
+				array[i-2] = desc[i].getElementsByTagName(tags)[0].innerHTML;
+			} 
+			else if (array[i-1] == null && (i-1) > 0){
+				array[i-1] = desc[i].getElementsByTagName(tags)[0].innerHTML;
+			}
+			else {
+				array[i] = desc[i].getElementsByTagName(tags)[0].innerHTML;
+			}
+		} catch (error) {
+			console.log(`Cannot find ${tags} tags in this div.`);
+		}
+	}	
 }
 
 // Fade in any elements

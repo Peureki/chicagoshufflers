@@ -44,33 +44,4 @@ body.addEventListener('scroll', function(){
 
 
 
-/*
-for (let i = 0; i < rosterImgs.length; i++){
-	rosterImgs[i].animate([
-		{
-			opacity: 0,
-			top: "100%",
-		},
-		{
-			opacity: 1,
-			top: "50%",
-		},
-		{
-			opacity: 1,
-			top: "0%",
-		},
-		{
-			opacity: 1,
-			top: "-50%",
-		}],
-		{
-			duration: 30000,
-			easing: "linear",
-			iterations: "Infinity",
-	});
-}
-*/
-
-
-
 

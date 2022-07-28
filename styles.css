@@ -134,7 +134,16 @@ a:hover{
 
     --font-size-header: clamp(1rem, 25vw, 200px); /* For super omega headers */
     --font-size-subheader: clamp(100px, 10vw, 150px); /* subheaders */
-    --font-size-general: clamp(30px, 5vw, 50px);
+    --font-size-general: clamp(30px, 5vw, 50px); /* For p1 */
+    --font-size-p2: clamp(25px, 3vw, 35px);
+}
+h1{
+    font-size: var(--font-size-subheader);
+    color: var(--clr-bkg-secondary);
+}
+p2{
+    font-size: var(--font-size-p2);
+    color: var(--clr-bkg-accent);
 }
 
 /* 
@@ -1908,6 +1917,7 @@ table.crossword #secondary-word{
     font-size: 50px;
 }
 */
+/*
 .timeline-grid-container{
     display: grid;
     grid-template-areas: 
@@ -2008,7 +2018,7 @@ table.crossword #secondary-word{
         bottom: -39%;
     }
     .timeline-section:nth-child(4){
-        padding-top: 30px; /* Allows the bar to show up and not be hidden from the overflow x scroll bar */
+        padding-top: 30px;  Allows the bar to show up and not be hidden from the overflow x scroll bar 
     }
 
     .timeline-event-container{
@@ -2027,6 +2037,133 @@ table.crossword #secondary-word{
         padding-top: 10px;
     }
 }
+*/
+.timeline-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.timeline-event-box{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+.timeline-event-box > div p2 span{
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(-100%);
+    transition: 1s ease all;
+}
+.timeline-event-box > div:nth-child(1){
+    width: 49.5%;
+    padding-left: 20px;
+    padding-right: 80px;
+}
+.timeline-event-box > div:nth-child(2){
+    position: relative;
+    width: 10px;
+    background-color: var(--clr-bkg-accent);
+    height: 0%;
+    transition: 1s ease all;
+}
+.timeline-event-box > div:nth-child(3){
+    width: 49.5%;
+    padding-left: 20px;
+    padding-left: 80px;
+}
+.timeline-event-section h2{
+    font-size: var(--font-size-subheader);
+    color: var(--clr-bkg-accent);
+}
+.timeline-event-section p1{
+    font-size: var(--font-size-general);
+    color: var(--clr-bkg-accent);
+}
+.timeline-event-section img{
+    width: 98%;
+}
+.timeline-middle-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: var(--clr-bkg-accent);
+    padding: 10px;
+}
+@media only screen and (max-width: 768px){
+    .timeline-event-box{
+        flex-direction: column;
+    }
+    /*
+        Have all .timeline-event-box go in the following order: 
+        Order 1: Num
+        Order 2: Title and Descriptions
+        Order 3: Picture of the event
+
+        The default odd childs in the HTML are made in this order: 
+        1. Title and Descriptions
+        2. Num
+        3. Picture of the event
+
+        Even childs are vise versa
+    */
+    .timeline-event-box:nth-child(odd) > div:nth-child(1){
+        order: 2;
+        width: unset;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .timeline-event-box:nth-child(odd) > div:nth-child(2){
+        order: 1;
+        width: unset;
+        height: unset;
+        background-color: unset;
+    }
+    .timeline-event-box:nth-child(odd) > div:nth-child(3){
+        order: 3;
+        width: unset;
+        padding-left: unset;
+    }
+    .timeline-event-box:nth-child(even) > div:nth-child(1){
+        order: 3;
+        width: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
+    .timeline-event-box:nth-child(even) > div:nth-child(2){
+        order: 1;
+        width: unset;
+        height: unset;
+        background-color: unset;
+    }
+    .timeline-event-box:nth-child(even) > div:nth-child(3){
+        order: 2;
+        width: unset;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .timeline-event-section img{
+        margin-top: unset;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timeline-middle-header{
+        position: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
+        text-align: center;
+        background-color: unset;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+
+
 /* 
     ============================================================
     ================== GRID TWO COLUMNS ========================

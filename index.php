@@ -6,7 +6,6 @@
 	<title> Chicago Shufflers </title>
 </head>
 <body>
-
 	<!-- 
 		============================================================
 		====================== NAVIGATION BAR ======================
@@ -105,6 +104,12 @@
 
 	</div>
 
+	<!-- 
+		=============================================================
+		====================== MAIN HERO VIDEO ======================
+		=============================================================
+		-->
+
 	<div class = "main-container" style = "height: 120vh;" id = "main-hero-container">
 		<!--
 		<video class = "main-video" id = "main-hero-video" autoplay muted loop>
@@ -117,7 +122,7 @@
 		</video>
 
 		<div class = "sound-tooltip" id = "main-hero-video-tooltip">
-			<p1> Click anywhere on the video to listen! </p1>
+			<p1> Listen in! </p1>
 		</div>
 
 
@@ -487,7 +492,7 @@
 		</div>
 
 		<div class = "sound-tooltip" id = "main-shuffling-video-tooltip">
-			<p1> Click anywhere on the video to listen! </p1>
+			<p1> Listen in! </p1>
 		</div>
 		
 	</div>
@@ -526,7 +531,7 @@
 			</div>
 		</div>
 		
-		<div class = "general-desc">
+		<div class = "general-desc" style = "padding-top:50px; padding-bottom:50px">
 			<p1>Learn through our classes.</p1>
 		</div>
 		
@@ -634,6 +639,7 @@
 		<!-- 
 			TIMELINE GRID FOR EVENTS 
 		-->
+		<!--
 		<div class = "timeline-grid-container">
 			<div class = "timeline-section">
 				<h1> Grant Park Meetup </h1>
@@ -687,6 +693,55 @@
 				</div>
 			</div>
 		</div>
+		-->
+
+
+		<div class = "timeline-container">
+			<div class = "timeline-event-box">
+				<div class = "timeline-event-section">
+					<h2>Grant Park Meetup</h2>
+					<p2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p2>
+				</div>
+				<div class = "timeline-middle-line">
+					<div class = "timeline-middle-header"><h1>01</h1></div>
+				</div>
+				<div class = "timeline-event-section">
+					<img src = "<?php echo $base;?>/images/group/img-4.jpg">
+				</div>
+			</div>
+
+			<div class = "timeline-event-box">
+				<div class = "timeline-event-section">
+					<img src = "<?php echo $base;?>/images/group/img-4.jpg">
+				</div>
+				<div class = "timeline-middle-line">
+					<div class = "timeline-middle-header"><h1>02</h1></div>
+				</div>
+				<div class = "timeline-event-section">
+					<h2>Grant Park Meetup</h2>
+					<p2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p2>
+				</div>
+			</div>
+
+			<div class = "timeline-event-box">
+				<div class = "timeline-event-section">
+					<h2>Grant Park Meetup</h2>
+					<p2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p2>
+				</div>
+				<div class = "timeline-middle-line">
+					<div class = "timeline-middle-header"><h1>03</h1></div>
+				</div>
+				<div class = "timeline-event-section">
+					<img src = "<?php echo $base;?>/images/group/img-4.jpg">
+				</div>
+			</div>
+		</div>
+
+		<!-- 
+		===========================================================
+		====================== COLLABS ============================
+		===========================================================
+		-->
 
 		<div class = "main-header-block" style = "margin-top: 100px;">
 			<h1> COLLABS </h1>
@@ -771,8 +826,6 @@
 		</div>
 
 	</div>
-
-
 </body>
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
 <script type = "text/javascript" src = "<?php echo $base;?>/homepage.js?v=<?php echo $date;?>"></script>
