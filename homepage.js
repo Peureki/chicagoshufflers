@@ -81,14 +81,14 @@ let headerAbs = document.getElementsByClassName('main-header'),
 let timelineMiddleLine = document.getElementsByClassName('timeline-middle-line'),
 	timelineEventSection = document.getElementsByClassName('timeline-event-section');
 	timelineMiddleLineArray = [], 
-	timelineEventSectionArray = [],
+	timelineEventSectionH2Array = [],
+	timelineEventSectionP2Array = [],
 	timelineMiddleLineCount = 0; 
 
+// Put desired <h1> or <p> tags from the HTML into an array to be animated later
 get_HTML_into_array(timelineMiddleLine, timelineMiddleLineArray, "h1");
-get_HTML_into_array(timelineEventSection, timelineEventSectionArray, "p2");
-
-console.log(timelineEventSectionArray);
-
+get_HTML_into_array(timelineEventSection, timelineEventSectionH2Array, "h2");
+get_HTML_into_array(timelineEventSection, timelineEventSectionP2Array, "p2");
 
 remove_desc_from_HTML_for_scroll(headerAbs, headerAbsArray);
 remove_desc_from_HTML_for_scroll(headerBlocks, headerBlocksArray);
@@ -141,23 +141,31 @@ body.addEventListener('scroll', function(){
 
 	// TIMELINE EVENTS
 	// 01
-	/*
 	if (timelineMiddleLine[0].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 0){
-		animate_every_word(timelineEventSection[0].getElementsByTagName('p2')[0], timelineEventDesc[0]); 
+		animate_every_word(timelineMiddleLine[0].getElementsByTagName('h1')[0], timelineMiddleLineArray[0]);
+		animate_every_word(timelineEventSection[0].getElementsByTagName('h2')[0], timelineEventSectionH2Array[0]);
+		animate_every_word(timelineEventSection[0].getElementsByTagName('p2')[0], timelineEventSectionP2Array[0]); 
 		timelineMiddleLine[0].style.height = "100%"; 
 		timelineMiddleLineCount++;
 	}
-	//02
+	// 02
 	if (timelineMiddleLine[1].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 1){
+		animate_every_word(timelineMiddleLine[1].getElementsByTagName('h1')[0], timelineMiddleLineArray[1]);
+		animate_every_word(timelineEventSection[1].getElementsByTagName('h2')[0], timelineEventSectionH2Array[1]);
+		animate_every_word(timelineEventSection[1].getElementsByTagName('p2')[0], timelineEventSectionP2Array[1]); 
 		timelineMiddleLine[1].style.height = "100%"; 
 		timelineMiddleLineCount++;
 	}
-	//03
+	// 03
 	if (timelineMiddleLine[2].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 2){
+		animate_every_word(timelineMiddleLine[2].getElementsByTagName('h1')[0], timelineMiddleLineArray[2]);
+		animate_every_word(timelineEventSection[2].getElementsByTagName('h2')[0], timelineEventSectionH2Array[2]);
+		animate_every_word(timelineEventSection[2].getElementsByTagName('p2')[0], timelineEventSectionP2Array[2]); 
 		timelineMiddleLine[2].style.height = "100%"; 
 		timelineMiddleLineCount++;
 	}
-	*/
+	
+	
 
 	// COLLABORATORS
 	if (generalDesc[0].getBoundingClientRect().y < 500 && generalDescCount == 0){

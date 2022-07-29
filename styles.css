@@ -134,12 +134,22 @@ a:hover{
 
     --font-size-header: clamp(1rem, 25vw, 200px); /* For super omega headers */
     --font-size-subheader: clamp(100px, 10vw, 150px); /* subheaders */
+    --font-size-h2: clamp(90px, 9vw, 125px);
+    --font-size-h3: clamp(50px, 8vw, 70px);
     --font-size-general: clamp(30px, 5vw, 50px); /* For p1 */
     --font-size-p2: clamp(25px, 3vw, 35px);
 }
 h1{
     font-size: var(--font-size-subheader);
     color: var(--clr-bkg-secondary);
+}
+h2{
+    font-size: var(--font-size-h2);
+    color: var(--clr-bkg-accent);
+}
+h3{
+    font-size: var(--font-size-h3);
+    color: var(--clr-bkg-accent);
 }
 p2{
     font-size: var(--font-size-p2);
@@ -2050,39 +2060,24 @@ table.crossword #secondary-word{
     justify-content: space-evenly;
     height: 100vh;
 }
-.timeline-event-box > div p2 span{
-    opacity: 0;
-    display: inline-block;
-    transform: translateY(-100%);
-    transition: 1s ease all;
-}
+
 .timeline-event-box > div:nth-child(1){
     width: 49.5%;
     padding-left: 20px;
     padding-right: 80px;
 }
+/* Middle line */
 .timeline-event-box > div:nth-child(2){
     position: relative;
     width: 10px;
     background-color: var(--clr-bkg-accent);
     height: 0%;
-    transition: 1s ease all;
+    transition: 3s ease all;
 }
 .timeline-event-box > div:nth-child(3){
     width: 49.5%;
     padding-left: 20px;
     padding-left: 80px;
-}
-.timeline-event-section h2{
-    font-size: var(--font-size-subheader);
-    color: var(--clr-bkg-accent);
-}
-.timeline-event-section p1{
-    font-size: var(--font-size-general);
-    color: var(--clr-bkg-accent);
-}
-.timeline-event-section img{
-    width: 98%;
 }
 .timeline-middle-header{
     position: absolute;
@@ -2092,9 +2087,32 @@ table.crossword #secondary-word{
     background-color: var(--clr-bkg-accent);
     padding: 10px;
 }
+.timeline-middle-header h1,
+.timeline-event-section h2,
+.timeline-event-section p2{
+    opacity: 0;
+}
+/* For animation when the innerHTML turns into individual spans */
+.timeline-middle-header h1 span,
+.timeline-event-section h2 span,
+.timeline-event-section p2 span{
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(100%);
+    transition: 1s ease all;
+}
+.timeline-event-section p1{
+    font-size: var(--font-size-general);
+    color: var(--clr-bkg-accent);
+}
+.timeline-event-img img{
+    width: 98%;
+}
+
 @media only screen and (max-width: 768px){
     .timeline-event-box{
         flex-direction: column;
+        height: unset;
     }
     /*
         Have all .timeline-event-box go in the following order: 
@@ -2144,7 +2162,7 @@ table.crossword #secondary-word{
         padding-left: 10px;
         padding-right: 10px;
     }
-    .timeline-event-section img{
+    .timeline-event-img img{
         margin-top: unset;
         display: block;
         margin-left: auto;

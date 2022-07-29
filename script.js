@@ -393,6 +393,10 @@ function animate_every_word(div, word){
 		// Display the word
 		div.innerHTML = newWord;
 	}
+	// Make sure the div is set to 0
+	// By default, it should be opacity: 0;
+	div.style.opacity = 1; 
+
 	// Get an array of all the span classes for each word
 	let span = div.querySelectorAll("span"),
 		spanIndex = 0;
@@ -419,8 +423,9 @@ function remove_desc_from_HTML_for_scroll(desc, array){
 	}
 }
 
-// Get the <h> or <p> tags from the HTML and put them into an array
-// This array will be used to form an animation on scroll when the user gets to it's section. The function animate_every_letter() and animate_every_word() takes in parameters: the div where it's animating, array with content
+// Get the <h> or <p> tags from the HTML and put them into an array.
+// This array will be used to form an animation on scroll when the user gets to it's section.
+// The function animate_every_letter() and animate_every_word() takes in parameters: the div where it's animating, array with content.
 function get_HTML_into_array(desc, array, tags){
 	for (let i = 0; i < desc.length; i++){		
 		// TRY: Check if the desc has the valid tags. If not, CATCH the error and continue the loop
