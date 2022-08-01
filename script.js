@@ -374,6 +374,14 @@ function animate_every_word(div, word){
 					newWord += "<span class = 'red-text'><a href = './shuffling.php'>" + wordArray[i] + "</a></span>" + " ";
 					break;
 				}
+				if (wordArray[i] == "events"){
+					newWord += "<span class = 'red-text'><a href = './about.php'>" + wordArray[i] + "</a></span>" + " ";
+					break;
+				}
+				if (wordArray[i] == "shop!"){
+					newWord += "<span class = 'red-text'><a href = 'https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit'>" + wordArray[i] + "</a></span>" + " ";
+					break;
+				}
 			case "shuffling.php": 
 				if (wordArray[i] == "T-Step"){
 					newWord += "<span class = 'red-text' id = 'shuffle-t-step-word'>" + wordArray[i] + "</span>" + "  ";

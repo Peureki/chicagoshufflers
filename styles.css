@@ -1290,72 +1290,39 @@ table.crossword #secondary-word{
     ================== IMAGE COLLAGE ====================
     =====================================================
 */
-.img-slider-container{
+.img-slider-fader{
     position: absolute;
-    width: 70%;
-    height: 70%;
-    max-width: 1000px;
-    max-height: 1000px;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    z-index: -100;
-}
-.img-slider-fader,
-.img-fader{
-    position: absolute;
-    background-color: var(--clr-bkg-main);
     width: 100%;
     height: 100%;
-    bottom: 0; /* Allow the fader to transition form top to bottom */
-    z-index: 100; /* Show this first in the slider */
+    background-color: var(--clr-bkg-main);
+    z-index: 1000;
+}
+.img-slider-container{
+    display: block;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin-inline: auto;
+    cursor: pointer;
 }
 .img-slider-indiv{
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
 }
-.img-slider-indiv img{
-    width: 95%;
-    height: 95%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+.img-slider-container img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .img-slider-arrows{
-    position: absolute;
-    z-index: 100;
-    left: 105%;
     cursor: pointer;
-    transition: 0.5s all ease;
 }
-.img-slider-arrows img{
-    width: 75px;
-    height: 75px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-35%, -50%);
-}
-
 #img-slider-up-arrow{
-    top: 80%;
     transform: rotate(-90deg);
 }
 #img-slider-down-arrow{
-    top: 90%;
     transform: rotate(90deg);
-}
-#img-slider-up-arrow:hover{
-    top: 78%;
-    transition: 0.5s all ease;
-}
-
-#img-slider-down-arrow:hover{
-    top: 92%;
-    transition: 0.5s all ease;
 }
 @media only screen and (max-width: 768px){
     .img-slider-container{
@@ -2089,12 +2056,14 @@ table.crossword #secondary-word{
 }
 .timeline-middle-header h1,
 .timeline-event-section h2,
+.timeline-event-section h3,
 .timeline-event-section p2{
     opacity: 0;
 }
 /* For animation when the innerHTML turns into individual spans */
 .timeline-middle-header h1 span,
 .timeline-event-section h2 span,
+.timeline-event-section h3 span,
 .timeline-event-section p2 span{
     opacity: 0;
     display: inline-block;
@@ -2143,6 +2112,8 @@ table.crossword #secondary-word{
         order: 3;
         width: unset;
         padding-left: unset;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     .timeline-event-box:nth-child(even) > div:nth-child(1){
         order: 3;

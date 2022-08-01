@@ -6,16 +6,6 @@ let navBar = document.getElementById('nav-bar'),
 let aboutBKG = document.getElementById('home-about-bkg'),
 	aboutMarquee = document.getElementById('home-about-marquee');
 
-console.log(aboutBKG);
-for (let i = 0; i < aboutMarquee.children.length; i++){
-	aboutMarquee.children[i].addEventListener('mouseover', function(){
-		aboutBKG.style.opacity = 0.5;
-	});
-	aboutMarquee.children[i].addEventListener('mouseout', function(){
-		aboutBKG.style.opacity = 0;
-	});
-}
-
 // Section that the user lands on when they first load the main page
 let landingContainer = document.getElementById('main-landing-container');
 
@@ -51,7 +41,8 @@ let eventWords = document.getElementById('event-header').children,
 
 // The MERCH section 
 let merchWords = document.getElementById('merch-header').children,
-	merchSection = document.getElementById('merch-section');
+	merchSection = document.getElementById('merch-section'),
+	merchCount = 0;
 
 // Get the individual images from the MERCH section 
 let imgSliders = document.getElementsByClassName('img-slider-indiv'),
@@ -79,16 +70,18 @@ let headerAbs = document.getElementsByClassName('main-header'),
 
 // Get timeline events
 let timelineMiddleLine = document.getElementsByClassName('timeline-middle-line'),
-	timelineEventSection = document.getElementsByClassName('timeline-event-section');
+	timelineEventSection = document.getElementsByClassName('timeline-event-section'),
 	timelineMiddleLineArray = [], 
 	timelineEventSectionH2Array = [],
+	timelineEventSectionH3Array = [],
 	timelineEventSectionP2Array = [],
 	timelineMiddleLineCount = 0; 
 
 // Put desired <h1> or <p> tags from the HTML into an array to be animated later
-get_HTML_into_array(timelineMiddleLine, timelineMiddleLineArray, "h1");
-get_HTML_into_array(timelineEventSection, timelineEventSectionH2Array, "h2");
-get_HTML_into_array(timelineEventSection, timelineEventSectionP2Array, "p2");
+get_HTML_into_array(timelineMiddleLine, timelineMiddleLineArray, "h1"); // Nums
+get_HTML_into_array(timelineEventSection, timelineEventSectionH2Array, "h2"); // Event name
+get_HTML_into_array(timelineEventSection, timelineEventSectionH3Array, "h3"); // Event date
+get_HTML_into_array(timelineEventSection, timelineEventSectionP2Array, "p2"); // Event desc
 
 remove_desc_from_HTML_for_scroll(headerAbs, headerAbsArray);
 remove_desc_from_HTML_for_scroll(headerBlocks, headerBlocksArray);
@@ -106,113 +99,40 @@ body.addEventListener('scroll', function(){
 		stickyVideoY = mainHeroVideo.getBoundingClientRect().y,
 		shuffleVideoY = mainShuffleVid.getBoundingClientRect().y;
 
-	// Animate headers when users scroll near them
-	
-	// WHO WE ARE
-	if (headerAbs[0].getBoundingClientRect().y < 500 && absCount == 0){
-		animate_every_letter(headerAbs[0].children[0], headerAbsArray[0]);
-		absCount = 1;
+	// HEADERS WITH POSITION:ABSOLUTE
+	for (let i = 0; i < headerAbs.length; i++){
+		if (headerAbs[i].getBoundingClientRect().y < 500 && absCount == i){
+			animate_every_letter(headerAbs[i].children[0], headerAbsArray[i]);
+			absCount++;
+		}
 	}
-	// SHUFFLING
-	if (headerAbs[1].getBoundingClientRect().y < 800 && absCount == 1){
-		animate_every_letter(headerAbs[1].children[0], headerAbsArray[1]);
-		absCount = 2;
-	}
-	// LEARN WITH US
-	if  (headerBlocks[0].getBoundingClientRect().y < 500 && blockCount == 0){
-		animate_every_letter(headerBlocks[0].children[0], headerBlocksArray[0]);
-		blockCount = 1;
-	}
-	// VIBE WITH US
-	if  (headerBlocks[1].getBoundingClientRect().y < 500 && blockCount == 1){
-		animate_every_letter(headerBlocks[1].children[0], headerBlocksArray[1]);
-		blockCount = 2;
-	}
-	// COLLABS
-	if  (headerBlocks[2].getBoundingClientRect().y < 500 && blockCount == 2){
-		animate_every_letter(headerBlocks[2].children[0], headerBlocksArray[2]);
-		blockCount++;
-	}
-	// BE THE VIBE
-	if (headerAbs[2].getBoundingClientRect().y < 500 && absCount == 2){
-		animate_every_letter(headerAbs[2].children[0], headerAbsArray[2]);
-		absCount = 3;
+	// HEADERS WITH BLOCK
+	for (let i = 0; i < headerBlocks.length; i++){
+		if  (headerBlocks[i].getBoundingClientRect().y < 500 && blockCount == i){
+			animate_every_letter(headerBlocks[i].children[0], headerBlocksArray[i]);
+			blockCount++;
+		}
 	}
 
 	// TIMELINE EVENTS
-	// 01
-	if (timelineMiddleLine[0].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 0){
-		animate_every_word(timelineMiddleLine[0].getElementsByTagName('h1')[0], timelineMiddleLineArray[0]);
-		animate_every_word(timelineEventSection[0].getElementsByTagName('h2')[0], timelineEventSectionH2Array[0]);
-		animate_every_word(timelineEventSection[0].getElementsByTagName('p2')[0], timelineEventSectionP2Array[0]); 
-		timelineMiddleLine[0].style.height = "100%"; 
-		timelineMiddleLineCount++;
-	}
-	// 02
-	if (timelineMiddleLine[1].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 1){
-		animate_every_word(timelineMiddleLine[1].getElementsByTagName('h1')[0], timelineMiddleLineArray[1]);
-		animate_every_word(timelineEventSection[1].getElementsByTagName('h2')[0], timelineEventSectionH2Array[1]);
-		animate_every_word(timelineEventSection[1].getElementsByTagName('p2')[0], timelineEventSectionP2Array[1]); 
-		timelineMiddleLine[1].style.height = "100%"; 
-		timelineMiddleLineCount++;
-	}
-	// 03
-	if (timelineMiddleLine[2].getBoundingClientRect().y < 500 && timelineMiddleLineCount == 2){
-		animate_every_word(timelineMiddleLine[2].getElementsByTagName('h1')[0], timelineMiddleLineArray[2]);
-		animate_every_word(timelineEventSection[2].getElementsByTagName('h2')[0], timelineEventSectionH2Array[2]);
-		animate_every_word(timelineEventSection[2].getElementsByTagName('p2')[0], timelineEventSectionP2Array[2]); 
-		timelineMiddleLine[2].style.height = "100%"; 
-		timelineMiddleLineCount++;
+	for (let i = 0; i < timelineMiddleLine.length; i++){
+		if (timelineMiddleLine[i].getBoundingClientRect().y < 500 && timelineMiddleLineCount == i){
+			animate_every_word(timelineMiddleLine[i].getElementsByTagName('h1')[0], timelineMiddleLineArray[i]);
+			animate_every_word(timelineEventSection[i].getElementsByTagName('h2')[0], timelineEventSectionH2Array[i]);
+			animate_every_word(timelineEventSection[i].getElementsByTagName('h3')[0], timelineEventSectionH3Array[i]);
+			animate_every_word(timelineEventSection[i].getElementsByTagName('p2')[0], timelineEventSectionP2Array[i]); 
+			timelineMiddleLine[i].style.height = "100%"; 
+			timelineMiddleLineCount++;
+		}
 	}
 	
-	
-
-	// COLLABORATORS
-	if (generalDesc[0].getBoundingClientRect().y < 500 && generalDescCount == 0){
-		animate_every_word(generalDesc[0].children[0], generalDescArray[0]);
-		generalDescCount++;
+	// GENERAL DESC && COLLABORATORS
+	for (let i = 0; i < generalDesc.length; i++){
+		if (generalDesc[i].getBoundingClientRect().y < 500 && generalDescCount == i){
+			animate_every_word(generalDesc[i].children[0], generalDescArray[i]);
+			generalDescCount++;
+		}
 	}
-	if (generalDesc[1].getBoundingClientRect().y < 500 && generalDescCount == 1){
-		animate_every_word(generalDesc[1].children[0], generalDescArray[1]);
-		generalDescCount++;
-	}
-	if (generalDesc[2].getBoundingClientRect().y < 500 && generalDescCount == 2){
-		animate_every_word(generalDesc[2].children[0], generalDescArray[2]);
-		generalDescCount++;
-	}
-	if (generalDesc[3].getBoundingClientRect().y < 500 && generalDescCount == 3){
-		animate_every_word(generalDesc[3].children[0], generalDescArray[3]);
-		generalDescCount++;
-	}
-	if (generalDesc[4].getBoundingClientRect().y < 500 && generalDescCount == 4){
-		animate_every_word(generalDesc[4].children[0], generalDescArray[4]);
-		generalDescCount++;
-	}
-	if (generalDesc[5].getBoundingClientRect().y < 500 && generalDescCount == 5){
-		animate_every_word(generalDesc[5].children[0], generalDescArray[5]);
-		generalDescCount++;
-	}
-	if (generalDesc[6].getBoundingClientRect().y < 500 && generalDescCount == 6){
-		animate_every_word(generalDesc[6].children[0], generalDescArray[6]);
-		generalDescCount++;
-	}
-	if (generalDesc[7].getBoundingClientRect().y < 500 && generalDescCount == 7){
-		animate_every_word(generalDesc[7].children[0], generalDescArray[7]);
-		generalDescCount++;
-	}
-	if (generalDesc[8].getBoundingClientRect().y < 500 && generalDescCount == 8){
-		animate_every_word(generalDesc[8].children[0], generalDescArray[8]);
-		generalDescCount++;
-	}
-	if (generalDesc[9].getBoundingClientRect().y < 500 && generalDescCount == 9){
-		animate_every_word(generalDesc[9].children[0], generalDescArray[9]);
-		generalDescCount++;
-	}
-	if (generalDesc[10].getBoundingClientRect().y < 500 && generalDescCount == 10){
-		animate_every_word(generalDesc[10].children[0], generalDescArray[10]);
-		generalDescCount++;
-	}
-
 	// For the homepage only
 	// When the user scrolls past the landing section, show the navigation bar at the top, sticky
 	if (windowWidth > 500){
@@ -268,26 +188,26 @@ body.addEventListener('scroll', function(){
 	*/
 
 	// When scrolling to the MERCH section
-	if (merchY < 5 && merchY >= 0){
-		for(let i = 0; i < imgSliders.length; i++){
-			imgSliders[i].style.opacity = 1;
-			imgSliders[i].style.zIndex = imgSliders.length - i;
-		}
+	if (merchY <= 0 && merchCount == 0){
+		console.log('this happens');
 		if (imgSliderContainer.style.zIndex != 1){
 			imgSliderContainer.style.zIndex = 1;
 			imgFader.animate([
 				{
 					height: "100%",
+					bottom: 0,
 				},
 				{
 					height: 0,
+					bottom: 0,
 				}],
 				{
-					duration: 3000,
+					duration: 2000,
 					easing: "ease",
 					fill: "forwards"
 			});
 		}	
+		merchCount++;
 	}
 	/*
 	if (shuffleWords[0].style.opacity == 0){
@@ -327,32 +247,22 @@ body.addEventListener('scroll', function(){
 	
 	
 });
-
-function change_merch_img(choice){
-	switch(choice){
-		case "Down": 
-			for (let i = 0; i < imgSliders.length; i++){
-				
-				if (parseInt(imgSliders[i].style.zIndex) == imgSliders.length){
-					imgSliders[i].style.zIndex = 1;
-				} else {
-					imgSliders[i].style.zIndex = parseInt(imgSliders[i].style.zIndex) + 1; 
-				}
-			}
-			break;
-		case "Up":
-			for (let i = 0; i < imgSliders.length; i++){
-				
-				if (parseInt(imgSliders[i].style.zIndex) == 1){
-					imgSliders[i].style.zIndex = imgSliders.length;
-				} else {
-					imgSliders[i].style.zIndex = parseInt(imgSliders[i].style.zIndex) - 1; 
-				}
-			}
-			break;
-	}
+// IMAGE SLIDER
+// Set each image a z-index
+for (let i = 0; i < imgSliders.length; i++){
+	imgSliders[i].style.zIndex = i + 1; 
 }
+// When the user clicks the container with the imgs, change the order of the z-indexes to change the images
+function change_merch_img(choice){
+	for (let i = 0; i < imgSliders.length; i++){
+		if (parseInt(imgSliders[i].style.zIndex) == imgSliders.length){
+			imgSliders[i].style.zIndex = 1;
+		} else {
+			imgSliders[i].style.zIndex = parseInt(imgSliders[i].style.zIndex) + 1; 
+		}
+	}
 
+}
 // Get elements for the SHUFFLE and CLASS section 
 let heroSound = document.getElementById('hero-sound-tooltip'),
 	heroSoundUp = document.getElementById('hero-sound-up'),
@@ -441,105 +351,6 @@ for (let i = 0; i < imgFaders.length; i++){
 }
 animate_collage(mainCollage[0], 100, -100);
 animate_collage(mainCollage[1], 0, -200);
-
-
-//let path = document.querySelector("path");
-//let pathLength = path.getTotalLength();
-/*
-let merp = 0;
-
-path.forEach(function(item, index) {
-
-	merp++; 
-
-	let pathLength = item.getTotalLength(); 
-
-	item.setAttribute("stroke-dasharray", pathLength);
-	item.setAttribute("stroke-dashoffset", pathLength); 
-
-	if (index == 0){
-		item.innerHTML = "<animate id = 'a"+merp+"' attributeName='stroke-dashoffset' begin='0s' dur='3s' to='0' fill='freeze'/>";
-	} else {
-		item.innerHTML = "<animate id = 'a"+merp+"' attributeName='stroke-dashoffset' begin='a"+(merp-1)+".end' dur='3s' to='0' fill='freeze'/>"
-	}
-
-	console.log(index, pathLength, item, item.innerHTML);
-});
-*/
-
-/*
-path.style.strokeDasharray = pathLength + '' + pathLength;
-path.style.strokeDashoffset = pathLength; 
-
-body.addEventListener('scroll', () => {
-	// What % down is it? 
-	let scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop)/(document.documentElement.scrollHeight - document.documentElement.clientHeight);
-	// Length to offset the dashes
-	let drawLength = pathLength * scrollPercentage; 
-	// Draw in reverse
-	path.style.strokeDashoffset = pathLength - drawLength;
-
-	console.log(document.documentElement.scrollTop, document.body.scrollTop, document.documentElement.scrollHeight, document.documentElement.clientHeight);
-
-});
-
-*/
-
-/*
-	=====================================================================
-	========================== TIMELINE =================================
-	=====================================================================
-*/
-/*
-let timelineSections = document.getElementsByClassName('timeline-section'),
-	timelineEvents = document.getElementsByClassName('timeline-event-section');
-
-// Use this to track which timeline event is currently selected
-let currentTimeline = -1;
-
-console.log("timeline sections: ", timelineSections[0].children);
-
-for (let i = 0; i < timelineSections.length - 1; i++){
-	// When the user hovers over, highlight the section white
-	timelineSections[i].addEventListener("mouseover", () => {
-
-		timelineSections[i].children[0].style.color = "var(--clr-bkg-accent)"; 
-		timelineSections[i].children[1].style.color = "var(--clr-bkg-accent)";
-		timelineSections[i].children[2].style.width = "100%";
-	}, false);
-	// When the user hovers over, revert back to the original settings
-	timelineSections[i].addEventListener("mouseout", () => {
-		if (i != currentTimeline){
-			timelineSections[i].children[0].style.color = "var(--clr-bkg-secondary)"; 
-			timelineSections[i].children[1].style.color = "var(--clr-bkg-secondary)";
-			timelineSections[i].children[2].style.width = "0%";
-		}
-	}, false);
-
-	timelineSections[i].addEventListener("click", () => {
-		timelineEvents[i].style.display = "flex"; 
-		currentTimeline = i;
-
-		for (let j = 0; j < timelineEvents.length; j++){
-			if (j == i){
-				continue;
-			} else {
-				timelineEvents[j].style.display = "none"; 
-				timelineSections[j].children[0].style.color = "var(--clr-bkg-secondary)"; 
-				timelineSections[j].children[1].style.color = "var(--clr-bkg-secondary)";
-				timelineSections[j].children[2].style.width = "0%";
-			}	
-		}
-	}, false);
-}
-
-// Show the first event by default
-timelineEvents[0].style.display = "flex";
-timelineSections[0].children[0].style.color = "var(--clr-bkg-accent)"; 
-timelineSections[0].children[1].style.color = "var(--clr-bkg-accent)";
-timelineSections[0].children[2].style.width = "100%";
-
-*/
 
 
 

@@ -459,7 +459,7 @@
 		</div>
 
 		<div class = "abs-container" id = "home-about-button">
-			<button class = "button-about" type = "button"><h1><a href = "<?php echo $base;?>/about.php">GET TO KNOW US</a></h1></button>
+			<button class = "button-about" type = "button"><h3><a href = "<?php echo $base;?>/about.php">Learn about us!</a></h3></button>
 		</div>
 
 
@@ -720,6 +720,7 @@
 				</div>
 				<div class = "timeline-event-section">
 					<h2>Shuffle-palooza</h2>
+					<h3>07/24/21</h3>
 					<p2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p2>
 				</div>
 			</div>
@@ -727,6 +728,7 @@
 			<div class = "timeline-event-box">
 				<div class = "timeline-event-section">
 					<h2>MyHouse Performance</h2>
+					<h3>08/28/21</h3>
 					<p2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p2>
 				</div>
 				<div class = "timeline-middle-line">
@@ -736,6 +738,10 @@
 					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
 				</div>
 			</div>
+		</div>
+
+		<div class = "general-desc" style = "margin-top: 20px; margin-bottom: 20px">
+			<p1>View all events</p1>
 		</div>
 
 		<!-- 
@@ -802,30 +808,49 @@
 	-->
 
 	<div class = "main-container" id = "merch-container">
-		<div class = "main-header" id = "merch-section" style = "z-index: 1000;">
+		<div class = "main-header-block" id = "merch-section" style = "z-index: 1000;">
 			<h1 id = "merch-header">BE THE VIBE</h1>
 		</div>
 
-		<div class = "img-slider-container" id = "img-slider-container">
+		<div class = "img-slider-container" id = "img-slider-container" onclick = "change_merch_img();">
 			<div class = "img-slider-fader" id = "img-slider-fader"></div>
-
-			<div class = "img-slider-arrows" id = "img-slider-up-arrow" onclick = "change_merch_img('Up');">
-				<img src = "<?php echo $base;?>/images/assets/red-triangle.svg">
-			</div>
-
-			<div class = "img-slider-arrows" id = "img-slider-down-arrow" onclick = "change_merch_img('Down');">
-				<img src = "<?php echo $base;?>/images/assets/red-triangle.svg">
-			</div>
 
 			<div class = "img-slider-indiv">
 				<img src = "<?php echo $base;?>/images/merch/img-1.jpg">
 			</div>
 
 			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-2.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
 				<img src = "<?php echo $base;?>/images/merch/img-3.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-4.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-5.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-6.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-7.jpg">
+			</div>
+
+			<div class = "img-slider-indiv">
+				<img src = "<?php echo $base;?>/images/merch/img-8.jpg">
 			</div>
 		</div>
 
+		<div class = "general-desc">
+			<p1>Visit our shop!</p1>
+		</div>
 	</div>
 </body>
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
