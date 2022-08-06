@@ -18,7 +18,8 @@
 		====================== MAIN BOXES =========================
 		===========================================================
 	-->
-	<div class = "main-container" >
+	<div class = "main-container" id = "main-event-container">
+		<!--
 		<div class = "main-header-block"><h1> SHUFFLE-PALOOZA</h1></div>
 
 		<div class = "countdown-container">
@@ -41,6 +42,7 @@
 
 			This isn't just your average shuffle meetup. This is a fully curated event. We're bringing a Chicago House music legend and some of the hottest DJs/producers in Chicago to a never before used DIY space and adding in full light and sound production.</p1>
 		</div>
+		-->
 	</div>
 
 	<div class = "main-container">
@@ -48,7 +50,8 @@
 			<h1> UPCOMING EVENTS </h1>
 		</div>
 
-		<div class = "upcoming-event-container">
+		<div class = "upcoming-event-container" id = "event-container">
+			<!--
 			<div class = "upcoming-event-box">
 				<div class = "upcoming-event-num">
 					<h1> 01 </h1>
@@ -72,6 +75,7 @@
 					<p1><a href = "https://arcmusicfestival.com/" target = "_blank"> Buy Tickets </a></p1>
 				</div>
 			</div>
+		-->
 		</div>
 
 		
@@ -85,6 +89,8 @@
 
 
 </body>
+
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
+<?php include('./php-to-js/calendar.php'); ?>
 <script type = "text/javascript" src = "<?php echo $base;?>/events.js?v=<?php echo $date;?>"></script>
 </html>

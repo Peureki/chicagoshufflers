@@ -78,14 +78,13 @@ let timelineMiddleLine = document.getElementsByClassName('timeline-middle-line')
 	timelineMiddleLineCount = 0; 
 
 // Put desired <h1> or <p> tags from the HTML into an array to be animated later
+get_HTML_into_array(headerAbs, headerAbsArray, "h1");
+get_HTML_into_array(headerBlocks, headerBlocksArray, "h1");
+get_HTML_into_array(generalDesc, generalDescArray, "p1");
 get_HTML_into_array(timelineMiddleLine, timelineMiddleLineArray, "h1"); // Nums
 get_HTML_into_array(timelineEventSection, timelineEventSectionH2Array, "h2"); // Event name
 get_HTML_into_array(timelineEventSection, timelineEventSectionH3Array, "h3"); // Event date
 get_HTML_into_array(timelineEventSection, timelineEventSectionP2Array, "p2"); // Event desc
-
-remove_desc_from_HTML_for_scroll(headerAbs, headerAbsArray);
-remove_desc_from_HTML_for_scroll(headerBlocks, headerBlocksArray);
-remove_desc_from_HTML_for_scroll(generalDesc, generalDescArray);
 
 body.addEventListener('scroll', function(){
 

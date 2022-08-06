@@ -205,6 +205,7 @@ p2{
     padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
+    text-transform: uppercase;
 }
 .main-header h1,
 .main-header-block h1{
@@ -212,7 +213,9 @@ p2{
     color: var(--clr-bkg-secondary);
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    opacity: 0;
 }
 .main-header h1 span,
 .main-header-block h1 span{
@@ -223,6 +226,7 @@ p2{
 .letter-space{
     padding-left: 15px;
     padding-right: 15px;
+    width: 100%;
 }
 
 
@@ -248,10 +252,6 @@ p2{
     .main-header-block h1{
         flex-wrap: wrap;
     }
-    .letter-space{
-        width: 100%;
-    }
-
     .vertical-header h1{
         text-orientation: initial;
         writing-mode: initial;
@@ -528,7 +528,22 @@ p2{
     font-size: var(--font-size-general);
     color: var(--clr-bkg-accent);
 }
+.upcoming-event-card summary::marker{
+    content: '';
+    display: none;
+}
+.upcoming-event-card summary p1{
+    color: var(--clr-bkg-secondary);
+    transition: 0.5s ease all;
+}
+.upcoming-event-card summary p1:hover{
+    color: var(--clr-bkg-accent);
+    transition: 0.5s ease all;
+}
 @media only screen and (max-width: 768px){
+    .upcoming-event-container{
+        width: 80%;
+    }
     .upcoming-event-num{
         display: none;
     }
@@ -682,10 +697,16 @@ table.crossword #secondary-word{
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     color: var(--clr-bkg-accent);
     transition: 0.5s ease all;
     z-index: 2;
+}
+.center-desc p1,
+.general-desc p1{
+    opacity: 0;
 }
 .center-desc span,
 .general-desc span{

@@ -457,14 +457,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class = "abs-container" id = "home-about-button">
-			<button class = "button-about" type = "button"><h3><a href = "<?php echo $base;?>/about.php">Learn about us!</a></h3></button>
-		</div>
-
-
-
-		
 	</div>
 
 	<div class = "main-space-container">

@@ -331,6 +331,9 @@ function animate_every_letter(div, word){
 		}
 		div.innerHTML = newWord;  
 	}
+	// Make sure the div is set to 0
+	// By default, it should be opacity: 0;
+	div.style.opacity = 1; 
 
 	let span = div.querySelectorAll("span"),
 		index = 0; 
@@ -350,12 +353,19 @@ function animate_every_letter(div, word){
 
 // Animate every word in a given paragraph to fade in one by one
 function animate_every_word(div, word){
-	// Check if the string has a span tag. If yes, remove it
+	// Check if the string has span or u tags
 	word = word.replace(/<\/?span[^>]*>/g,"");
-	// Seperate every word into an array index
-	wordArray = word.split(" ");
+	word = word.replace(/<\/?u[^>]*>/g,"");
+	// Check for specific tags within the string
+	// If there's any of these conditions, split the array
+	// This allows the string to not combine and mess up the string later on. Example: 1: "merp<br>merp2" should be => 1: "merp", 2: "<br>", 3: "merp2"
+	let seperators = [" ", "<br>", "<a>"];
+	wordArray = word.split(new RegExp(seperators.join("|", "g")));
 	// This is where the new word is gonna be
-	let newWord = "";
+	let newWord = ``,
+		href = ``,
+		aTag = ``,
+		skipTrigger = 0;
 
 	// Iterate through the entire paragraph array
 	for (let i = 0; i < wordArray.length; i++){
@@ -365,36 +375,62 @@ function animate_every_word(div, word){
 		// 
 		// Having words be in a <span> class allows more special effects to happen individually
 		switch (sPage){
-			case "":
-				if (wordArray[i] == "classes."){
-					newWord += "<span class = 'red-text'><a href = './classes.php'>" + wordArray[i] + "</a></span></p1>";
+			case ``:
+				if (wordArray[i] == `classes.`){
+					newWord += `<span class = 'red-text'><a href = './classes.php'>` + wordArray[i] + `</a></span></p1>`;
 					break;
 				}
-				if (wordArray[i] == "Shuffling"){
-					newWord += "<span class = 'red-text'><a href = './shuffling.php'>" + wordArray[i] + "</a></span>" + " ";
+				if (wordArray[i] == `Shuffling`){
+					newWord += `<span class = 'red-text'><a href = './shuffling.php'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
-				if (wordArray[i] == "events"){
-					newWord += "<span class = 'red-text'><a href = './about.php'>" + wordArray[i] + "</a></span>" + " ";
+				if (wordArray[i] == `events`){
+					newWord += `<span class = 'red-text'><a href = './about.php'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
-				if (wordArray[i] == "shop!"){
-					newWord += "<span class = 'red-text'><a href = 'https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit'>" + wordArray[i] + "</a></span>" + " ";
+				if (wordArray[i] == `shop!`){
+					newWord += `<span class = 'red-text'><a href = 'https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
-			case "shuffling.php": 
-				if (wordArray[i] == "T-Step"){
-					newWord += "<span class = 'red-text' id = 'shuffle-t-step-word'>" + wordArray[i] + "</span>" + "  ";
-				} else if (wordArray[i] == "Running" && wordArray[i+1] == "Man"){
-					newWord += "<span class = 'red-text' id = 'shuffle-running-man-word'>" + wordArray[i] + " " + wordArray[i+1] + "</span>" + " ";
-				} else if (wordArray[i] == "umbrella" && wordArray[i+1] == "term"){
-					newWord += "<span class = 'red-text' id = 'umbrella-hover'>" + wordArray[i] + " " + wordArray[i+1] + "</span>" + " ";
+			case `shuffling.php`: 
+				if (wordArray[i] == `T-Step`){
+					newWord += `<span class = 'red-text' id = 'shuffle-t-step-word'>` + wordArray[i] + `</span>` + `  `;
+				} else if (wordArray[i] == `Running` && wordArray[i+1] == `Man`){
+					newWord += `<span class = 'red-text' id = 'shuffle-running-man-word'>` + wordArray[i] + ` ` + wordArray[i+1] + `</span>` + ` `;
+				} else if (wordArray[i] == `umbrella` && wordArray[i+1] == `term`){
+					newWord += `<span class = 'red-text' id = 'umbrella-hover'>` + wordArray[i] + ` ` + wordArray[i+1] + `</span>` + ` `;
 				} else {
-					newWord += "<span>" +  wordArray[i] + "</span>" + " ";
+					newWord += `<span>` +  wordArray[i] + `</span>` + ` `;
 				}
 				break; 
 			default: 
-				newWord += "<span>" + wordArray[i] + "</span>" + " ";
+				// Check if the array starts with the <a tag 
+				// If yes => start the href with the start of the <a tag
+				if (wordArray[i].includes(`<a`) && skipTrigger == 0){
+					href += `${wordArray[i]} target = "_blank" `;
+					skipTrigger = 1; 
+				// Afterwards, keep adding to the <a> tag until the array that contains the </a>
+				// When reaching the end, add the new href to newWord and stop the trigger
+				} else if (skipTrigger == 1){
+					if (wordArray[i].includes(`</a>`)){
+						href += ` ${wordArray[i]}`;
+						newWord += href;
+						skipTrigger = 0;
+					} else {
+						href += ` ${wordArray[i]} `;
+					}
+				// If there is no <a> tag, check if there's any spaces that were replaced by the regex <br> 
+				// Replace all spaces with <br> tags to appropiately skip lines
+				// If there's no regex and no replacement, the strings become combined unnecessarily
+				} else {
+					if (wordArray[i] == ""){
+						newWord += `<br><br>`;
+					}
+					else {
+						newWord += `<span>${wordArray[i]}</span>` + ` `;
+					}
+				}	
+				console.log(href);
 				break;
 		}
 		
