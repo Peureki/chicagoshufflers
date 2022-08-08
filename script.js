@@ -359,13 +359,15 @@ function animate_every_word(div, word){
 	// Check for specific tags within the string
 	// If there's any of these conditions, split the array
 	// This allows the string to not combine and mess up the string later on. Example: 1: "merp<br>merp2" should be => 1: "merp", 2: "<br>", 3: "merp2"
-	let seperators = [" ", "<br>", "<a>"];
+	let seperators = [" ", "<br>", "<a>", "<html-blob>", "&nbsp;", "\\n", "<p>", "</p>"];
 	wordArray = word.split(new RegExp(seperators.join("|", "g")));
 	// This is where the new word is gonna be
 	let newWord = ``,
 		href = ``,
 		aTag = ``,
 		skipTrigger = 0;
+
+	console.log("word array: ", wordArray);
 
 	// Iterate through the entire paragraph array
 	for (let i = 0; i < wordArray.length; i++){
@@ -377,7 +379,7 @@ function animate_every_word(div, word){
 		switch (sPage){
 			case ``:
 				if (wordArray[i] == `classes.`){
-					newWord += `<span class = 'red-text'><a href = './classes.php'>` + wordArray[i] + `</a></span></p1>`;
+					newWord += `<span class = 'red-text'><a href = './events-and-classes.php'>` + wordArray[i] + `</a></span></p1>`;
 					break;
 				}
 				if (wordArray[i] == `Shuffling`){
@@ -385,7 +387,7 @@ function animate_every_word(div, word){
 					break;
 				}
 				if (wordArray[i] == `events`){
-					newWord += `<span class = 'red-text'><a href = './about.php'>` + wordArray[i] + `</a></span>` + ` `;
+					newWord += `<span class = 'red-text'><a href = './events.php'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
 				if (wordArray[i] == `shop!`){
@@ -424,13 +426,21 @@ function animate_every_word(div, word){
 				// If there's no regex and no replacement, the strings become combined unnecessarily
 				} else {
 					if (wordArray[i] == ""){
-						newWord += `<br><br>`;
+						// Check if the "" is the first in the array. 
+						// If yes => don't assume it's a <br><br> tag so it doesn't move the entire block down and ignore it
+						//
+						// OR if the next in the array is also another "" => skip current iteration
+						// This allows no double enters on the paragraphs
+						if (i == 0 || wordArray[i + 1] == ""){
+							continue;
+						} else {
+							newWord += `<br><br>`;
+						}
 					}
 					else {
 						newWord += `<span>${wordArray[i]}</span>` + ` `;
 					}
 				}	
-				console.log(href);
 				break;
 		}
 		

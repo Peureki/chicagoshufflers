@@ -86,6 +86,13 @@ get_HTML_into_array(timelineEventSection, timelineEventSectionH2Array, "h2"); //
 get_HTML_into_array(timelineEventSection, timelineEventSectionH3Array, "h3"); // Event date
 get_HTML_into_array(timelineEventSection, timelineEventSectionP2Array, "p2"); // Event desc
 
+// For the homepage only
+// When the user scrolls past the landing section, show the navigation bar at the top, sticky
+if (windowWidth > 500){
+	navBar.style.display = "none";
+}
+
+
 body.addEventListener('scroll', function(){
 
 	let navY = homepageListContainer.getBoundingClientRect().y,

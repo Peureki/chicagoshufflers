@@ -149,7 +149,7 @@
 				<span>R</span>
 				<span>E</span>
 			 </h1>-->
-			 <h1 id = "about-header">WHO WE ARE</h1>
+			 <h1 id = "about-header">WE ARE</h1>
 		</div>
 		<!--
 		<div class =  "marquee-container">
@@ -733,7 +733,7 @@
 		</div>
 
 		<div class = "general-desc" style = "margin-top: 20px; margin-bottom: 20px">
-			<p1>View all events</p1>
+			<p1>Check out our upcoming events</p1>
 		</div>
 
 		<!-- 

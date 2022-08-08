@@ -51,25 +51,26 @@ let headers = document.getElementsByClassName('main-header-block'),
 let upcomingEventBox = document.getElementsByClassName('upcoming-event-box'), 
 	upcomingEventBoxCount = 0; 
 
+let details = document.querySelectorAll('details'),
+	detailsDesc = document.getElementsByClassName('details-desc'),
+	detailsDescArray = [];
+
+console.log(detailsDesc);
+
 get_HTML_into_array(headers, headerArray, "h1");
 get_HTML_into_array(generalDescs, generalDescsArray, "p1");
 animate_every_letter(headers[0].children[0], headerArray[0]);
 
-for (let i = 0; i < generalDescs.length; i++){
+get_HTML_into_array(detailsDesc, detailsDescArray, "p1");
+// Only do the first 4 general-desc
+// The first 4 are the top event post
+// Every other general-desc are the upcoming events
+for (let i = 0; i < 4; i++){
 	animate_every_word(generalDescs[i].children[0], generalDescsArray[i]);
 	generalCount++;
 }
 
 body.addEventListener('scroll', function(){
-
-	for (let i = 1; i < generalDescs.length; i++){
-		if (generalDescs[i].getBoundingClientRect().y < 500 && generalCount == i){
-			animate_every_word(generalDescs[i].children[0], generalDescsArray[i]);
-			generalCount++;
-		}
-	}
-	
-
 	if (headers[1].getBoundingClientRect().y < 300 && headerCount == 1){
 		animate_every_letter(headers[1].children[0], headerArray[1]);
 		headerCount++;
@@ -82,3 +83,11 @@ body.addEventListener('scroll', function(){
 		}
 	}
 });
+console.log("details list: ", details);
+
+for (let i = 0; i < details.length; i++){
+	details[i].addEventListener('click', () => {
+		animate_every_word(detailsDesc[i].children[0], detailsDescArray[i]);
+	});
+}
+

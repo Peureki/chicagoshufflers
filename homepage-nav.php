@@ -8,8 +8,8 @@
 			<ul>
 				<li><a href = "<?php echo $base;?>/shuffling.php">Shuffling</a></li>
 				<li><a href = "<?php echo $base;?>/about.php">About</a></li>
-				<li><a href = "<?php echo $base;?>/classes.php">Classes</a></li>
-				<li><a href = "<?php echo $base;?>/events.php">Events</a></li>
+				<li><a href = "<?php echo $base;?>/events-and-classes.php">Events</a></li>
+				<li><a href = "<?php echo $base;?>/events-and-classes.php">Classes</a></li>
 				<li><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></li>
 			</ul>
 		</div>

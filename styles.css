@@ -488,7 +488,7 @@ p2{
     =========================================================================
 */
 .upcoming-event-container{
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -516,6 +516,9 @@ p2{
     width: 100%;
     padding: 10px;
 }
+.upcoming-event-card img{
+    cursor: pointer;
+}
 .upcoming-event-card h1{
     font-size: var(--font-size-subheader);
     color: var(--clr-bkg-secondary);
@@ -532,20 +535,34 @@ p2{
     content: '';
     display: none;
 }
+.upcoming-event-card details p1{
+    opacity: 0;
+    transition: 0.5s ease all;
+}
 .upcoming-event-card summary p1{
     color: var(--clr-bkg-secondary);
+    transition: 0.5s ease all;
+    opacity: 1;
+}
+.upcoming-event-card details[open] p1{
+    opacity: 1;
     transition: 0.5s ease all;
 }
 .upcoming-event-card summary p1:hover{
     color: var(--clr-bkg-accent);
     transition: 0.5s ease all;
 }
+
 @media only screen and (max-width: 768px){
     .upcoming-event-container{
         width: 80%;
     }
     .upcoming-event-num{
         display: none;
+    }
+    .upcoming-event-card img{
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -691,7 +708,8 @@ table.crossword #secondary-word{
     font-size: 30px;
     color: var(--clr-bkg-accent);
 }
-.general-desc{
+.general-desc,
+.details-desc{
     font-size: var(--font-size-general);
     width: 80%;
     max-width: 1000px;
@@ -704,12 +722,17 @@ table.crossword #secondary-word{
     transition: 0.5s ease all;
     z-index: 2;
 }
+.general-desc img {
+    cursor: pointer;
+}
 .center-desc p1,
-.general-desc p1{
+.general-desc p1,
+.details-desc p1{
     opacity: 0;
 }
 .center-desc span,
-.general-desc span{
+.general-desc span,
+.details-desc span{
     opacity: 0;
     display: inline-block;
     transform: translateY(100%);
@@ -768,6 +791,13 @@ table.crossword #secondary-word{
     transition: inherit;
     user-select: none;
 }
+@media only screen and (max-width: 768px){
+    .general-desc img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
 /* 
     ==========================================================
     ================== UMBRELLA WORDS ========================
