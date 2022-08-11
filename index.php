@@ -464,9 +464,9 @@
 	</div>
 
 	<!-- 
-		===========================================================
+		=============================================================
 		====================== SHUFFLING ============================
-		===========================================================
+		=============================================================
 	-->
 
 	<div class = "main-container" style = "height: 150vh;" id = "main-shuffle-container">
@@ -788,6 +788,18 @@
 
 		<div class = "general-desc">
 			<p1>Proppa</p1>
+		</div>
+
+		<div class = "general-desc">
+			<p1>IHeartTechno</p1>
+		</div>
+
+		<div class = "general-desc">
+			<p1>Dance Rituals</p1>
+		</div>
+
+		<div class = "general-desc">
+			<p1>ARC Music Festival</p1>
 		</div>
 
 	</div>

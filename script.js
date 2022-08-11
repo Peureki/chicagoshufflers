@@ -409,13 +409,13 @@ function animate_every_word(div, word){
 				// Check if the array starts with the <a tag 
 				// If yes => start the href with the start of the <a tag
 				if (wordArray[i].includes(`<a`) && skipTrigger == 0){
-					href += `${wordArray[i]} target = "_blank" `;
+					href += `<span>${wordArray[i]} target = "_blank" `;
 					skipTrigger = 1; 
 				// Afterwards, keep adding to the <a> tag until the array that contains the </a>
 				// When reaching the end, add the new href to newWord and stop the trigger
 				} else if (skipTrigger == 1){
 					if (wordArray[i].includes(`</a>`)){
-						href += ` ${wordArray[i]}`;
+						href += ` ${wordArray[i]}</span> `;
 						newWord += href;
 						skipTrigger = 0;
 					} else {

@@ -9,6 +9,12 @@
 	</div>
 </div>
 
+<!-- 
+	==============================================================
+	====================== MOBILE NAV ============================
+	==============================================================
+-->
+
 <div class = "mobile-nav-container" id = "mobile-nav-container">
 	<div class = "mobile-nav-star" id = "mobile-nav-star">
 		<img src = "<?php echo $base;?>/images/assets/star.svg">
@@ -26,6 +32,12 @@
 	</div>
 </div>
 
+<!-- 
+	===========================================================
+	====================== NAV BAR ============================
+	===========================================================
+-->
+
 <div class = "nav-bar" id = "nav-bar">
 	<div class = "nav-list">
 		<div class = "nav-logo" id = "nav-logo">
@@ -39,6 +51,14 @@
 				<li><a href = "<?php echo $base;?>/events-and-classes.php">Events</a></li>
 				<li><a href = "<?php echo $base;?>/events-and-classes.php">Classes</a></li>
 				<li><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></li>
+			</ul>
+		</div>
+
+		<div class = "nav-social">
+			<ul>
+				<li><a href = ""><img src = "<?php echo $base;?>/images/assets/instagram.svg"></a></li>
+				<li><a href = ""><img src = "<?php echo $base;?>/images/assets/facebook.svg"></a></li>
+				<li><a href = ""><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
 			</ul>
 		</div>
 	</div>

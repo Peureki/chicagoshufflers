@@ -87,6 +87,11 @@ for (let i = 0; i < calendarItems.length; i++){
 			eventOverallDate = `${eventStartDate}`;
 		}
 
+		// Check for location if undefined
+		if (eventLocation == undefined || eventLocation == null){
+			eventLocation = "No location";
+		}
+
 	} catch (error){
 		console.log(`Keys are missing at index ${i} of calendarItems.`);
 	}
