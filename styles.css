@@ -67,7 +67,7 @@ a {
     text-decoration: none;
 }
 a:hover{
-	color: var(--clr-red);
+	color: var(--clr-bkg-accent);
 }
 details summary{
 	cursor: pointer;
@@ -964,6 +964,102 @@ table.crossword #secondary-word{
 .floating-img img{
     width: 5%;
 }
+/* 
+    ==================================================
+    ================== FOOTER ========================
+    ==================================================
+*/
+.footer-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.footer-outline{
+    position: relative;
+    width: 100%;
+    height: 300px;   
+}
+.footer-outline img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 2000;
+}
+.footer-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-section{
+    width: 30%;
+}
+#footer-logo img{
+    width: 80%;
+    display: block;
+    margin-inline: auto;
+}
+#footer-nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    color: var(--clr-bkg-secondary);
+    font-size: 30px;
+    padding-left: 50%;
+}
+#footer-social ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+#footer-social li{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#footer-social img{
+    width: 25px;
+    filter: invert(18%) sepia(100%) saturate(7251%) hue-rotate(2deg) brightness(93%) contrast(120%);
+    transition: 0.5s ease all;
+}
+#footer-social img:hover{
+    filter: invert(100%) sepia(0%) saturate(7461%) hue-rotate(330deg) brightness(117%) contrast(86%);
+    transition: 0.5s ease all;
+}
+.footer-inner-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-inner-section > div{
+    font-size: 30px;
+    color: var(--clr-bkg-secondary);
+    padding-top: 10px;
+}
+@media only screen and (max-width: 768px){
+    .footer-outline{
+        height: 100px;
+    }
+    .footer-container{
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+    .footer-section{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .footer-box{
+        flex-direction: column;
+    }
+    #footer-logo img{
+        width: 50%;
+    }
+    #footer-nav ul{
+        padding-left: unset;
+        text-align: center;
+    }
+}
 
 /* 
     =====================================================
@@ -1460,7 +1556,7 @@ table.crossword #secondary-word{
     cursor: pointer;
 }
 .mobile-nav-logo img{
-    height: 100px;
+    height: 75px;
 }
 .mobile-nav-hamburger{
     position: absolute;
@@ -1540,13 +1636,44 @@ table.crossword #secondary-word{
     color: var(--clr-bkg-accent);
     transition: 0.3s ease all;
 }
-.nav-social img{
+.nav-social img,
+.homepage-nav-social img{
     width: 25px;
     filter: invert(18%) sepia(100%) saturate(7251%) hue-rotate(2deg) brightness(93%) contrast(120%); /* Red bkg */
+    transition: 0.5s ease all;
+}
+.nav-social img:hover,
+.homepage-nav-social img:hover{
+    filter: invert(100%) sepia(0%) saturate(7461%) hue-rotate(330deg) brightness(117%) contrast(86%);
+    transition: 0.5s ease all;
+}
+.mobile-nav-container .nav-social{
+    display: none;
+}
+/* I have no idea where this came from, but remove the marker */
+.nav-social li::marker{
+    content: "";
+    display: none;
 }
 @media only screen and (max-width: 768px){
     .nav-bar{
         display: none;
+    }
+    .mobile-nav-container .nav-social{
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mobile-nav-container .nav-social ul{
+        display: flex;
+    }
+    .mobile-nav-container .nav-social li {
+        padding-left: 10px; 
+        padding-right: 10px;
+    }
+    .mobile-nav-container .nav-social img{
+        width: 35px;
     }
 }
 
@@ -1589,7 +1716,7 @@ table.crossword #secondary-word{
     left: 50%;
     transform: translate(-50%, -75%);
 }
-.homepage-nav-list ul{
+.homepage-nav-list .homepage-list-container ul{
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -1610,6 +1737,20 @@ table.crossword #secondary-word{
     color: var(--clr-bkg-accent);
     transition: 0.3s ease all;
 }
+.homepage-nav-social{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+.homepage-nav-social ul{
+    display: flex;
+    flex-direction: row;
+}
+.homepage-nav-social li::marker{
+    content: "";
+    display: none;
+}
 @media only screen and (max-width: 768px){
     .homepage-nav-logo{
         width: 100%;
@@ -1621,8 +1762,17 @@ table.crossword #secondary-word{
         top: 83%;
         transform: translate(-50%, -83%);
     }
-    .homepage-nav-list ul{
+    .homepage-nav-list .homepage-list-container ul{
         flex-direction: column;
+    }
+    .homepage-nav-social ul{
+        display: flex;
+        flex-direction: row;
+    }
+    .homepage-nav-social{
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -95%);
     }
 }
 
@@ -1714,17 +1864,6 @@ table.crossword #secondary-word{
 .main-landing-nav a:hover{
     color: var(--clr-bkg-accent);
     transition: 0.3s ease all;
-}
-
-/* 
-    =================================================
-    ================== FOOTER =======================
-    =================================================
-*/
-.footer-outline{
-    position: absolute;
-    bottom: 8%;
-    width: 100%;
 }
 /* 
     =========================================================

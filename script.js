@@ -110,110 +110,26 @@ function on_window_resize(){
 			navContainer = document.getElementById('mobile-nav-container'),
 			navStar = document.getElementById('mobile-nav-star'),
 			pageList = document.getElementById('page-list'),
+			socials = document.getElementById('mobile-nav-social'),
 			hamburgerToggle = 0;
 		// Click on logo to go to homepage
 		logo.addEventListener("click", () => window.location = "./");
 
 		// When the user clicks on the star (hamburger) icon on the top right, pull up the nav
 		hamburger.addEventListener("click", () =>{
-			// Toggle = status of the nav bar
-			// 0 => not showing
-			// 1 => showing
-			/*
-			if (hamburgerToggle == 0){
-				hamburgerToggle = 1;
-				navContainer.style.zIndex = 2001;
-				navStar.style.opacity = 1;
-				// Drop the nav bar from the top to the bottom 
-				navContainer.animate([
-					{
-						height: 0,
-					},
-					{
-						height: "100%",
-					}],
-					{
-						duration: 1000,
-						easing: "ease",
-						fill: "forwards"
-				});
-				// Spin the star while the nav bar drops down
-				navStar.animate([
-					{
-						transform: "rotate(0deg)",
-					},
-					{
-						transform: "rotate(180deg)",
-					}],
-					{
-						duration: 1000,
-						easing: "ease",
-						fill: "forwards"
-				});
-				navStar.animate([
-					{
-						opacity: 0,
-					},
-					{
-						opacity: 1,
-					}],
-					{
-						delay: 1000,
-						easing: "ease",
-						fill: "forwards"
-				});
-				// After the animation from above, show the page list
-				setTimeout(() => {
-					pageList.style.opacity = 1;
-				}, 1000);
-				
-			} else {
-				hamburgerToggle = 0;
-				navStar.style.opacity = 0;
-				pageList.style.opacity = 0;
-
-				navContainer.animate([
-					{
-						height: "100%",
-					},
-					{
-						height: 0,
-					}],
-					{
-						duration: 1000,
-						easing: "ease",
-						fill: "forwards"
-				});
-
-				navStar.animate([
-					{
-						transform: "rotate(0deg)",
-					},
-					{
-						transform: "rotate(-180deg)",
-					}],
-					{
-						duration: 1000,
-						easing: "ease",
-						fill: "forwards"
-				});
-
-				setTimeout(() => {
-					navContainer.style.zIndex = -1000;
-				}, 1000);
-				
-			}	*/
 			if (hamburgerToggle == 0){
 				navContainer.style.zIndex = 2001; 
 				navStar.style.opacity = 1;
 				navStar.style.transform = "rotate(360deg)";
 				pageList.style.opacity = 1;
 				hamburgerToggle = 1;
+				socials.style.display = "unset";
 			} else {
 				hamburgerToggle = 0;
 				navContainer.style.zIndex = -2001; 
 				navStar.style.opacity = 0;
 				pageList.style.opacity = 0;
+				socials.style.display = "none";
 			}
 			
 		});
