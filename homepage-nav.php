@@ -19,7 +19,7 @@
 				<li><a href = "https://www.instagram.com/chicagoshufflers/" target = "_blank" title = "Instagram @chicagoshufflers"><img src = "<?php echo $base;?>/images/assets/instagram.svg"></a></li>
 				<li><a href = "https://www.facebook.com/chicagoshufflers" target = "_blank" title = "Facebook @chicagoshufflers"><img src = "<?php echo $base;?>/images/assets/facebook.svg"></a></li>
 				<li><a href = "https://www.youtube.com/channel/UCrudQ_ci6tFss6W0aVtFHWw" title = "Youtube @chi shufflers"><img src = "<?php echo $base;?>/images/assets/youtube.svg"></a></li>
-				<li><a href = "mailto: chicagoshufflers@gmail.com" title = "Gmail: chicagoshufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
+				<li><a href = "mailto: chishufflers@gmail.com" title = "Gmail: chishufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
 			</ul>
 		</div>
 	</div>
