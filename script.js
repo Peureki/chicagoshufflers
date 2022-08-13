@@ -235,7 +235,8 @@ navLogo.addEventListener('click', () => {
 	location.href = "./";
 }, false);
 
-function animate_every_letter(div, word){
+function assign_letters_to_span(div, word){
+	div = div.children[0];
 	let wordArray = word.split("");
 	let newWord = "";
 
@@ -250,8 +251,28 @@ function animate_every_letter(div, word){
 	// Make sure the div is set to 0
 	// By default, it should be opacity: 0;
 	div.style.opacity = 1; 
-
+	/*
 	let span = div.querySelectorAll("span"),
+		index = 0; 
+
+	let span_function = setInterval(fade, 25);
+
+	function fade(){
+		span[index].style.opacity = 1; 
+		span[index].style.transform = "translateY(0%)";
+		index++;
+		// Stop when interval reaches the end of the array
+		if (index == span.length){
+			clearInterval(span_function);
+		}
+	}*/
+}
+
+function animate_every_letter(div){
+	let wordArray = div.children[0];
+	console.log("word array: ", wordArray);
+
+	let span = wordArray.querySelectorAll("span"),
 		index = 0; 
 
 	let span_function = setInterval(fade, 25);
@@ -283,7 +304,7 @@ function animate_every_word(div, word){
 		aTag = ``,
 		skipTrigger = 0;
 
-	console.log("word array: ", wordArray);
+	//console.log("word array: ", wordArray);
 
 	// Iterate through the entire paragraph array
 	for (let i = 0; i < wordArray.length; i++){
@@ -303,7 +324,7 @@ function animate_every_word(div, word){
 					break;
 				}
 				if (wordArray[i] == `events`){
-					newWord += `<span class = 'red-text'><a href = './events.php'>` + wordArray[i] + `</a></span>` + ` `;
+					newWord += `<span class = 'red-text'><a href = './events-and-classes.php'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
 				if (wordArray[i] == `shop!`){
@@ -395,7 +416,7 @@ function remove_desc_from_HTML_for_scroll(desc, array){
 
 // Get the <h> or <p> tags from the HTML and put them into an array.
 // This array will be used to form an animation on scroll when the user gets to it's section.
-// The function animate_every_letter() and animate_every_word() takes in parameters: the div where it's animating, array with content.
+// The function assign_letters_to_span() and animate_every_word() takes in parameters: the div where it's animating, array with content.
 function get_HTML_into_array(desc, array, tags){
 	for (let i = 0; i < desc.length; i++){		
 		// TRY: Check if the desc has the valid tags. If not, CATCH the error and continue the loop

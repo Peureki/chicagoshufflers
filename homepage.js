@@ -92,6 +92,12 @@ if (windowWidth > 500){
 	navBar.style.display = "none";
 }
 
+for (let i = 0; i < headerAbs.length; i++){
+	assign_letters_to_span(headerAbs[i], headerAbsArray[i]);
+}
+for (let i = 0; i < headerBlocks.length; i++){
+	assign_letters_to_span(headerBlocks[i], headerBlocksArray[i]);
+}
 
 body.addEventListener('scroll', function(){
 
@@ -108,14 +114,14 @@ body.addEventListener('scroll', function(){
 	// HEADERS WITH POSITION:ABSOLUTE
 	for (let i = 0; i < headerAbs.length; i++){
 		if (headerAbs[i].getBoundingClientRect().y < 500 && absCount == i){
-			animate_every_letter(headerAbs[i].children[0], headerAbsArray[i]);
+			animate_every_letter(headerAbs[i]);
 			absCount++;
 		}
 	}
 	// HEADERS WITH BLOCK
 	for (let i = 0; i < headerBlocks.length; i++){
 		if  (headerBlocks[i].getBoundingClientRect().y < 500 && blockCount == i){
-			animate_every_letter(headerBlocks[i].children[0], headerBlocksArray[i]);
+			animate_every_letter(headerBlocks[i]);
 			blockCount++;
 		}
 	}

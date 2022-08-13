@@ -151,6 +151,10 @@ h3{
     font-size: var(--font-size-h3);
     color: var(--clr-bkg-accent);
 }
+p1{
+    font-size: var(--font-size-general);
+    color: var(--clr-bkg-accent);
+}
 p2{
     font-size: var(--font-size-p2);
     color: var(--clr-bkg-accent);
@@ -161,15 +165,21 @@ p2{
     ================== MAIN BOX && SLIDES ========================
     ==============================================================
 */
-.main-container{
+.main-container,
+.main-half-container{
     width: 100%;
-    min-height: 100vh;
     height: auto;
     position: relative;
     background-color: var(--clr-bkg-main); 
     /*scroll-snap-type: y mandatory;
     overflow-y: scroll;
     */
+}
+.main-container{
+    min-height: 100vh;
+}
+.main-half-container{
+    min-height: 50vh;
 }
 .main-space-container{
     width: 100%;
@@ -1332,6 +1342,27 @@ table.crossword #secondary-word{
 }
 .event-view-more a{
     text-decoration: none;
+}
+
+/* 
+    =================================================================
+    ================== EVENT SCOREBOARD CONTAINER ===================
+    =================================================================
+*/
+.event-scoreboard-container{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.event-scoreboard{
+    width: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: 1s ease all;
+}
+.event-scoreboard h1{
+    color: var(--clr-bkg-accent);
 }
 
 

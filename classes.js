@@ -52,8 +52,10 @@ let upcomingEventBox = document.getElementsByClassName('upcoming-event-box'),
 remove_desc_from_HTML_for_scroll(headers, headerArray);
 remove_desc_from_HTML_for_scroll(generalDescs, generalDescsArray);
 
-
-animate_every_letter(headers[0].children[0], headerArray[0]);
+for (let i = 0; i < headers.length; i++){
+	assign_letters_to_span(headers[i]);
+}
+animate_every_letter(headers[0], headerArray[0]);
 
 
 body.addEventListener('scroll', function(){
@@ -64,7 +66,7 @@ body.addEventListener('scroll', function(){
 	}
 
 	if (headers[1].getBoundingClientRect().y < 300 && headerCount == 1){
-		animate_every_letter(headers[1].children[0], headerArray[1]);
+		animate_every_letter(headers[1], headerArray[1]);
 		headerCount++;
 	}
 

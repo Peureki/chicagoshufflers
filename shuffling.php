@@ -149,7 +149,7 @@
 	</div>
 
 
-
+	<?php include("footer.php"); ?>
 </body>
 <script type = "text/javascript" src = "<?php echo $base;?>/script.js?v=<?php echo $date;?>"></script>
 <script type = "text/javascript" src = "<?php echo $base;?>/shuffling.js?v=<?php echo $date;?>"></script>

@@ -76,6 +76,10 @@ let build = mainHeaderWords[0],
 	centerCount = 1,
 	generalCount = 0;
 
+assign_letters_to_span(mainHeaderDivs[0], build);
+assign_letters_to_span(mainHeaderDivs[1], your);
+assign_letters_to_span(mainHeaderDivs[2], foundation);
+
 body.addEventListener('scroll', function(){
 
 
@@ -85,15 +89,15 @@ body.addEventListener('scroll', function(){
 		foundationY = mainHeaderDivs[2].getBoundingClientRect().y;
 
 	if (buildY <= 500 && headerCount == 0){
-		animate_every_letter(mainHeaderDivs[0].children[0], build);
+		animate_every_letter(mainHeaderDivs[0], build);
 		headerCount++;
 	}
 	if (yourY <= 500 && headerCount == 1){
-		animate_every_letter(mainHeaderDivs[1].children[0], your);
+		animate_every_letter(mainHeaderDivs[1], your);
 		headerCount++;
 	}
 	if (foundationY <= 500 && headerCount == 2){
-		animate_every_letter(mainHeaderDivs[2].children[0], foundation);
+		animate_every_letter(mainHeaderDivs[2], foundation);
 		headerCount++;
 	}
 

@@ -55,31 +55,66 @@ let details = document.querySelectorAll('details'),
 	detailsDesc = document.getElementsByClassName('details-desc'),
 	detailsDescArray = [];
 
+let scoreboards = document.getElementsByClassName('event-scoreboard'),
+	scoreboardsArray = [],
+	scoreboardsCount = 0;
+
 console.log(detailsDesc);
 
 get_HTML_into_array(headers, headerArray, "h1");
 get_HTML_into_array(generalDescs, generalDescsArray, "p1");
-animate_every_letter(headers[0].children[0], headerArray[0]);
+assign_letters_to_span(headers[0], headerArray[0]);
 
 get_HTML_into_array(detailsDesc, detailsDescArray, "p1");
 // Only do the first 4 general-desc
 // The first 4 are the top event post
 // Every other general-desc are the upcoming events
+/*
 for (let i = 0; i < 4; i++){
 	animate_every_word(generalDescs[i].children[0], generalDescsArray[i]);
 	generalCount++;
 }
+*/
+setTimeout(() => {
+	for (let i = 0; i < scoreboards.length; i++){
+		fade_in_element(scoreboards[i]);
+		scoreboardsCount++;
+	}
+}, 500);
+
+for (let i = 1; i < headers.length; i++){
+	assign_letters_to_span(headers[i], headerArray[i]);
+}
+animate_every_letter(headers[0]);
 
 body.addEventListener('scroll', function(){
-	if (headers[1].getBoundingClientRect().y < 300 && headerCount == 1){
-		animate_every_letter(headers[1].children[0], headerArray[1]);
-		headerCount++;
+	/*
+	for (let i = 1; i < headers.length; i++){
+		if (headers[i].getBoundingClientRect().y < 300 && headerCount == i){
+			assign_letters_to_span(headers[i].children[0], headerArray[i]);
+			headerCount++;
+		}
+	}*/
+
+	for (let i = 1; i < headers.length; i++){
+		if (headers[i].getBoundingClientRect().y < 300 && headerCount == i){
+			console.log("does this happen merp");
+			animate_every_letter(headers[i]);
+			headerCount++;
+		}
 	}
 
 	for (let i = 0; i < upcomingEventBox.length; i++){
 		if (upcomingEventBox[i].getBoundingClientRect().y < 500 && upcomingEventBoxCount == i){
 			fade_in_element(upcomingEventBox[i]);
 			upcomingEventBoxCount++;
+		}
+	}
+
+	for (let i = 0; i < generalDescs.length; i++){
+		if (generalDescs[i].getBoundingClientRect().y < 500 && generalCount == i){
+			animate_every_word(generalDescs[i].children[0], generalDescsArray[i]);
+			generalCount++;
 		}
 	}
 });
