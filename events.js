@@ -66,15 +66,8 @@ get_HTML_into_array(generalDescs, generalDescsArray, "p1");
 assign_letters_to_span(headers[0], headerArray[0]);
 
 get_HTML_into_array(detailsDesc, detailsDescArray, "p1");
-// Only do the first 4 general-desc
-// The first 4 are the top event post
-// Every other general-desc are the upcoming events
-/*
-for (let i = 0; i < 4; i++){
-	animate_every_word(generalDescs[i].children[0], generalDescsArray[i]);
-	generalCount++;
-}
-*/
+
+// After the animation of the first header, wait half a second to display the scoreboard
 setTimeout(() => {
 	for (let i = 0; i < scoreboards.length; i++){
 		fade_in_element(scoreboards[i]);
@@ -98,7 +91,6 @@ body.addEventListener('scroll', function(){
 
 	for (let i = 1; i < headers.length; i++){
 		if (headers[i].getBoundingClientRect().y < 300 && headerCount == i){
-			console.log("does this happen merp");
 			animate_every_letter(headers[i]);
 			headerCount++;
 		}

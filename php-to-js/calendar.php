@@ -121,20 +121,20 @@ for (let i = 0; i < calendarItems.length; i++){
 					<h1>${eventName}</h1>
 				</div>
 
-				<div class = "general-desc">
+				<div class = "general-desc" style = "text-align: center;">
 					<p1>${eventOverallDate}</p1> 
 				</div>
 
-				<div class = "general-desc">
+				<div class = "general-desc" style = "text-align: center;">
 					<p1>${eventStartTime} - ${eventEndTime}</p1> 
 				</div>
 
-				<div class = "general-desc">
+				<div class = "general-desc" style = "text-align: center;">
 					<p1>${eventLocation}</p1>
 					<img src = "./images/assets/google-maps.svg" onclick = "window.open('http://maps.google.com/?q=${eventLocation}','_blank')">
 				</div>
 
-				<div class = "general-desc"  style = "text-align: left;">
+				<div class = "general-desc">
 					<p1>${eventDesc}</p1>
 				</div>
 			`;

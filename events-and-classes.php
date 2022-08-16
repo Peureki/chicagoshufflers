@@ -46,7 +46,7 @@
 
 	<div class = "main-container">
 		<div class = "main-header-block">
-			<h1> UPCOMING EVENTS </h1>
+			<h1>MORE...</h1>
 		</div>
 
 		<div class = "upcoming-event-container" id = "event-container">

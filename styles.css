@@ -714,7 +714,7 @@ table.crossword #secondary-word{
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: center;
+    text-align: left;
     color: var(--clr-bkg-accent);
     transition: 0.5s ease all;
     z-index: 2;
@@ -2778,8 +2778,7 @@ table.crossword #secondary-word{
     height: 400vh;
     background-color: transparent;
 }
-.collage-container,
-.roster-container{
+.collage-container{
     position: relative;
     width: 100%;
     height: 100%;
@@ -2788,15 +2787,13 @@ table.crossword #secondary-word{
 .collage-container{
     height: 400%;
 }
-.collage,
-.roster-collage{
+.collage{
     position: relative;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
-.collage-img, 
-.roster-img{
+.collage-img{
     position: absolute;
     width: 30%;
     min-width: 300px;
@@ -2809,83 +2806,12 @@ table.crossword #secondary-word{
     color: var(--clr-bkg-accent);
 }
 .collage-img img, 
-.roster-img img,
 .collage-img video{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#roster-1{
-    top: 10%;
-    left: 20%;
-    transform: translate(-20%, -10%);
-}
-#roster-2{
-    top: 22%;
-    left: 80%;
-    transform: translate(-80%, -22%);
-}
-#roster-3{
-    top: 34%;
-    left: 20%;
-    transform: translate(-20%, -34%);
-}
-#roster-4{
-    top: 46%;
-    left: 80%;
-    transform: translate(-80%, -46%);
-}
-#roster-5{
-    top: 58%;
-    left: 20%;
-    transform: translate(-20%, -58%);
-}
-#roster-6{
-    top: 70%;
-    left: 80%;
-    transform: translate(-80%, -70%);
-}
-#roster-7{
-    top: 82%;
-    left: 20%;
-    transform: translate(-20%, -82%);
-}
-#roster-8{
-    top: 94%;
-    left: 80%;
-    transform: translate(-80%, -94%);
-}
-@media only screen and (max-width: 768px){
-    #roster-1,
-    #roster-2,
-    #roster-3,
-    #roster-4,
-    #roster-5,
-    #roster-6,
-    #roster-7,
-    #roster-8{
-        top: unset;
-        left: unset;
-        transform: unset;
-    }
-    #roster-1{
-        padding-top: 200px;
-    }
-    .roster-img{
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    #second-roster{
-        display: none;
-    }
-    #main-roster-container{
-        height: auto;
-    }
-}
+
 #main-collage-1{
     top: 10%;
     left: 20%;
@@ -2905,6 +2831,44 @@ table.crossword #secondary-word{
     bottom: 0;
     left: 80%;
     transform: translate(-80%, 0%);
+}
+/* 
+    ==================================================
+    ================== ROSTER ========================
+    ==================================================
+*/
+.roster-container{
+    width: 95%;
+    max-width: 1300px;
+    position: relative;
+    display: flex;
+    margin-inline: auto;
+    flex-direction: column;
+}
+.roster-grid{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+        'one two'
+        'three three';
+    align-items: center;
+    justify-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.roster-portrait img{
+    width: 100%;
+    max-width: 700px;
+    object-fit: cover;
+}
+.roster-name{
+    grid-area: one;
+}
+.roster-portrait{
+    grid-area: two;
+}
+.roster-desc{
+    grid-area: three;
 }
 /* 
     =================================================

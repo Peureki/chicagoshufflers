@@ -5,7 +5,7 @@ let imgFaders = document.getElementsByClassName('img-fader');
 let shufflingDesc = document.getElementById("shuffling-desc");
 
 
-let shufflePara = "Shuffling is a dance that originated in the Melbourn, Australia rave scene around the 1980s. Shuffle dance moves involve a <span class = 'red-text' id = 'shuffle-t-step-word'>T-Step</span> combined with a variation of the <span class = 'red-text' id = 'shuffle-running-man-word'>Running Man</span> and coupled with a matching arm action. This dance became widely popular amongst many nations from the widespread of raves and social media that led to an evolutino of different styles through the years. Shuffling has come to be an <span class = 'red-text' id = 'umbrella-hover'>umbrella term</span> due to mini subcultures of the movement led in various parts of the world.";
+let shufflePara = "Shuffling is a dance style that originated in the Melbourne, Australia rave scene around the 1980s. Shuffle dance moves involve a Running Man combined with a T-Step elevated with matching arm movements. This dance became widely popular in many nations from the spread of rave culture that has been publicized through social media leading to an evolution and diversification of styles over the years. Shuffling has come to be an umbrella term due to mini subcultures of the movement developing in various parts of the world.";
 
 let shuffleParaHTML = document.getElementById('shuffle-para');
 
