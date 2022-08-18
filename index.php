@@ -523,7 +523,7 @@
 			</div>
 		</div>
 		
-		<div class = "general-desc" style = "padding-top:50px; padding-bottom:50px">
+		<div class = "general-desc" style = "padding-top:50px; padding-bottom:50px; text-align: center;">
 			<p1>Learn through our classes.</p1>
 		</div>
 		
@@ -732,7 +732,7 @@
 			</div>
 		</div>
 
-		<div class = "general-desc" style = "margin-top: 20px; margin-bottom: 20px">
+		<div class = "general-desc" style = "margin-top: 20px; margin-bottom: 20px; text-align: center;">
 			<p1>Check out our upcoming events</p1>
 		</div>
 
@@ -746,59 +746,59 @@
 			<h1> COLLABS </h1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Fuego Shoes</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>The Get Down Chicago</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Dance Rituals</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Whats Good Chicago</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>EDM Chicago</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>MyHouse Music Festival</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>The Mid</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Primary Night Club</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Trifecta Records</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Speaker Honey</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Proppa</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>IHeartTechno</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Dance Rituals</p1>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>ARC Music Festival</p1>
 		</div>
 
@@ -852,7 +852,7 @@
 			</div>
 		</div>
 
-		<div class = "general-desc">
+		<div class = "general-desc" style = "text-align: center;">
 			<p1>Visit our shop!</p1>
 		</div>
 	</div>
