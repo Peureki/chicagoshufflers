@@ -479,7 +479,7 @@
 			<source src = "<?php echo $base;?>/videos/Manny solo 2_Trim_again.mp4">
 		</video>
 		<
-		<div class = "general-desc" id = "shuffle-desc">
+		<div class = "general-desc" id = "shuffle-desc" style = "text-align: center;">
 			<p1>Shuffling is the complete embodiment of what it means to express all emotions through footwork and flow.</p1>
 		</div>
 

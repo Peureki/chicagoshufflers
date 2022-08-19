@@ -1,3 +1,20 @@
+<!-- 
+	================================================================
+	====================== CONTACT FORM ============================
+	================================================================
+-->
+
+<div class = "contact-form-container" id = "contact-form-container">
+	<button type = "text" id = "contact-form-exit">X</button>
+	<h1 class = "">Contact Us</h1>
+	<form class = "contact-form" action = "contact-form.php" method = "post">
+		<input type = "text" name = "name" placeholder = "Full Name">
+		<input type = "text" name = "mail" placeholder = "Email">
+		<input type = "text" name = "subject" placeholder = "Subject">
+		<textarea name = "message" placeholder = "Message"></textarea>
+		<button type = "submit" name = "submit">Send Message</button>
+	</form>
+</div>
 
 <div class = "footer-outline">
 	<img src = "<?php echo $base;?>/images/logos/chicago-outline-white-2.png">
@@ -28,9 +45,7 @@
 					<li><a href = "mailto: chicagoshufflers@gmail.com" title = "Gmail: chicagoshufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
 				</ul>
 
-				<div>
-					<p1><a href = "">Contact Us</a></p1>
-				</div>
+				<button type = "text" class = "contact-button">Contact Us</button>
 			</div>
 		</div>
 	</div>

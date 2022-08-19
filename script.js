@@ -123,7 +123,7 @@ function on_window_resize(){
 				navStar.style.transform = "rotate(360deg)";
 				pageList.style.opacity = 1;
 				hamburgerToggle = 1;
-				socials.style.display = "unset";
+				socials.style.display = "flex";
 			} else {
 				hamburgerToggle = 0;
 				navContainer.style.zIndex = -2001; 
@@ -442,5 +442,46 @@ function get_HTML_into_array(desc, array, tags){
 function fade_in_element(ele){
 	ele.style.opacity = 1;
 }
+
+// Contact Us exit button
+let contactExitButton = document.getElementById('contact-form-exit'),
+	contactFormContainer = document.getElementById('contact-form-container'),
+	contactForm = document.getElementsByTagName('form')[0],
+	contactButtons = document.getElementsByClassName('contact-button');
+console.log(contactForm.children);
+
+contactExitButton.addEventListener('click', () => {
+	contactFormContainer.style.zIndex = -10000;
+	contactFormContainer.style.opacity = 0;
+});
+
+for (let i = 0; i < contactButtons.length; i++){
+
+	contactButtons[i].addEventListener('click', () => {
+		contactFormContainer.style.zIndex = 10000;
+		contactFormContainer.style.opacity = 1;
+	});
+}
+
+if (windowWidth < 768){
+	for (let j = 0; j < contactForm.children.length; j++){
+		contactForm.children[j].addEventListener('focus', () => {
+			if (j == 3){
+				//contactFormContainer.style.height = "200%";
+				contactFormContainer.style.paddingBottom = "800px";
+			} else {
+				//contactFormContainer.style.height = "150%";
+				contactFormContainer.style.paddingBottom = "500px";
+			}
+			
+		});
+
+		contactForm.children[j].addEventListener('blur', () => {
+			//contactFormContainer.style.height = "100%";
+			contactFormContainer.style.paddingBottom = "0px";
+		});
+	}
+}
+
 
 

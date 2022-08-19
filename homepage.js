@@ -147,7 +147,7 @@ body.addEventListener('scroll', function(){
 	}
 	// For the homepage only
 	// When the user scrolls past the landing section, show the navigation bar at the top, sticky
-	if (windowWidth > 500){
+	if (windowWidth > 768){
 		if (navY <= -50){
 			navBar.style.display = "block";
 		} else {

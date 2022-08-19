@@ -21,6 +21,8 @@
 				<li><a href = "https://www.youtube.com/channel/UCrudQ_ci6tFss6W0aVtFHWw" title = "Youtube @chi shufflers"><img src = "<?php echo $base;?>/images/assets/youtube.svg"></a></li>
 				<li><a href = "mailto: chishufflers@gmail.com" title = "Gmail: chishufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
 			</ul>
+
+			<button type = "text" class = "contact-button">Contact Us</button>
 		</div>
 	</div>
 </div>
