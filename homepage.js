@@ -99,17 +99,27 @@ for (let i = 0; i < headerBlocks.length; i++){
 	assign_letters_to_span(headerBlocks[i], headerBlocksArray[i]);
 }
 
+let firstContainer = document.getElementById('first-container'),
+	firstLogo = document.getElementById('first-logo');
+
 body.addEventListener('scroll', function(){
 
-	let navY = homepageListContainer.getBoundingClientRect().y,
-		landingY = landingContainer.getBoundingClientRect().y,
+	let //navY = homepageListContainer.getBoundingClientRect().y,
+		//landingY = landingContainer.getBoundingClientRect().y,
+		heroY = heroContainer.getBoundingClientRect().y,
 		aboutY = aboutSection.getBoundingClientRect().y,
 		shuffleY = shuffleSection.getBoundingClientRect().y,
 		classY = classContainer.getBoundingClientRect().y,
 		eventY = eventSection.getBoundingClientRect().y,
 		merchY = merchContainer.getBoundingClientRect().y,
 		stickyVideoY = mainHeroVideo.getBoundingClientRect().y,
-		shuffleVideoY = mainShuffleVid.getBoundingClientRect().y;
+		shuffleVideoY = mainShuffleVid.getBoundingClientRect().y,
+		firstY = firstContainer.getBoundingClientRect().y;
+
+	if (stickyVideoY >= screenHeight){
+		firstLogo.style.transform = `translateY(${firstY*-1}px)`;
+	}
+	
 
 	// HEADERS WITH POSITION:ABSOLUTE
 	for (let i = 0; i < headerAbs.length; i++){
@@ -145,10 +155,11 @@ body.addEventListener('scroll', function(){
 			generalDescCount++;
 		}
 	}
+	
 	// For the homepage only
 	// When the user scrolls past the landing section, show the navigation bar at the top, sticky
 	if (windowWidth > 768){
-		if (navY <= -50){
+		if (heroY <= 0){
 			navBar.style.display = "block";
 		} else {
 			navBar.style.display = "none";
@@ -353,7 +364,7 @@ function throttle (fn, wait){
 	}
 }
 
-
+/*
 // COLLAGE
 let mainCollage = document.getElementsByClassName('collage'),
 	imgFaders = document.getElementsByClassName('img-fader');
@@ -364,7 +375,7 @@ for (let i = 0; i < imgFaders.length; i++){
 animate_collage(mainCollage[0], 100, -100);
 animate_collage(mainCollage[1], 0, -200);
 
-
+*/
 
 
 

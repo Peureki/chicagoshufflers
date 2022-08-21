@@ -15,7 +15,7 @@
 	==============================================================
 -->
 
-<div class = "mobile-nav-container" id = "mobile-nav-container">
+<div class = "mobile-nav-container" id = "mobile-nav-container" style = "z-index: -2000;">
 	<div class = "mobile-nav-star" id = "mobile-nav-star">
 		<img src = "<?php echo $base;?>/images/assets/star.svg">
 	</div>

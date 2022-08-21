@@ -27,11 +27,11 @@
 		</div>
 
 		<div class = "event-scoreboard-container">
-			<div class = "event-scoreboard" id = "event-scoreboard">
+			<div class = "event-scoreboard" id = "event-scoreboard" style = "opacity: 0;">
 				<!-- Current upcoming events -->
 			</div>
 
-			<div class = "event-scoreboard"  id = "class-scoreboard">
+			<div class = "event-scoreboard"  id = "class-scoreboard" style = "opacity: 0;">
 				<!-- Current upcoming classes -->
 			</div>
 		</div>

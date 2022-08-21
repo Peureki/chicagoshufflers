@@ -20,30 +20,13 @@
 		============================================================
 	-->
 	
-
+	<!--
 	<div class = "main-container" style = "background-color: transparent; height: 100vh;" id = "main-landing-container">
-		<!--
-		<div class = "main-logo">
-			<img src = "<?php echo $base;?>/images/logos/banner-logo.PNG">
-		</div>
-
-		<div class = "main-landing-nav">
-			<ul>
-				<li><a href = "<?php echo $base;?>/shuffling.php">Shuffling</a></li>
-				<li><a href = "<?php echo $base;?>/about.php">About</a></li>
-				<li><a href = "<?php echo $base;?>/classes.php">Classes</a></li>
-				<li><a href = "<?php echo $base;?>/events.php">Events</a></li>
-				<li><a href = "<?php echo $base;?>/merch.php">Merch</a></li>
-			</ul>
-		</div>
-
-		-->
-
-		<!-- 
+		<!x-- 
 		===========================================================================================
 		====================== NAVIGATION BAR SPECIFICALLY FOR THE HOME PAGE ======================
 		===========================================================================================
-		-->
+		--x>
 		<?php include('homepage-nav.php'); ?>
 
 		
@@ -103,7 +86,61 @@
 
 
 	</div>
+	-->
 
+	<div class = "main-container" style = "height: 250vh;" id = "first-container">
+		<div class = "first-fixed-container" id = "first-logo">
+			<div class = "first-logo">
+				<img src = "<?php echo $base;?>/images/logos/Logo_White.png">
+			</div>
+
+			<div class = "first-list-container" id = "first-list-container">
+				<ul>
+					<li><a href = "<?php echo $base;?>/shuffling.php">Shuffling</a></li>
+					<li><a href = "<?php echo $base;?>/about.php">About</a></li>
+					<li><a href = "<?php echo $base;?>/events-and-classes.php">Events</a></li>
+					<li><a href = "<?php echo $base;?>/events-and-classes.php">Classes</a></li>
+					<li><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></li>
+				</ul>
+			</div>
+
+			<div class = "first-nav-social">
+				<ul>
+					<li><a href = "https://www.instagram.com/chicagoshufflers/" target = "_blank" title = "Instagram @chicagoshufflers"><img src = "<?php echo $base;?>/images/assets/instagram.svg"></a></li>
+					<li><a href = "https://www.facebook.com/chicagoshufflers" target = "_blank" title = "Facebook @chicagoshufflers"><img src = "<?php echo $base;?>/images/assets/facebook.svg"></a></li>
+					<li><a href = "https://www.youtube.com/channel/UCrudQ_ci6tFss6W0aVtFHWw" title = "Youtube @chi shufflers"><img src = "<?php echo $base;?>/images/assets/youtube.svg"></a></li>
+					<li><a href = "mailto: chishufflers@gmail.com" title = "Gmail: chishufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
+				</ul>
+
+				<button type = "text" class = "contact-button">Contact Us</button>
+			</div>
+		</div>
+
+		<div class = "first-collage-container">
+			<div class = "first-collage-img" id = "first-collage-img-1">
+				<img src = "<?php echo $base;?>/images/group/img-5.jpg">
+			</div>
+
+			<div class = "first-collage-img" id = "first-collage-img-2">
+				<video autoplay muted loop>
+					<source src = "<?php echo $base;?>/videos/myhouse-performance-1.mov">
+				</video>
+			</div>
+
+			<div class = "first-collage-img" id = "first-collage-img-3">
+				<video autoplay muted loop>
+					<source src = "<?php echo $base;?>/videos/santana-1.MOV">
+				</video>
+			</div>
+
+			<div class = "first-collage-img" id = "first-collage-img-4">
+				<img src = "<?php echo $base;?>/images/group/img-2.jpg">
+			</div>
+		</div>
+
+
+		
+	</div>
 	<!-- 
 		=============================================================
 		====================== MAIN HERO VIDEO ======================
