@@ -49,6 +49,10 @@
 			<h1>MORE...</h1>
 		</div>
 
+		<div class = "general-desc" style = "text-align: center;">
+			<p1>Add all upcoming events to your <a href = "https://calendar.google.com/calendar/u/2?cid=Y2hpc2h1ZmZsZXJzQGdtYWlsLmNvbQ">Google Calendar</a></p1>
+		</div>
+
 		<div class = "upcoming-event-container" id = "event-container">
 
 		</div>

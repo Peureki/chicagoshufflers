@@ -113,7 +113,7 @@
 	<div class = "main-container">
 		<div class = "grid-two-col">
 			<div class = "grid-two-col-section"> 
-				<img src = "<?php echo $base;?>/images/assets/running-man-1.svg">
+				<img src = "<?php echo $base;?>/images/assets/running-man-step-1.svg">
 			</div>
 			<div class = "grid-two-col-section"> 
 				<h1> 01 </h1>
@@ -123,7 +123,7 @@
 
 		<div class = "grid-two-col">
 			<div class = "grid-two-col-section"> 
-				<img src = "<?php echo $base;?>/images/assets/running-man-2.svg">
+				<img src = "<?php echo $base;?>/images/assets/running-man-step-2.svg">
 			</div>
 			<div class = "grid-two-col-section"> 
 				<h1> 02 </h1>
@@ -133,7 +133,7 @@
 
 		<div class = "grid-two-col">
 			<div class = "grid-two-col-section"> 
-				<img src = "<?php echo $base;?>/images/assets/running-man-1.svg">
+				<img src = "<?php echo $base;?>/images/assets/running-man-step-3.svg">
 			</div>
 			<div class = "grid-two-col-section"> 
 				<h1> 03 </h1>

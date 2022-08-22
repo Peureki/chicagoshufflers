@@ -30,6 +30,8 @@ function compare_calendar_dates(a, b){
 
 calendarItems.sort(compare_calendar_dates);
 
+console.log('calendar items: ', calendarItems);
+
 
 let today = new Date(),
 	compareToday = today.getTime(),
@@ -156,7 +158,7 @@ for (let i = 0; i < calendarItems.length; i++){
 						<details>
 							<summary><p1>More Info</p1></summary>
 							<div class = "details-desc" style = "text-align: left">
-								<p1>${eventDesc}</p1>
+								<p2>${eventDesc}</p2>
 							</div>
 						</details>
 					</div>

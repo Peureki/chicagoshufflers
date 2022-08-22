@@ -542,7 +542,7 @@ p2{
     transition: 0.5s ease all;
     opacity: 1;
 }
-.upcoming-event-card details[open] p1{
+.upcoming-event-card details[open] p2{
     opacity: 1;
     transition: 0.5s ease all;
 }
@@ -1879,6 +1879,7 @@ table.crossword #secondary-word{
     display: flex;
     flex-direction: column;
     margin-inline: auto;
+    margin-top: 10px;
     margin-bottom: auto;
 }
 .first-nav-social ul{
@@ -1887,7 +1888,7 @@ table.crossword #secondary-word{
     flex-direction: row;
 }
 .first-nav-social img{
-    width: 30px;
+    width: 25px;
     filter: invert(18%) sepia(100%) saturate(7251%) hue-rotate(2deg) brightness(93%) contrast(120%);
     transition: 0.5s ease all;
 }
@@ -1916,11 +1917,13 @@ table.crossword #secondary-word{
     width: 100%;
     object-fit: cover;
     max-height: 1000px;
+    max-height: 700px;
 }
 .first-collage-img video{
     width: 100%;
     object-fit: cover;
     max-width: 1000px;
+    max-height: 700px;
 }
 #first-collage-img-1{
     top: 5%;
@@ -1941,6 +1944,12 @@ table.crossword #secondary-word{
     top: 95%;
     left: 10%;
     transform: translate(-10%, -95%);
+}
+.collage-fader{
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-bkg-main);
+    position: absolute;
 }
 @media only screen and (max-width: 786px){
     .first-logo img{

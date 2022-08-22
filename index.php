@@ -19,75 +19,6 @@
 		====================== LANDING BOX =========================
 		============================================================
 	-->
-	
-	<!--
-	<div class = "main-container" style = "background-color: transparent; height: 100vh;" id = "main-landing-container">
-		<!x-- 
-		===========================================================================================
-		====================== NAVIGATION BAR SPECIFICALLY FOR THE HOME PAGE ======================
-		===========================================================================================
-		--x>
-		<?php include('homepage-nav.php'); ?>
-
-		
-		<div class = "collage-container">
-			<div class = "collage">
-				<div class = "collage-img" id = "main-collage-1">
-					<div class = "img-fader"></div>
-					<video autoplay muted loop>
-						<source src = "<?php echo $base;?>/videos/myhouse-performance-1.mov">
-					</video>
-				</div>
-
-				<div class = "collage-img" id = "main-collage-2">
-					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/group/img-6.jpg">
-				</div>
-				
-				<div class = "collage-img" id = "main-collage-3">
-					<div class = "img-fader"></div>
-					<video autoplay muted loop>
-						<source src = "<?php echo $base;?>/videos/santana-1.mov">
-					</video>
-				</div>
-
-				<div class = "collage-img" id = "main-collage-4">
-					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/group/img-5.jpg">
-				</div>
-			</div>
-
-			<div class = "collage">
-				<div class = "collage-img" id = "main-collage-1">
-					<div class = "img-fader"></div>
-					<video autoplay muted loop>
-						<source src = "<?php echo $base;?>/videos/myhouse-performance-1.mov">
-					</video>
-				</div>
-
-				<div class = "collage-img" id = "main-collage-2">
-					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/group/img-6.jpg">
-				</div>
-				
-				<div class = "collage-img" id = "main-collage-3">
-					<div class = "img-fader"></div>
-					<video autoplay muted loop>
-						<source src = "<?php echo $base;?>/videos/santana-1.mov">
-					</video>
-				</div>
-
-				<div class = "collage-img" id = "main-collage-4">
-					<div class = "img-fader"></div>
-					<img src = "<?php echo $base;?>/images/group/img-5.jpg">
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	-->
-
 	<div class = "main-container" style = "height: 250vh;" id = "first-container">
 		<div class = "first-fixed-container" id = "first-logo">
 			<div class = "first-logo">
@@ -118,22 +49,26 @@
 
 		<div class = "first-collage-container">
 			<div class = "first-collage-img" id = "first-collage-img-1">
+				<div class = "collage-fader"></div>
 				<img src = "<?php echo $base;?>/images/group/img-5.jpg">
 			</div>
 
 			<div class = "first-collage-img" id = "first-collage-img-2">
+				<div class = "collage-fader"></div>
 				<video autoplay muted loop>
 					<source src = "<?php echo $base;?>/videos/myhouse-performance-1.mov">
 				</video>
 			</div>
 
 			<div class = "first-collage-img" id = "first-collage-img-3">
+				<div class = "collage-fader"></div>
 				<video autoplay muted loop>
 					<source src = "<?php echo $base;?>/videos/santana-1.MOV">
 				</video>
 			</div>
 
 			<div class = "first-collage-img" id = "first-collage-img-4">
+				<div class = "collage-fader"></div>
 				<img src = "<?php echo $base;?>/images/group/img-2.jpg">
 			</div>
 		</div>

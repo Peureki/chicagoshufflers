@@ -376,7 +376,11 @@ animate_collage(mainCollage[0], 100, -100);
 animate_collage(mainCollage[1], 0, -200);
 
 */
+let collageFaders = document.getElementsByClassName('collage-fader'); 
 
+for (let i = 0; i < collageFaders.length; i++){
+	animate_remove_fader(collageFaders[i]);
+}
 
 
 

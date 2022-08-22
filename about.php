@@ -316,7 +316,7 @@
 				</div>
 
 				<div class = "roster-desc">
-					<p1>Although Courtney has been shuffling since 2018, it wasn’t until after the pandemic when she connected with the Chicago Shufflers. When gyms closed down, she had to find an alternative to get her cardio in. She dedicated almost an hour every morning to honing her craft and finding her flow. When things started to open back up, she attended a drive-in rave and happened to park right next to the Chicago Shufflers! Since then, she has been an active member in the group as well as one of the co-leaders and social media administrators. No matter the club attire, she’s most likely rocking a bucket hat and phat pants or cool joggers at a show. When Courtney isn’t shuffling, she’s building her business and taking photos of really cool architecture & interiors for architects, designers and custom home builders.</p1>
+					<p1>Although I’ve been shuffling since 2018, it wasn’t until halfway through the pandemic when I connected with the Chicago Shufflers. When gyms closed down, I had to find an alternative to get my cardio in. I dedicated almost an hour every morning to honing my craft and finding my flow. When things started to open back up, I attended a drive-in rave and happened to park right next to the Chicago Shufflers! I found Don and he introduced me to everyone in the group. Since then, I’ve been an active member as well as one of the co-leaders and social media administrators. No matter the club attire, I’m most likely rocking a bucket hat and phat pants or cool joggers at a show. When I’m not shuffling, I’m building my business and taking photos of really cool architecture & interiors for architects, designers and custom home builders.</p1>
 				</div>
 			</div>
 
@@ -376,7 +376,7 @@
 				</div>
 
 				<div class = "roster-desc">
-					<p1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p1>
+					<p1> I was first introduced to Melbourne shuffling in 2008. I have always had a love for all types of electronic music but seeing how shufflers flowed so gracefully to the music yet with attitude really intrigued me. I didn’t get serious about shuffling until 2019 where I was introduced to the Chicago Shufflers after being spotted shuffling by one of the members at a night club. Through them, I started taking classes, learning techniques and fundamentals eventually leading me to figuring out my own style. Now, I help coordinate events for the organization, helping the shufflers facilitate fun and exciting experiences as well as be one of the many welcoming faces to new members. The Chicago Shufflers have led me to meeting some amazing and creative souls. I’m not hard to find at events, I’m usually right in front of the booth dancing non stop. Feel free to say hi because I always enjoy meeting new people to dance and vibe with!</p1>
 				</div>
 			</div>
 

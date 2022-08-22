@@ -65,7 +65,7 @@ get_HTML_into_array(headers, headerArray, "h1");
 get_HTML_into_array(generalDescs, generalDescsArray, "p1");
 assign_letters_to_span(headers[0], headerArray[0]);
 
-get_HTML_into_array(detailsDesc, detailsDescArray, "p1");
+get_HTML_into_array(detailsDesc, detailsDescArray, "p2");
 
 // After the animation of the first header, wait half a second to display the scoreboard
 setTimeout(() => {
