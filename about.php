@@ -40,8 +40,9 @@
 			</div>
 
 			<div class = "timeline-event-box">
-				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/shufflepalooza-1.jpg">
+				<div class = "timeline-event-img" style = "display: flex; flex-direction: column; align-content: flex-end;">
+					<img src = "<?php echo $base;?>/images/group/ctf.jpg">
+					<img src = "<?php echo $base;?>/images/group/wdk.jpg">
 				</div>
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>02</h1></div>
@@ -71,7 +72,7 @@
 
 			<div class = "timeline-event-box">
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/shufflepalooza-1.jpg">
+					<img src = "<?php echo $base;?>/images/Individuals/steph.jpg">
 				</div>
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>04</h1></div>
@@ -95,7 +96,7 @@
 					<div class = "timeline-middle-header"><h1>05</h1></div>
 				</div>
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
+					<img src = "<?php echo $base;?>/images/group/img-7.jpg">
 				</div>
 			</div>
 
@@ -111,7 +112,7 @@
 					<h3>2018</h3>
 					<p2>Chicago Shufflers had their first ever club host at Stereo Nightclub.
 
-					 Instagram page began to gain more traction and followers as there more active members throughout Chicago. This is when we see a huge following and passion on our page.
+					Instagram page began to gain more traction and followers as there more active members throughout Chicago. This is when we see a huge following and passion on our page.
 
 					The foundation of the new core members was established and a big ole happy family was created!
 
@@ -153,7 +154,7 @@
 				<div class = "timeline-event-section">
 					<h2>Individual classes, connecting other communities</h2>
 					<h3>2018</h3>
-					<p2>Shuffle classes grew, gaby and don host their first class!
+					<p2>Shuffle classes grew, Gaby and Don host their first class!
 
 						The Shuffle Circle comes to town to host their own class!
 
@@ -175,7 +176,7 @@
 					<div class = "timeline-middle-header"><h1>09</h1></div>
 				</div>
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
+					<img src = "<?php echo $base;?>/images/roster/manny.jpg">
 				</div>
 			</div>
 
@@ -319,7 +320,7 @@
 					<p1>Although I’ve been shuffling since 2018, it wasn’t until halfway through the pandemic when I connected with the Chicago Shufflers. When gyms closed down, I had to find an alternative to get my cardio in. I dedicated almost an hour every morning to honing my craft and finding my flow. When things started to open back up, I attended a drive-in rave and happened to park right next to the Chicago Shufflers! I found Don and he introduced me to everyone in the group. Since then, I’ve been an active member as well as one of the co-leaders and social media administrators. No matter the club attire, I’m most likely rocking a bucket hat and phat pants or cool joggers at a show. When I’m not shuffling, I’m building my business and taking photos of really cool architecture & interiors for architects, designers and custom home builders.</p1>
 				</div>
 			</div>
-
+			<!--
 			<div class = "roster-grid">
 				<div class = "roster-name">
 					<h1>Jesse</h1>
@@ -334,7 +335,7 @@
 					<p1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p1>
 				</div>
 			</div>
-
+			-->
 			<div class = "roster-grid">
 				<div class = "roster-name">
 					<h1>Amrita</h1>

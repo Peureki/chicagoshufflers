@@ -295,7 +295,11 @@ function animate_every_word(div, word){
 	word = word.replace(/<\/?u[^>]*>/g,"");
 	// Check for specific tags within the string
 	// If there's any of these conditions, split the array
-	// This allows the string to not combine and mess up the string later on. Example: 1: "merp<br>merp2" should be => 1: "merp", 2: "<br>", 3: "merp2"
+	// This allows the string to not combine and mess up the string later on. 
+	// Example: 1: "merp<br>merp2" should be => 
+	// 1: "merp", 
+	// 2: "<br>", 
+	// 3: "merp2"
 	let seperators = [" ", "<br>", "<a>", "<html-blob>", "&nbsp;", "\\n", "<p>", "</p>"];
 	wordArray = word.split(new RegExp(seperators.join("|", "g")));
 	// This is where the new word is gonna be
@@ -304,7 +308,7 @@ function animate_every_word(div, word){
 		aTag = ``,
 		skipTrigger = 0;
 
-	//console.log("word array: ", wordArray);
+	console.log("word array: ", wordArray);
 
 	// Iterate through the entire paragraph array
 	for (let i = 0; i < wordArray.length; i++){
