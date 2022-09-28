@@ -34,8 +34,8 @@
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>01</h1></div>
 				</div>
-				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/img-4.jpg">
+				<div class = "timeline-event-img" id = "timeline-event-img-1">
+					<img src = "<?php echo $base;?>/images/logos/youtube.png">
 				</div>
 			</div>
 
@@ -63,8 +63,8 @@
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>03</h1></div>
 				</div>
-				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
+				<div class = "timeline-event-img" id = "timeline-event-img-3">
+					<img src = "<?php echo $base;?>/images/assets/star.svg">
 				</div>
 			</div>
 
@@ -72,7 +72,7 @@
 
 			<div class = "timeline-event-box">
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/Individuals/steph.jpg">
+					<img src = "<?php echo $base;?>/images/individuals/steph.jpg">
 				</div>
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>04</h1></div>
@@ -102,7 +102,7 @@
 
 			<div class = "timeline-event-box">
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/shufflepalooza-1.jpg">
+					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
 				</div>
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>06</h1></div>
@@ -140,20 +140,20 @@
 					<div class = "timeline-middle-header"><h1>07</h1></div>
 				</div>
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/myhouse-1.jpg">
+					<img src = "<?php echo $base;?>/images/group/img-4.jpg">
 				</div>
 			</div>
 
 			<div class = "timeline-event-box">
 				<div class = "timeline-event-img">
-					<img src = "<?php echo $base;?>/images/group/shufflepalooza-1.jpg">
+					<img src = "<?php echo $base;?>/images/posters/classes/gaby-6-5.jpg">
 				</div>
 				<div class = "timeline-middle-line">
 					<div class = "timeline-middle-header"><h1>08</h1></div>
 				</div>
 				<div class = "timeline-event-section">
 					<h2>Individual classes, connecting other communities</h2>
-					<h3>2018</h3>
+					<h3>2020</h3>
 					<p2>Shuffle classes grew, Gaby and Don host their first class!
 
 						The Shuffle Circle comes to town to host their own class!
@@ -299,9 +299,9 @@
 
 				<div class = "roster-desc">
 					<p1>My journey into this scene started in 2013, when I attended my first festival, North Coast Music Festival. I met the Chicago Shufflers in 2017 at the Chicago House Music Festival four years later. There, I met the creator, Mama Tempa, and others. It was here that I realized that I had a community and a family! I helped co-lead many projects and be the co-leader during this time, and it wasn't until January of 2020 that I officially took over as President and Owner of the Chicago Shufflers! Since then, my mission has been to advocate for my dancers, the dance styles of shuffling, and the city of Chicago most of all! 
-
+					<br><br>
 					Although I started raving in 2013, I've been an avid festival/concert goer since 2008. I used to be a metalcore/warped tour kid! I started shuffling back in 2017 and have been going strong since. My style can be described as groovy and funky with a sprinkle of spins.
-
+					<br><br>
 					On top of running the Chicago Shufflers organization, I also run my own podcast dedicated to men’s mental health (Brospective Podcast) and have a full-time job as a licensed clinical mental health therapist.</p1>
 				</div>
 			</div>
@@ -320,7 +320,7 @@
 					<p1>Although I’ve been shuffling since 2018, it wasn’t until halfway through the pandemic when I connected with the Chicago Shufflers. When gyms closed down, I had to find an alternative to get my cardio in. I dedicated almost an hour every morning to honing my craft and finding my flow. When things started to open back up, I attended a drive-in rave and happened to park right next to the Chicago Shufflers! I found Don and he introduced me to everyone in the group. Since then, I’ve been an active member as well as one of the co-leaders and social media administrators. No matter the club attire, I’m most likely rocking a bucket hat and phat pants or cool joggers at a show. When I’m not shuffling, I’m building my business and taking photos of really cool architecture & interiors for architects, designers and custom home builders.</p1>
 				</div>
 			</div>
-			<!--
+			
 			<div class = "roster-grid">
 				<div class = "roster-name">
 					<h1>Jesse</h1>
@@ -332,10 +332,10 @@
 				</div>
 
 				<div class = "roster-desc">
-					<p1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p1>
+					<p1>Jesse aka HappyFeett here! I started shuffling since 2018 and have been a huge supporter of the Chicago Shufflers community ever since! Outside of shuffling I am a current student studying for Bio Medicine. I also Dj on the side as Happyfeett for local venues here in Chicago!  My current role as an admin is to help Don and the team with any tasks they need for event set up and be a point person for any questions the community might have!</p1>
 				</div>
 			</div>
-			-->
+			
 			<div class = "roster-grid">
 				<div class = "roster-name">
 					<h1>Amrita</h1>
@@ -343,7 +343,7 @@
 				</div>
 
 				<div class = "roster-portrait">
-					<img src = "<?php echo $base;?>/images/roster/amrita.png">
+					<img src = "<?php echo $base;?>/images/roster/amrita.jpg">
 				</div>
 
 				<div class = "roster-desc">
@@ -408,7 +408,7 @@
 
 				<div class = "roster-desc">
 					<p1>I started shuffling around 2017. It was one of those things where you go into a rabbit hole of YouTube one night and find the most random videos and one of them happened to be a shuffle compilation. Back then, Instagram blew up with Cutting Shapes. I was obsessed! I watched YouTube tutorials, bought my own pair of light up shoes, and made an Instagram too. I followed every single shuffler I could find, popular or with a few followers. Eventually I found the Instagram and Facebook to Chicago Shufflers and was like, "Yo! I'm from Chicago too!". I immediately linked up, joined the team, traveled to festivals, and tried my best to go to every event and class possible even though I lived 4 hours away for college. 
-
+					<br><br>
 					I shuffled seriously for about a 1 - 1 1/2 years until life caught up with me and took a long break. Pandemic hit..you know how that goes. Then comes ARC Festival 2021. I felt so euphoric seeing everyone and all the shufflers again that it inspired the idea of creating this website. After finally moving back into the area in July 2022, the website came into fruition and my passion for the dance is on its way back! </p1>
 				</div>
 			</div>

@@ -19,7 +19,7 @@
 		====================== LANDING BOX =========================
 		============================================================
 	-->
-	<div class = "main-container" style = "height: 250vh;" id = "first-container">
+	<div class = "main-container" style = "height: 150vh;" id = "first-container">
 		<div class = "first-fixed-container" id = "first-logo">
 			<div class = "first-logo">
 				<img src = "<?php echo $base;?>/images/logos/Logo_White.png">
@@ -31,7 +31,7 @@
 					<li><a href = "<?php echo $base;?>/about.php">About</a></li>
 					<li><a href = "<?php echo $base;?>/events-and-classes.php">Events</a></li>
 					<li><a href = "<?php echo $base;?>/events-and-classes.php">Classes</a></li>
-					<li><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></li>
+					<li><a href = "https://shop.sadboitees.com/chicago_shufflers/shop/home" target = "_blank">Merch</a></li>
 				</ul>
 			</div>
 
@@ -55,21 +55,12 @@
 
 			<div class = "first-collage-img" id = "first-collage-img-2">
 				<div class = "collage-fader"></div>
-				<video autoplay muted loop>
-					<source src = "<?php echo $base;?>/videos/myhouse-performance-1.mov">
-				</video>
+				<img src = "<?php echo $base;?>/images/group/img-6.jpg">
 			</div>
 
 			<div class = "first-collage-img" id = "first-collage-img-3">
 				<div class = "collage-fader"></div>
-				<video autoplay muted loop>
-					<source src = "<?php echo $base;?>/videos/santana-1.MOV">
-				</video>
-			</div>
-
-			<div class = "first-collage-img" id = "first-collage-img-4">
-				<div class = "collage-fader"></div>
-				<img src = "<?php echo $base;?>/images/group/img-2.jpg">
+				<img src = "<?php echo $base;?>/images/group/img-7.jpg">
 			</div>
 		</div>
 
@@ -448,7 +439,7 @@
 		</div>
 
 		<video class = "main-video" id = "main-shuffle-video" autoplay muted loop>
-			<source src = "<?php echo $base;?>/videos/Manny solo 2_Trim_again.mp4">
+			<source src = "<?php echo $base;?>/videos/Ctalbs_shuffles_Trim.mp4">
 		</video>
 		<
 		<div class = "general-desc" id = "shuffle-desc" style = "text-align: center;">

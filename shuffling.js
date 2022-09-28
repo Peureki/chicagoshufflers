@@ -20,6 +20,7 @@ let tutorialDivs = document.getElementsByClassName('grid-two-col-section'),
 let centerDivs = document.getElementsByClassName('center-desc'),
 	centerWords = [];
 
+get_HTML_into_array(mainHeaderDivs, mainHeaderWords, "h1");
 /*
 // Get general descrpitions
 let generalDivs = document.getElementsByClassName('general-desc'), 
@@ -27,10 +28,12 @@ let generalDivs = document.getElementsByClassName('general-desc'),
 */
 // For every main header word, put it into an array
 // Replace every main header word with a blank to be replaced later when the user scrolls
+/*
 for (let i = 0; i < mainHeaderDivs.length; i++){
 	mainHeaderWords[i] = mainHeaderDivs[i].children[0].innerHTML;
 	mainHeaderDivs[i].children[0].innerHTML = "";
 }
+*/
 for (let i = 0; i < tutorialDivs.length; i++){
 	// Get the odd numbers as these divs have the number and descriptions
 	// The first child is the description
@@ -50,60 +53,37 @@ for (let i = 0; i < centerDivs.length; i++){
 	}
 	
 }
-/*
-for (let i = 0; i < generalDivs.length; i++){
-	generalWords.push(generalDivs[i].children[0].innerHTML);
-	generalDivs[i].children[0].innerHTML = "";
-}
-*/
-
-
 
 
 animate_every_word(shuffleParaHTML, shufflePara); 
-
-/*
-for (let i = 0; i < mainHeaders.length; i++){
-	animate_every_letter(mainHeaders[i].children[0], mainHeaders[i].children[0].innerHTML);
-}
-*/
 
 let build = mainHeaderWords[0],
 	your = mainHeaderWords[1],
 	foundation = mainHeaderWords[2],
 	headerCount = 0,
 	tutorialCount = 0,
+	tutorialLoopCount = 0,
 	centerCount = 1,
 	generalCount = 0;
 
-assign_letters_to_span(mainHeaderDivs[0], build);
-assign_letters_to_span(mainHeaderDivs[1], your);
-assign_letters_to_span(mainHeaderDivs[2], foundation);
+for (let i = 0; i < mainHeaderDivs.length; i++){
+	assign_letters_to_span(mainHeaderDivs[i], mainHeaderWords[i]);
+}
 
 body.addEventListener('scroll', function(){
 
 
-
-	let buildY = mainHeaderDivs[0].getBoundingClientRect().y,
-		yourY = mainHeaderDivs[1].getBoundingClientRect().y,
-		foundationY = mainHeaderDivs[2].getBoundingClientRect().y;
-
-	if (buildY <= 500 && headerCount == 0){
-		animate_every_letter(mainHeaderDivs[0], build);
-		headerCount++;
-	}
-	if (yourY <= 500 && headerCount == 1){
-		animate_every_letter(mainHeaderDivs[1], your);
-		headerCount++;
-	}
-	if (foundationY <= 500 && headerCount == 2){
-		animate_every_letter(mainHeaderDivs[2], foundation);
-		headerCount++;
+	for (let i = 0; i < mainHeaderDivs.length; i++){
+		if (mainHeaderDivs[i].getBoundingClientRect().y < 500 && headerCount == i){
+			animate_every_letter(mainHeaderDivs[i]);
+			headerCount++;
+		}
 	}
 
 	// Show the tutorial steps of the Running Man
 	// For the if statements, do the tutorialDivs[ODD #] because those are the nums and descriptions
 	// Stick figures are totalDivs[EVEN #]
+	
 	if (tutorialDivs[1].getBoundingClientRect().y <= 500 && tutorialCount == 0){
 		// Stick figure
 		tutorialDivs[0].style.opacity = 1; 
@@ -128,10 +108,20 @@ body.addEventListener('scroll', function(){
 		animate_every_word(tutorialDivs[5].children[1], tutorialWords[2]); 
 		tutorialCount = 3; 
 	}
+	/*
+	if (tutorialDivs[7].getBoundingClientRect().y <= 500 && tutorialCount == 3){
+		// Stick figure
+		tutorialDivs[6].style.opacity = 1; 
+		// Animate the number and descriptions 
+		animate_every_word(tutorialDivs[7].children[0], "RUNNING MAN");
+		animate_every_word(tutorialDivs[7].children[1], tutorialWords[3]); 
+		tutorialCount++; 
+	}
+	*/
 	if (centerDivs[1].getBoundingClientRect().y <= 500 && centerCount == 1){
 		animate_every_word(centerDivs[1].children[0], centerWords[1]);
 		centerCount++;
-	}
+	} 
 
 });
 

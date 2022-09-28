@@ -332,7 +332,7 @@ function animate_every_word(div, word){
 					break;
 				}
 				if (wordArray[i] == `shop!`){
-					newWord += `<span class = 'red-text'><a href = 'https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit'>` + wordArray[i] + `</a></span>` + ` `;
+					newWord += `<span class = 'red-text'><a href = 'https://shop.sadboitees.com/chicago_shufflers/shop/home' target = '_blank'>` + wordArray[i] + `</a></span>` + ` `;
 					break;
 				}
 			case `shuffling.php`: 

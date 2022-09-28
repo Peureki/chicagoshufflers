@@ -27,7 +27,7 @@
 			<span id = "page-about"><a href = "./about.php"> About </a></span>
 			<span id = "page-events"><a href = "./events-and-classes.php"> Events </a></span>
 			<span id = "page-classes"><a href = "./events-and-classes.php"> Classes </a></span>
-			<span id = "page-merch"><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></span>
+			<span id = "page-merch"><a href = "https://shop.sadboitees.com/chicago_shufflers/shop/home" target = "_blank">Merch</a></span>
 		</div>
 	</div>
 
@@ -61,7 +61,7 @@
 				<li><a href = "<?php echo $base;?>/about.php">About</a></li>
 				<li><a href = "<?php echo $base;?>/events-and-classes.php">Events</a></li>
 				<li><a href = "<?php echo $base;?>/events-and-classes.php">Classes</a></li>
-				<li><a href = "https://docs.google.com/forms/d/1AAgEhmtGbvnTkUBdhO9b2giCHw_Q-XpI2Ilh5b3wzpE/edit" target = "_blank">Merch</a></li>
+				<li><a href = "https://shop.sadboitees.com/chicago_shufflers/shop/home" target = "_blank">Merch</a></li>
 			</ul>
 		</div>
 

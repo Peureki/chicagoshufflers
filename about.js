@@ -113,7 +113,8 @@ body.addEventListener('scroll', function(){
 	}
 	for (let i = 0; i < rosterDesc.length; i++){
 		if (rosterDesc[i].getBoundingClientRect().y < 700 && rosterDescCount == i){
-			animate_every_word(rosterDesc[i], rosterDescArray[i]);
+			//animate_every_word(rosterDesc[i], rosterDescArray[i]);
+			rosterDesc[i].style.opacity = 1;
 			rosterDescCount++;
 		}
 	}

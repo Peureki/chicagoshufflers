@@ -46,6 +46,8 @@
 				</ul>
 
 				<button type = "text" class = "contact-button">Contact Us</button>
+				<div class = "footer-plug"><p1>Created by: <a href = "https://www.instagram.com/peurekii/" target = "_blank">@peurekii</p1></div>
+
 			</div>
 		</div>
 	</div>

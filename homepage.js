@@ -116,7 +116,7 @@ body.addEventListener('scroll', function(){
 		shuffleVideoY = mainShuffleVid.getBoundingClientRect().y,
 		firstY = firstContainer.getBoundingClientRect().y;
 
-	if (stickyVideoY >= screenHeight){
+	if (stickyVideoY >= screenHeight && windowWidth > 768){
 		firstLogo.style.transform = `translateY(${firstY*-1}px)`;
 	}
 	
@@ -212,7 +212,6 @@ body.addEventListener('scroll', function(){
 
 	// When scrolling to the MERCH section
 	if (merchY <= 0 && merchCount == 0){
-		console.log('this happens');
 		if (imgSliderContainer.style.zIndex != 1){
 			imgSliderContainer.style.zIndex = 1;
 			imgFader.animate([
