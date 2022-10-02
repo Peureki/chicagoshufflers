@@ -80,7 +80,7 @@
 				<div class = "timeline-event-section">
 					<h2>Chicago Shufflers</h2>
 					<h3>2015</h3>
-					<p2>Stephanie “Mama Tempa” Frazier created the Chicago Shufflers in October of 2015. She recruited new people and others she  found at the local raves in Chicago. She then proceeded to create a group chat  to host all memebers that wanted to be a part of the community.</p2>
+					<p2>Stephanie “Mama Tempa” Frazier created the Chicago Shufflers in October of 2015. She recruited new people and others she  found at the local raves in Chicago. She then proceeded to create a group chat  to host all members that wanted to be a part of the community.</p2>
 				</div>
 			</div>
 

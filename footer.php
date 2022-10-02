@@ -43,6 +43,7 @@
 					<li><a href = "https://www.facebook.com/chicagoshufflers" target = "_blank" title = "Facebook @chicagoshufflers"><img src = "<?php echo $base;?>/images/assets/facebook.svg"></a></li>
 					<li><a href = "https://www.youtube.com/channel/UCrudQ_ci6tFss6W0aVtFHWw" title = "Youtube @chi shufflers"><img src = "<?php echo $base;?>/images/assets/youtube.svg"></a></li>
 					<li><a href = "mailto: chicagoshufflers@gmail.com" title = "Gmail: chicagoshufflers@gmail.com"><img src = "<?php echo $base;?>/images/assets/mail.svg"></a></li>
+					<li><a href = "https://l.facebook.com/l.php?u=https%3A%2F%2Fopen.spotify.com%2Fuser%2F31wctfdvuehypo3jewakiiz55ife%3Fsi%3D71e9aa49a7c14bc9%26fbclid%3DIwAR3aRnEcxvq4OKP6e-zaqwIE36rtfg4cT9hRUAOzeUKkMgYrQsGRMAXkdpE&h=AT3rFsUKNftcsiX01YI_SK8TyITwDFjcADaiM6ZGaXhewu-2bLdeCjQDVnQICczYLNCrPTkBKeScj83x12uWD00GTxuPUR8VIgykr1eeuYL7V_yOOeNhHsr3bpaHLBqjQRM3gY_dtzifExYbQ4w" target = "_blank" title = "Spotify Playlists"><img src = "<?php echo $base;?>/images/assets/spotify.svg"></a></li>
 				</ul>
 
 				<button type = "text" class = "contact-button">Contact Us</button>
