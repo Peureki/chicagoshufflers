@@ -56,7 +56,7 @@
 
 			<div class = "first-collage-img" id = "first-collage-img-2">
 				<div class = "collage-fader"></div>
-				<img src = "<?php echo $base;?>/images/group/img-6.jpg">
+				<img src = "<?php echo $base;?>/images/group/img-8.jpg">
 			</div>
 
 			<div class = "first-collage-img" id = "first-collage-img-3">

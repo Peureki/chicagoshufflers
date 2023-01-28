@@ -62,6 +62,7 @@ function animate_letters(posY, words, counter){
 		}, 20);
 	}
 }
+
 function animate_on_load(words){
 	let counter = 0;
 	function show_letters(words){
@@ -76,6 +77,7 @@ function animate_on_load(words){
 	}
 	show_letters(words); 
 }
+
 // Remove any faders that are on top of an img
 function animate_remove_fader(fader){
 	fader.animate([
@@ -486,6 +488,7 @@ if (windowWidth < 768){
 		});
 	}
 }
+
 
 
 
