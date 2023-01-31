@@ -118,3 +118,16 @@ for (let i = 0; i < details.length; i++){
 	});
 }
 
+let eventObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting){
+			entry.target.classList.add('show');
+		}
+	})
+}, {
+	threshold: 1,
+});
+
+let eventFlyer = document.querySelectorAll('.event-flyer'); 
+eventFlyer.forEach((el) => eventObserver.observe(el));
+

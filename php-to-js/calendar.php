@@ -55,7 +55,9 @@ let eventName,
 	eventLink,
 	eventDesc,
 	href,
-	compareEvent; 
+	compareEvent,
+	eventImg,
+	eventImgCheck = 0; 
 
 let firstContainer = document.getElementById('main-event-container'),
 	eventContainer = document.getElementById('event-container'),
@@ -89,6 +91,19 @@ for (let i = 0; i < calendarItems.length; i++){
 		eventEndDate = new Date(calendarItems[i].end.dateTime).toLocaleDateString('en-US', {
 			month: '2-digit',day: '2-digit',year: 'numeric'});
 		eventDesc = calendarItems[i].description;
+
+		// Check if there's any attachments in an event
+		// If yes => eventImg is the URL to the event img that needs to be embedded by iframe
+		// If no => skip
+		if (calendarItems[i].attachments == null){
+			eventImgCheck = 0;
+			eventImg = ``;
+		} else {
+			eventImg = calendarItems[i].attachments.fileUrl; 
+			eventImg = `<iframe src="https://drive.google.com/file/d/${calendarItems[i].attachments[0].fileId}/preview" allow="autoplay" class = "event-flyer"></iframe>`;
+			console.log('calendar img', calendarItems[i].attachments[0].fileUrl);
+		}
+
 		
 
 		// If there's no set start date on the calendar, set to 0
@@ -122,6 +137,8 @@ for (let i = 0; i < calendarItems.length; i++){
 				<div class = "main-header-block" id = "${eventName}">
 					<h1>${eventName}</h1>
 				</div>
+
+				${eventImg}
 
 				<div class = "general-desc" style = "text-align: center;">
 					<p1>${eventOverallDate}</p1> 

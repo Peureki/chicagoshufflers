@@ -41,7 +41,7 @@
 		Main events inputted here from js
 	-->
 	<div class = "main-container" id = "main-event-container">
-
+		
 	</div>
 
 	<div class = "main-container">
